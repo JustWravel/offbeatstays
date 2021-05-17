@@ -1,0 +1,45 @@
+<div>
+
+	@include('livewire.front.property-detail-room-detail-component', ['room_id' => $room_id] )
+	
+    <div class="list-single-main-item fl-wrap" id="sec4">
+                                            <div class="list-single-main-item-title fl-wrap">
+                                                <h3>Available Rooms</h3>
+                                            </div>
+                                            <!--   rooms-container -->
+                                            <div class="rooms-container fl-wrap">
+                                                @foreach($property->rooms as $roomIndex => $room)
+                                                <!--  rooms-item -->
+                                                <div class="rooms-item fl-wrap">
+                                                    <div class="rooms-media">
+                                                        <img src="{{ asset($room->image ?? 'front-assets/images/gal/1.jpg')}}" alt="">
+                                                        <div class="dynamic-gal more-photos-button" data-dynamicPath="[
+                                                            {'src': '{{$room->image}}'},
+                                                         ]">  View Gallery <span>1 photo {{-- {{count($property->images)}} photos --}}</span> <i class="far fa-long-arrow-right"></i></div>
+                                                    </div>
+                                                    <div class="rooms-details">
+                                                        <div class="rooms-details-header fl-wrap">
+                                                            <span class="rooms-price"><span class="fal fas far fa-rupee-sign"></span> {{ $room->cost_per_night }}<strong> / person</strong></span>
+                                                            <h3>{{$room->name}}</h3>
+                                                            <h5>Max Guests: <span>3 persons</span></h5>
+                                                        </div>
+                                                        {{-- <p>Morbi varius, nulla sit amet rutrum elementum, est elit finibus tellus, ut tristique elit risus at metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> --}}
+                                                        <p>{{$room->description}}</p>
+                                                        <div class="facilities-list fl-wrap">
+                                                            <ul>
+                                                            	@foreach(json_decode($room->amenity) as $amenity)
+                                                            		@livewire('front.front-property-detail-amenity-show-by-id-component', ['amenity_id'=>$amenity, 'withname'=>false])
+                                                            	@endforeach
+                                                            </ul>
+                                                            
+                                                            <a href="#" class="btn color-bg ajax-link" wire:ignore wire:click.prevent=roomDetail({{$roomIndex}})>Details<i class="fas fa-caret-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--  rooms-item end -->
+                                                @endforeach
+                                                                                                      
+                                            </div>
+                                            <!--   rooms-container end -->
+                                        </div>
+</div>
