@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/un1ax3z7b6fl/public_html/obs/
+    - /bin/cp -R images $DEPLOYPATH
