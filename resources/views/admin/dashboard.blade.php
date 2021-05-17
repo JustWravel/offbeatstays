@@ -157,7 +157,7 @@
 										</div>
 										<!--end::Mixed Widget 1-->
 									</div>
-									<div class="col-lg-6 col-xxl-4">
+									{{-- <div class="col-lg-6 col-xxl-4">
 										<!--begin::List Widget 9-->
 										<div class="card card-custom card-stretch gutter-b">
 											<!--begin::Header-->
@@ -2819,11 +2819,11 @@
 										</div>
 										<!--end: Card-->
 										<!--end::List Widget 8-->
-									</div>
+									</div> --}}
 								</div>
 								<!--end::Row-->
 								<!--begin::Row-->
-								<div class="row">
+								{{-- <div class="row">
 									<div class="col-lg-4">
 										<!--begin::Mixed Widget 14-->
 										<div class="card card-custom card-stretch gutter-b">
@@ -3103,7 +3103,7 @@
 										</div>
 										<!--end::Advance Table Widget 4-->
 									</div>
-								</div>
+								</div> --}}
 								<!--end::Row-->
 								<!--end::Dashboard-->
 							</div>

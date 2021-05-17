@@ -91,7 +91,7 @@ class adminPropertyController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.pages.PropertyEdit', [
+        return view('admin.pages.propertyEdit', [
             'property' => Property::find($id),
             'states' => State::all(),
             'locations' => Location::all(),

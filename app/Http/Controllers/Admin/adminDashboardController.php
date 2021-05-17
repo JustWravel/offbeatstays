@@ -11,14 +11,14 @@ class adminDashboardController extends Controller
 {
     public function show()
     {
-    	$response = Http::get('https://www.offbeatstays.in/wp-json/wp/v2/listings?listing_cities=154',
-    		[
-    			'per_page' => 25
-    		])->json();
-    	echo "<pre/>";
+    	// $response = Http::get('https://www.offbeatstays.in/wp-json/wp/v2/listings?listing_cities=154',
+    	// 	[
+    	// 		'per_page' => 25
+    	// 	])->json();
+    	// echo "<pre/>";
 
-    	print_r($response);
-    	// return view('admin.dashboard');
+    	// print_r($response);
+    	return view('admin.dashboard');
 /*
         $filename = 'temp-image.jpg';
 $tempImage = tempnam(sys_get_temp_dir(), $filename);
