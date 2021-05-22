@@ -13,4 +13,12 @@ class PropertyRoom extends Model
      'name',
      'description',
     ];
+
+
+    public function getAmenitiesAttribute($value)
+    {
+        $data = (array)json_decode($value);
+        return Amenity::whereIn('id', $data)->get();
+        
+    }
 }

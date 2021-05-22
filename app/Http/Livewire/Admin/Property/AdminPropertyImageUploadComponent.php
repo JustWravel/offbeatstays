@@ -86,7 +86,7 @@ class AdminPropertyImageUploadComponent extends Component
 	            $img = Image::make(public_path($PropertyImage));
 
 
-	   			$watermark = Image::make(public_path('front-assets\images/logo.png'));
+	   			$watermark = Image::make(public_path('front-assets/images/logo.png'));
 
 			    /* insert watermark at bottom-right corner with 10px offset */
 

@@ -17,25 +17,16 @@ class AdminPropertyAmenitiesComponent extends Component
 	public function mount($property_id='')
 	{
 		$this->property = Property::find($property_id);
-		// $pamenity = json_decode($this->property->amenity);
-		// dd($paminity);
+		
 		$this->amenities = Amenity::all();
-		/*foreach ($this->amenities as $key => $amenity) {
-			if(in_array($amenity->id, (array)json_decode($this->property->amenity))){
-				$this->amenities[$key]->checked = 'checked';
-			}
-			
-		}
-		// $this->amenities->checked = 'checked';
-		// dd($this->amenities);
-		// dd(json_decode($this->amenities->checked));*/
+		
 		$this->amenity = (array)json_decode($this->property->amenity);
 	}
 
 	public function saveAmenity()
 	{
 		$property = $this->property;
-		$property->amenity = $this->amenity;
+		$property->amenity = json_encode($this->amenity);
 		$property->save();
 		$this->emit('AdminPropertyAmenitiesComponent');
 		// dd(array_values($this->amenity));

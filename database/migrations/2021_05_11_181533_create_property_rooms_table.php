@@ -16,12 +16,14 @@ class CreatePropertyRoomsTable extends Migration
         Schema::create('property_rooms', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->longText('description');
+            $table->longText('description')->nullable();
+            $table->integer('number_of_rooms')->nullable();
             $table->float('cost_per_night', 8, 2)->nullable();
             $table->float('cost_per_night_weekend', 8, 2)->nullable();
             $table->float('cost_per_night_weekly', 8, 2)->nullable();
             $table->float('cost_per_night_fortnightly', 8, 2)->nullable();
             $table->float('cost_per_night_monthly', 8, 2)->nullable();
+            $table->float('extra_person_cost', 8, 2)->nullable();
             $table->boolean('breakfast_included')->default(false);
             $table->text('image')->nullable();
             $table->text('amenity')->nullable();

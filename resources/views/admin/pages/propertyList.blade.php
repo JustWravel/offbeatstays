@@ -83,7 +83,7 @@
 													<td><a class="text-dark-50 text-hover-primary" href="{{ $property->slug }}">{{ $property->name }}</a></td>
 													<td>{{ $property->state->name }}</td>
 													<td>{{ $property->location->name }}</td>
-													<td><img src="{{ $property->image }}" style="width: 40px" alt=""></td>
+													<td>{{-- <img src="{{ $property->images[0]->name }}" style="width: 40px" alt=""> --}}</td>
 													<td>{!! $property->description !!}</td>
 													
 													<td nowrap="nowrap">

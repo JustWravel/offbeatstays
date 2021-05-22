@@ -16,7 +16,7 @@ class FrontCommonFooterComponent extends Component
 		]);
 		// dd($this->email);
 		Subscriber::create(['email'=>$this->email]);
-		session()->flash('message', 'You have subscribed Offbeatstays.in');
+		session()->flash('message', 'You have subscribed Offbeatstays.in!');
 		$this->email = '';
 	}
     public function render()

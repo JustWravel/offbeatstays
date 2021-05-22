@@ -88,7 +88,7 @@
 														<a href="{{ route('admin.location.edit', ['location' => $location->id]) }}" class="btn btn-sm btn-primary btn-icon" title="Edit details">
 															<i class="la la-edit"></i>
 														</a>
-														<form method="POST" action="{{ route('admin.location.show', ['location' => $location->id]) }}" onsubmit=" return confirm('Are you sure ?? Delete this loction!')" style="display: inline;">
+														<form method="POST" action="{{ route('admin.location.show', ['location' => $location->id]) }}" onsubmit="return confirm('Are you sure ?? Delete this loction!')" style="display: inline;">
 														    @csrf
 														    @method('DELETE')
 														    <button type="submit" class="btn btn-sm btn-danger btn-icon" title="Delete"><i class="la la-trash"></i></button>

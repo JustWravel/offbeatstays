@@ -3580,7 +3580,8 @@ input[type=number]
 }
 .geodir-category-img img  , .gallery-item img{
 	width:100%;
-	height:auto;
+	/*height:auto;*/
+	height:250px;
 	-webkit-transition: all 2000ms cubic-bezier(.19,1,.22,1) 0ms;
 	-webkit-transform: translateZ(0);
     transform: translateZ(0);

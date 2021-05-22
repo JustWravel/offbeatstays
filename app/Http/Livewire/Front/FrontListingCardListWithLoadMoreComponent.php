@@ -11,28 +11,28 @@ class FrontListingCardListWithLoadMoreComponent extends Component
 {
 	use WithPagination;
 	public $slug;
-    public $perPage = 2;
+    public $perPage;
     public $perPage1;
-    protected $listeners = [
-        'load-more' => 'loadMore'
-    ];
+    // protected $listeners = [
+    //     'load-more' => 'loadMore'
+    // ];
 
 	public function mount($slug)
 	{
 		$this->slug = $slug;
+		
 	}
 
 
-    public function loadMore()
-    {
-    	// dd('sdfsdf');
-        $this->perPage = $this->perPage + 10;
-    }
+    // public function loadMore()
+    // {
+    // 	// dd('sdfsdf');
+    //     $this->perPage = $this->perPage + 5;
+    // }
     public function render()
     {
     	$state = State::where('slug', $this->slug)->first();
-    	$properties = State::latest()->paginate(2);
-    	// $properties = Property::where('state_id', $state->id)->paginate(2);
+    	$properties = Property::where('state_id', $state->id)->paginate(1);
         return view('livewire.front.front-listing-card-list-with-load-more-component', [
         				'state' => $state,
         				'properties' => $properties,

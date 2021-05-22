@@ -54,11 +54,11 @@
                             <!-- portfolio start -->
                             <div class="gallery-items fl-wrap mr-bot spad home-grid">
                                 <!-- gallery-item-->
-                                @forelse($popular_destinations as $popular_destination)
+                                @foreach($popular_destinations as $popular_destination)
                                 <div class="gallery-item">
                                     <div class="grid-item-holder">
                                         <div class="listing-item-grid">
-                                            <div class="listing-counter"><span>{{count($popular_destination->properties)}} </span> @if(count($popular_destination->properties) > 1) Hotels @else Hotel @endif</div>
+                                            <div class="listing-counter"><span>{{count($popular_destination->properties)}} </span> @if(count($popular_destination->properties) > 1) Properties @else Property @endif</div>
                                             <a href="{{ route('front.state.show', ['slug'=>$popular_destination->slug])}}">
                                                 <img  src="{{ $popular_destination->image ?? asset('front-assets/images/city/1.jpg') }}"   alt="{{$popular_destination->name}} - Offbeat Stays">
                                             </a>
@@ -67,15 +67,15 @@
                                                 <h3>{{$popular_destination->name}}</h3>
                                                 {{-- <div class="weather-grid"   data-grcity="Rome"></div> --}}
                                                 <div class="clearfix"></div>
-                                            </a>
+                                                </a>
                                                 {{-- <p>Constant care and attention to the patients makes good record</p> --}}
                                             </div>
-                                        <a href="{{ route('front.state.show', ['slug'=>$popular_destination->slug])}}">
+                                        
                                         </div>
                                     </div>
                                 </div>
-                                @empty
-                                @endforelse
+                                
+                                @endforeach
                                 <!-- gallery-item end-->
                                 {{-- <!-- gallery-item-->
                                 <div class="gallery-item gallery-item-second">

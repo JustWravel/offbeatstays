@@ -33,4 +33,8 @@ class Location extends Model
     {
     	return $this->belongsTo(State::class,'state_id');
     }
+    public function properties()
+    {
+        return $this->hasMany(Property::class,'location_id');
+    }
 }

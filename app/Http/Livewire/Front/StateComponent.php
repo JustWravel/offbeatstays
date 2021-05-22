@@ -21,10 +21,10 @@ class StateComponent extends Component
     public function render()
     {
     	$state = State::where('slug', $this->slug)->first();
-    	// $properties = Property::where('state_id', $state->id)->paginate(1);
+    	$properties = Property::where('state_id', $state->id)->paginate(1);
         return view('livewire.front.state-component', [
         				'state' => $state,
-        				// 'properties' => $properties,
+        				'properties' => $properties,
         			])->layout('layouts.front.base');
     }
 }

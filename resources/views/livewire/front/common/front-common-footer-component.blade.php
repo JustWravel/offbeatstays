@@ -33,7 +33,7 @@
                 <div class="footer-inner">
                     <div class="container">
                         <!--footer-fw-widget-->
-                        <div class="footer-fw-widget fl-wrap">
+                        {{-- <div class="footer-fw-widget fl-wrap">
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="footer-carousel-title">
@@ -81,7 +81,7 @@
                                     <!--footer-carousel-wrap end-->
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!--footer-fw-widget end-->
                         <div class="row">
                             <!--footer-widget -->
@@ -114,7 +114,7 @@
                                 <div class="footer-widget fl-wrap">
                                     <h3>Our Last News</h3>
                                     <div class="widget-posts fl-wrap">
-                                        <ul>
+                                        {{-- <ul>
                                             <li class="clearfix">
                                                 <a href="#"  class="widget-posts-img"><img src="{{ asset('front-assets/images/all/1.jpg') }}" class="respimg" alt=""></a>
                                                 <div class="widget-posts-descr">
@@ -136,7 +136,7 @@
                                                     <span class="widget-posts-date"> 7 Mar 16.42 </span>
                                                 </div>
                                             </li>
-                                        </ul>
+                                        </ul> --}}
                                     </div>
                                 </div>
                             </div>

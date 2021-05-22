@@ -198,7 +198,10 @@
                                                 <!-- price-opt end-->                               
                                             </div>
                                             <!-- list-main-wrap-opt end-->
-                                            @livewire('load-more-user')
+                                            {{ $slug}}
+                                            @livewire('front.front-listing-card-list-with-load-more-component', [
+                                                    'slug'=>$slug
+                                                ])
                                         </div>
                                         <!-- list-main-wrap end-->
                                     </div>
@@ -213,13 +216,5 @@
                         <div class="limit-box fl-wrap"></div>
                     </section>
 
-                    @push('scripts')
-                    <script type="text/javascript">
-      window.onscroll = function(ev) {
-          if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-              window.livewire.emit('load-more');
-          }
-      };
-</script>
-                    @endpush
+                    
 

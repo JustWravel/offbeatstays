@@ -13,10 +13,32 @@
 		    <select class="form-control" id="location"  name="stay_location">
 		        <option value="">Location</option>
 		        @foreach($states as $state)
-		        <option value="{{ $state->slug }}">{{ $state->name }}</option>
+		        <optgroup label="{{ $state->name }}">
+		        	<option value="{{ $state->slug }}"> All {{ $state->name }}</option>
+			        	@foreach($state->locations as $location)
+			        
+			        	<option value="{{ $location->slug }}">{{ $location->name }}</option>
+		       
+		        
+		        		@endforeach
+		        </optgroup>
+		        
 		        @endforeach
 		    </select>
 		</div>
+		<style>
+			.select2-container--default .select2-results__group {
+    cursor: default;
+    display: block;
+    padding: 6px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #18458b;
+    padding: 10px 30px;
+    font-style: italic;
+    text-align: justify;
+}
+		</style>
                                         {{-- <div class="main-search-input-item location" id="autocomplete-container">
                                             <span class="inpt_dec"><i class="fal fa-map-marker"></i></span>
                                             <input type="text" placeholder="Hotel , City..." class="autocomplete-input" id="autocompleteid2"  value=""/>
@@ -55,12 +77,12 @@
     $(document).ready(function () {
         $('#category').select2();
         $('#category').on('change', function (e) {
-            var item = $('#category').select2("val");
+            // var item = $('#category').select2("val");
             {{-- @this.set('viralSongs', item); --}}
         });
         $('#location').select2();
         $('#location').on('change', function (e) {
-            var item = $('#location').select2("val");
+            // var item = $('#location').select2("val");
             {{-- @this.set('viralSongs', item); --}}
         });
     });

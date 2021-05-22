@@ -231,6 +231,7 @@
                                                     @livewire('front.front-property-detail-amenity-show-by-id-component', ['amenity_id'=>$amenity])
                                                     
                                                     @endforeach
+                                                    
                                                     {{-- <li><i class="fal fa-rocket"></i> Elevator in building</li>
                                                     <li><i class="fal fa-wifi"></i> Free Wi Fi</li>
                                                     <li><i class="fal fa-parking"></i> Free Parking</li>

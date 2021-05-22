@@ -121,7 +121,7 @@
 			window.livewire.on('roomUpdated',()=>{
 				$('#editroom').modal('hide');
 			});
-			window.livewire.on('roomCreated',()=>{
+			window.livewire.on('roomAdded',()=>{
 				$('#addroom').modal('hide');
 			});
 		</script>

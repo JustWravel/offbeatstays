@@ -22,6 +22,13 @@
                         <textarea class="form-control" placeholder="Enter Room Description" wire:model="rooms.description" rows="5" id="roomdescription" ></textarea>
                         <span class="form-text text-muted">Please enter property name</span>
                     </div>
+                    <div class="col-lg-12">
+                        <label>Number Of Rooms:</label>
+                        <input type="text" class="form-control" placeholder="Enter Number of rooms" value="" wire:model="rooms.number_of_rooms" />
+                        <span class="form-text text-muted">Please enter number of rooms of this type</span>
+                        {{-- @error('rooms.name') --}}
+                    </div>
+                    
                     
                     {{-- Rooms --}}
                     <div class="col-lg-12"><hr>
@@ -51,6 +58,11 @@
                         <label>Monthly (30 days):</label>
                         <input type="text" class="form-control" placeholder="Enter Room name" wire:model="rooms.cost_per_night_monthly" />
                         <span class="form-text text-muted">Please enter property room cost per night for a month(30 days)</span>
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Extra Person cost ( if allowed ):</label>
+                        <input type="text" class="form-control" placeholder="Enter Room name" wire:model="rooms.extra_person_cost" />
+                        <span class="form-text text-muted">Please enter extra person cost if allowed.</span>
                     </div>
 
                     <div class="col-lg-6">

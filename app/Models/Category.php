@@ -28,6 +28,6 @@ class Category extends Model
     }
     public function properties($value='')
     {
-        return $this->hasMany(Property::class,'state_id');
+        return $this->hasMany(Property::class,'category_id');
     }
 }
