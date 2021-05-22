@@ -26,11 +26,15 @@
                                                                 </div>
                                                             </div>
 
-                                                            <p>Sed interdum metus at nisi tempor laoreet. Integer gravida orci a justo sodales.</p>
+                                                            <div style="text-align: justify;">
+                                                            	{{ html_entity_decode(substr(strip_tags($property->description), 0, 100)) }}
+                                                            </div>
                                                             <ul class="facilities-list fl-wrap">
-                                                            	@foreach($property->amenities as $amenity)
+                                                            	@forelse($property->amenities as $amenity)
                                                             		<li><i class="fal fa-{{$amenity->iconclass}}"></i><span>{{$amenity->name}}</span></li>
-                                                            	@endforeach
+                                                            	@empty
+                                                            		<li><i class="fal fa-"></i><span></span></li>
+                                                            	@endforelse
                                                             	
                                                             </ul>
                                                             <div class="geodir-category-footer fl-wrap">
