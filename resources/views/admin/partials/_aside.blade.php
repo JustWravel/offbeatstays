@@ -52,7 +52,7 @@
 									<h4 class="menu-text">Content Management</h4>
 									<i class="menu-icon ki ki-bold-more-hor icon-md"></i>
 								</li>
-								<li class="menu-item menu-item-submenu {{ (strpos(Route::currentRouteName(), 'admin.property') === 0 || strpos(Route::currentRouteName(), 'admin.state') === 0 || strpos(Route::currentRouteName(), 'admin.location') === 0 || strpos(Route::currentRouteName(), 'admin.category') === 0 || strpos(Route::currentRouteName(), 'admin.amenity') === 0) ? 'menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+								<li class="menu-item menu-item-submenu {{ (strpos(Route::currentRouteName(), 'admin.property') === 0 || strpos(Route::currentRouteName(), 'admin.state') === 0 || strpos(Route::currentRouteName(), 'admin.location') === 0 || strpos(Route::currentRouteName(), 'admin.category') === 0 || strpos(Route::currentRouteName(), 'admin.amenity') === 0 || strpos(Route::currentRouteName(), 'admin.feature') === 0) ? 'menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
 									<a href="javascript:;" class="menu-link menu-toggle">
 										<i class="menu-icon flaticon2-telegram-logo"></i>
 										<span class="menu-text">Properties</span>
@@ -245,16 +245,16 @@
 												<div class="menu-submenu">
 													<i class="menu-arrow"></i>
 													<ul class="menu-subnav">
-														<li class="menu-item {{ (strpos(Route::currentRouteName(), 'admin.amenity.index') === 0) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-															<a href="{{ route('admin.amenity.index') }}" class="menu-link">
+														<li class="menu-item {{ (strpos(Route::currentRouteName(), 'admin.feature.index') === 0) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+															<a href="{{ route('admin.feature.index') }}" class="menu-link">
 																<i class="menu-bullet menu-bullet-dot">
 																	<span></span>
 																</i>
 																<span class="menu-text">Feature List</span>
 															</a>
 														</li>
-														<li class="menu-item {{ (strpos(Route::currentRouteName(), 'admin.amenity.create') === 0) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-															<a href="{{ route('admin.amenity.create') }}" class="menu-link">
+														<li class="menu-item {{ (strpos(Route::currentRouteName(), 'admin.feature.create') === 0) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+															<a href="{{ route('admin.feature.create') }}" class="menu-link">
 																<i class="menu-bullet menu-bullet-dot">
 																	<span></span>
 																</i>
