@@ -273,7 +273,7 @@ var KTTagifyDemos = function() {
 
 
         // "remove all tags" button event listener
-        document.getElementById('kt_tagify_1_remove').addEventListener('click', tagify.removeAllTags.bind(tagify));
+        // document.getElementById('kt_tagify_1_remove').addEventListener('click', tagify.removeAllTags.bind(tagify));
 
         // Chainable event listeners
         tagify.on('add', onAddTag)
