@@ -231,6 +231,39 @@
 													</ul>
 												</div>
 											</li>
+											<li class="menu-item menu-item-submenu {{ (strpos(Route::currentRouteName(), 'admin.feature') === 0) ? 'menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+												<a href="javascript:;" class="menu-link menu-toggle">
+													<i class="menu-bullet menu-bullet-line">
+														<span></span>
+													</i>
+													<span class="menu-text">Features</span>
+													{{-- <span class="menu-label">
+														<span class="label label-rounded label-primary">6</span>
+													</span> --}}
+													<i class="menu-arrow"></i>
+												</a>
+												<div class="menu-submenu">
+													<i class="menu-arrow"></i>
+													<ul class="menu-subnav">
+														<li class="menu-item {{ (strpos(Route::currentRouteName(), 'admin.amenity.index') === 0) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+															<a href="{{ route('admin.amenity.index') }}" class="menu-link">
+																<i class="menu-bullet menu-bullet-dot">
+																	<span></span>
+																</i>
+																<span class="menu-text">Feature List</span>
+															</a>
+														</li>
+														<li class="menu-item {{ (strpos(Route::currentRouteName(), 'admin.amenity.create') === 0) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+															<a href="{{ route('admin.amenity.create') }}" class="menu-link">
+																<i class="menu-bullet menu-bullet-dot">
+																	<span></span>
+																</i>
+																<span class="menu-text">Add Feature</span>
+															</a>
+														</li>
+													</ul>
+												</div>
+											</li>
 
 											{{-- <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
 												<a href="javascript:;" class="menu-link menu-toggle">
