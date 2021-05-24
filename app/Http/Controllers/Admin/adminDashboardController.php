@@ -54,14 +54,14 @@ class adminDashboardController extends Controller
                 'page'=> $page_id
             ])->json();
         echo "<pre/>";
-        print_r(count($response));
+        // print_r(count($response));
         
         foreach ($response as $key => $value) {
             $property = Property::where('slug', $value['slug'])->first();
             echo $property->id;
-            // print_r($response);
+            // print_r($response['id']);
             $this->getfeaturedattachment($value['_links']['wp:featuredmedia'][0]['href'], $property->id);
-            $this->getotherattachment($value['_links']['wp:attachment'][0]['href'], $property->id);
+            // $this->getotherattachment($value['id'], $property->id);
             // print_r($array);
             // $this->addproperty($array);
             
@@ -229,14 +229,16 @@ PropertyImage::create([
 
     public function getotherattachment($url, $property_id)
     {
-        $response = Http::get($url,
+        $response = Http::get('https://www.offbeatstays.in/wp-json/wp/v2/media',
             [
-                // 'per_page' => 100
+                'per_page' => 100,
+                'parent' => $url,
             ])->json();
 
         echo "<pre/>";
-        // print_r($response);
-        foreach ($response as $key => $value) {
+        print_r($response);
+
+       /* foreach ($response as $key => $value) {
             
             echo '<br>';
             $property = Property::find($property_id);
@@ -253,7 +255,7 @@ PropertyImage::create([
                     'name' => '/storage/uploads/properties/original/'.$imageName,
                     'property_id' => $property->id,
                 ]);
-        }
+        }*/
 
 
         // return Category::firstOrCreate([
