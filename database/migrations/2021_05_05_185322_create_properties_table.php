@@ -23,6 +23,13 @@ class CreatePropertiesTable extends Migration
             $table->foreignId('category_id')->nullable()->constrained();
             $table->text('description')->nullable();
             $table->text('amenity')->nullable();
+            $table->json('feature')->nullable();
+            $table->time('check_in')->nullable();
+            $table->time('check_out')->nullable();
+            $table->float('breakfast_cost')->nullable();
+            $table->float('lunch_cost')->nullable();
+            $table->float('dinner_cost')->nullable();
+            $table->longText('cancellation_policy')->nullable();
             $table->text('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();

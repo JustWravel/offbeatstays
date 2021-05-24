@@ -14,9 +14,66 @@ use App\Models\PropertyImage;
 
 class adminDashboardController extends Controller
 {
+    public function importpropertyonly($page_id)
+    {
+        $response = Http::get('https://www.offbeatstays.in/wp-json/wp/v2/listings',
+            [
+                'order' => 'asc',
+                'per_page' => 25,
+                'page'=> $page_id
+            ])->json();
+        echo "<pre/>";
+        print_r(count($response));
+        
+        foreach ($response as $key => $value) {
+            $array = [
+                'name' => str_replace('&#8211;', '-', $value['title']['rendered']),
+                'slug' => $value['slug'],
+                'state_id' => @$this->getStateId(@$value['listing_states'][0] ?? 9999999),
+                'location_id' => @$this->getLocationId(@$value['listing_cities'][0] ?? 9999999, @$this->getStateId(@$value['listing_states'][0] ?? 9999999)),
+                'category_id' => @$this->getCategoryId($value['listing_type'][0] ?? 9999999),
+                'description' => $value['content']['rendered'],
+            ];
+            
+            print_r($array);
+            $this->addproperty($array);
+            
+            echo '<br/>';
+            echo $key;
+            
+        }
+        
+    }
+
+    public function importpropertyimages($page_id)
+    {
+        $response = Http::get('https://www.offbeatstays.in/wp-json/wp/v2/listings',
+            [
+                'order' => 'asc',
+                'per_page' => 25,
+                'page'=> $page_id
+            ])->json();
+        echo "<pre/>";
+        print_r(count($response));
+        
+        foreach ($response as $key => $value) {
+            $property = Property::where('slug', $value['slug'])->first();
+            echo $property->id;
+            // print_r($response);
+            $this->getfeaturedattachment($value['_links']['wp:featuredmedia'][0]['href'], $property->id);
+            $this->getotherattachment($value['_links']['wp:attachment'][0]['href'], $property->id);
+            // print_r($array);
+            // $this->addproperty($array);
+            
+            echo '<br/>';
+            // echo $key;
+            
+        }
+        
+    }
     public function show()
     {
-    	$response = Http::get('https://www.offbeatstays.in/wp-json/wp/v2/listings',
+    	/*$response = Http::get('https://www.offbeatstays.in/wp-json/wp/v2/listings',
     		[
     			'order' => 'asc',
                 'per_page' => 100,
@@ -43,11 +100,11 @@ class adminDashboardController extends Controller
             echo '<br/>';
             echo $key;
             
-        }
+        }*/
 
     	// print_r($response);
         // print_r($response);
-    	// return view('admin.dashboard');
+    	return view('admin.dashboard');
 /*
         $filename = 'temp-image.jpg';
 $tempImage = tempnam(sys_get_temp_dir(), $filename);
@@ -166,6 +223,64 @@ PropertyImage::create([
                     'name' => '/storage/uploads/properties/original/'.$imageName,
                     'property_id' => $property->id,
                 ]);
+       
+
+    }
+
+    public function getotherattachment($url, $property_id)
+    {
+        $response = Http::get($url,
+            [
+                // 'per_page' => 100
+            ])->json();
+
+        echo "<pre/>";
+        // print_r($response);
+        foreach ($response as $key => $value) {
+            
+            echo '<br>';
+            $property = Property::find($property_id);
+
+        echo $path = $value['guid']['rendered'];
+        echo '<br/>';
+echo $filename = basename($path).'<br/>';
+echo $file_extension = pathinfo($path, PATHINFO_EXTENSION);
+$imageName = $property->slug.'-OffBeat-Stays-'.md5(time()).$key.'.'.$file_extension;
+
+Image::make($path)->save(storage_path('app/public/uploads/properties/original/'.$imageName));
+
+PropertyImage::create([
+                    'name' => '/storage/uploads/properties/original/'.$imageName,
+                    'property_id' => $property->id,
+                ]);
+        }
+
+
+        // return Category::firstOrCreate([
+        //     'name'=>$response['name'],
+            
+        // ])->id;
+        // foreach ($response as $key => $value) {
+        //     echo $value['description']['rendered'];
+        // }
+
+        // print_r($response['guid']['rendered']);
+        /*$property = Property::find($property_id);
+
+        echo $path = $response['guid']['rendered'];
+        echo '<br/>';
+echo $filename = basename($path).'<br/>';
+echo $file_extension = pathinfo($path, PATHINFO_EXTENSION);*/
+/*$imageName = $this->property->name.'-'.$this->property->location->name.'-'.$this->property->state->name.'-'.$this->property->category->name.'-OffBeat-Stays-'.md5(time()).'.'.$photo->getClientOriginalExtension();
+$PropertyImage = '/storage/' .$photo->storeAs('uploads/properties/original', $imageName, 'public');*/
+/*$imageName = $property->slug.'-OffBeat-Stays-'.md5(time()).'.'.$file_extension;
+
+Image::make($path)->save(storage_path('app/public/uploads/properties/original/'.$imageName));
+
+PropertyImage::create([
+                    'name' => '/storage/uploads/properties/original/'.$imageName,
+                    'property_id' => $property->id,
+                ]);*/
        
 
     }

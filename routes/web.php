@@ -73,6 +73,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'verified'])
     	return redirect('/admin/dashboard');
     });
     Route::get('/dashboard', [adminDashboardController::class, 'show'])->name('dashboard');
+
+    Route::get('/import-property-only/{page_no}', [adminDashboardController::class, 'importpropertyonly'])->name('import-property');
+    Route::get('/import-property-images/{page_no}', [adminDashboardController::class, 'importpropertyimages'])->name('import-property-images');
     Route::resources([
 	    'state' => adminStateController::class,
 	    'location' => adminLocationController::class,
