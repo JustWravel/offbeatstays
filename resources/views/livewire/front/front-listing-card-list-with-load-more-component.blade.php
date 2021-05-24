@@ -28,8 +28,9 @@
 	                                                            </div>
 	                                                            <div style="white-space: nowrap;width: 100%;display: inline-block;height: 40px;">{!! $property->description !!}</div>
 	                                                            <ul class="facilities-list fl-wrap">
-                                                                    @foreach(json_decode($property->amenity) as $amenity)
-                                                                        @livewire('front.front-property-detail-amenity-show-by-id-component', ['amenity_id'=>$amenity, 'withname'=>false])                                                                    
+                                                                    @foreach(json_decode($property->amenities) as $amenity)
+                                                                    	{{$amenity->name}}
+                                                                        {{-- @livewire('front.front-property-detail-amenity-show-by-id-component', ['amenity_id'=>$amenity, 'withname'=>false])                                                                     --}}
                                                                     @endforeach
 	                                                                
 	                                                            </ul>

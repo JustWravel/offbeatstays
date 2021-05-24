@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\adminStateController;
 use App\Http\Controllers\Admin\adminLocationController;
 use App\Http\Controllers\Admin\adminCategoryController;
 use App\Http\Controllers\Admin\adminAmenityController;
+use App\Http\Controllers\Admin\adminFeatureController;
 use App\Http\Controllers\Admin\adminPropertyController;
 
 //For components
@@ -30,6 +31,9 @@ use App\Http\Livewire\Front\PropertyDetailComponent;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\ReadXmlController;
+
+Route::get("read-xml", [ReadXmlController::class, "index"]);
 
 Route::get('/home', function () {
     return redirect('/');
@@ -74,6 +78,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'verified'])
 	    'location' => adminLocationController::class,
 	    'category' => adminCategoryController::class,
         'amenity' => adminAmenityController::class,
+        'feature' => adminFeatureController::class,
 	    'property' => adminPropertyController::class,
 	    // 'posts' => PostController::class,
 	]);

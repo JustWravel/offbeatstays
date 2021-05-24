@@ -73,6 +73,9 @@
 										<!--end::Card-->
 										<!--begin::Card-->
 										@livewire('admin.property.admin-property-amenities-component', ['property_id' => $property->id])
+										<!--end::Card-->
+										<!--begin::Card-->
+										@livewire('admin.property.admin-property-features-component', ['property_id' => $property->id])
 										<!--end::Card-->			
 										
 										

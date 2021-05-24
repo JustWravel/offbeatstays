@@ -10,7 +10,7 @@
                         <img src="{{ $property->rooms[$room_id]->image ?? asset('front-assets/images/gal/1.jpg')}}" alt="">
                         <div class="ajax-modal-title">
                             <div class="section-title-separator"><span></span></div>
-                            {{$property->rooms[$room_id]->name}}
+                            {{@$property->rooms[$room_id]->name}}
                         </div>
                         {{-- <div class="ajax-modal-photos-btn dynamic-gal" data-dynamicPath="[{'src': '{{ $property->rooms[$room_id]->image ?? asset('front-assets/images/gal/1.jpg')}}'}]">Photos (<span>3</span>)</div> --}}
                     </div>
@@ -38,7 +38,7 @@
                         <!--ajax-modal-details-box-->
                         <div class="ajax-modal-details-box">
                             <h3>Details</h3>
-                            <p>{{$property->rooms[$room_id]->description}}</p>
+                            <p>{{@$property->rooms[$room_id]->description}}</p>
                         </div>
 
                         <div class="ajax-modal-details-box">
@@ -60,11 +60,11 @@
                                     <tbody>
                                         <tr>
                                             <th>Price</th>
-                                            <td>{{$property->rooms[$room_id]->cost_per_night}}</td>
-                                            <td>{{$property->rooms[$room_id]->cost_per_night_weekend}}</td>
-                                            <td>{{$property->rooms[$room_id]->cost_per_night_weekly}}</td>
-                                            <td>{{$property->rooms[$room_id]->cost_per_night_fortnightly}}</td>
-                                            <td>{{$property->rooms[$room_id]->cost_per_night_monthly}}</td>
+                                            <td>{{@$property->rooms[$room_id]->cost_per_night}}</td>
+                                            <td>{{@$property->rooms[$room_id]->cost_per_night_weekend}}</td>
+                                            <td>{{@$property->rooms[$room_id]->cost_per_night_weekly}}</td>
+                                            <td>{{@$property->rooms[$room_id]->cost_per_night_fortnightly}}</td>
+                                            <td>{{@$property->rooms[$room_id]->cost_per_night_monthly}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -90,7 +90,7 @@
                             <h3>Room Amenities</h3>
                             <div class="listing-features fl-wrap">
                                 <ul>
-                                    @foreach(json_decode($property->rooms[$room_id]->amenity) as $amenity)
+                                    @foreach((array)json_decode(@$property->rooms[$room_id]->amenity) as $amenity)
                                         @livewire('front.front-property-detail-amenity-show-by-id-component', ['amenity_id'=>$amenity, 'withname'=>true])
                                     @endforeach
                                 </ul>

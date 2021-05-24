@@ -227,10 +227,11 @@
                                             </div>
                                             <div class="listing-features fl-wrap">
                                                 <ul>
-                                                    @foreach(json_decode($property->amenity) as $amenity)
-                                                    @livewire('front.front-property-detail-amenity-show-by-id-component', ['amenity_id'=>$amenity])
-                                                    
-                                                    @endforeach
+                                                    @forelse($property->amenities as $amenity)
+                                                        <li><i class="fal fa-{{$amenity->iconclass}}"></i><span>{{$amenity->name}}</span></li>
+                                                    @empty
+                                                        <li><i class="fal fa-"></i><span></span></li>
+                                                    @endforelse
                                                     
                                                     {{-- <li><i class="fal fa-rocket"></i> Elevator in building</li>
                                                     <li><i class="fal fa-wifi"></i> Free Wi Fi</li>
