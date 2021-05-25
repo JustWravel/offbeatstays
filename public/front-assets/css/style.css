@@ -1,4 +1,4 @@
-f@charset "utf-8";
+@charset "utf-8";
 /*======================================
  [ -Main Stylesheet-
   Theme: EasyBook
@@ -11,7 +11,7 @@ f@charset "utf-8";
 ++ Content Styles ++
  
 /*-------------Fonts---------------------------------------*/
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900|Nunito:400,600,700,800,900&subset=cyrillic,cyrillic-ext,latin-ext,vietnamese');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700,800,900|Nunito:400,600,700,800,900&subset=cyrillic,cyrillic-ext,latin-ext,vietnamese');
 
 /*-------------General Style---------------------------------------*/
 html{
@@ -1293,7 +1293,7 @@ nav li ul a:before , nav li ul a:after {
 	font-weight:500;
 	letter-spacing:2px;
 	text-transform:uppercase;
-	font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	font-family: 'Quicksand', 'Helvetica', 'Arial', sans-serif;
 }
 .footer-menu  li a:hover {
 	color:rgba(255,255,255,0.41);
@@ -1790,7 +1790,7 @@ section.no-pading {
 	font-size:24px;
 	font-weight:600;
 	color: #566985;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 .section-title h4{
 	float:left;
@@ -2021,7 +2021,7 @@ section.color-bg .section-title .breadcrumbs a:before {
 	font-size:30px;
 	font-weight:600;
 	position:relative;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 .section-decor{
 	position:absolute;
@@ -2060,7 +2060,7 @@ section.hero-section   {
 	font-size:44px;
 	font-weight:700;
 	color:#fff;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 .home-intro-card {
 	margin-top:50px;
@@ -2104,7 +2104,7 @@ section.hero-section   {
 .home-intro-subtitle {
 	padding-top:60px;
 	color: #fff;
- 	font-family: 'Montserrat', sans-serif;
+ 	font-family: 'Quicksand', sans-serif;
 	font-weight:300;
 	font-size:12px;
 }
@@ -2288,7 +2288,7 @@ section.hero-section   {
 }
 .intro-item.big-text h2 {
 	font-size:44px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 .intro-item h2:before {
 	content:'';
@@ -2457,7 +2457,7 @@ section.hero-section   {
     font-size: 18px;
     color: #566985;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 .main-register {
 	float:left;
@@ -3444,7 +3444,7 @@ input[type=number]
 	font-weight: 500;
     font-size: 18px;
 	float:left;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	color: #888DA0;
 }
 .list-main-wrap-opt {
@@ -3702,7 +3702,7 @@ input[type=number]
 	font-style:normal;
 	color:#fff;
 	font-size:13px;
- 	font-family: 'Montserrat', sans-serif;
+ 	font-family: 'Quicksand', sans-serif;
 	font-weight:500;
 } 
 .geodir-category-opt  .rate-class-name span {
@@ -4265,7 +4265,7 @@ input[type=number]
 	font-size:44px;
     font-weight: 600;
 	position:relative;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 .list-single-hero-title h2:before {
 	content:'';
@@ -5072,7 +5072,7 @@ article.post-article .list-single-main-item {
 }
 .home-facts   .num {
 	color:#fff;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size:44px;
 }
 .home-facts   h6 {
@@ -5577,7 +5577,7 @@ article.post-article .list-single-main-item {
 .listing-item-cat h3 {
 	font-size:18px;
 	float:left;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	padding-bottom:10px;
 }
 .listing-item-cat p {
@@ -6137,7 +6137,7 @@ article.post-article .list-single-main-item {
 	font-size:18px;
 	color: #fff;
 	text-transform:uppercase;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	box-shadow: 0px 0px 0px 7px rgba(255,255,255,0.2);
     animation: bounce 4s ease-in-out infinite;
 }
