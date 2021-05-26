@@ -18,7 +18,7 @@ class HomeComponent extends Component
 			    return $state->properties->count();
 			});
 
-		$this->recently_added_properties = Property::latest()->take(5)->get();
+		$this->recently_added_properties = Property::first()->take(5)->get();
 		// dd($this->popular_destinations);
 	}
 	

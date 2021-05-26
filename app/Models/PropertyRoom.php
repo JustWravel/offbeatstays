@@ -21,4 +21,11 @@ class PropertyRoom extends Model
         return Amenity::whereIn('id', $data)->get();
         
     }
+
+    // public function getImagesAttribute()
+    // {
+    //     $data = (array)json_decode($this->value);
+    //     return Amenity::whereIn('id', $data)->get();
+        
+    // }
 }

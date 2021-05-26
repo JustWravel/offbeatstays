@@ -50,7 +50,13 @@
 															        </div>
 																 </div>
 																 <div class="card-body">
-																 	Images: <img src="{{$room->image}}" style="height:50px" alt="" class="img-thumbnail"><br>
+																 	Images: 
+																 	@forelse((array)json_decode($room->image) as $image)
+																 	<img src="{{$image}}" style="height:50px" alt="" class="img-thumbnail">
+																 	@empty
+																 	<img src="{{$room}}" style="height:50px" alt="" class="img-thumbnail">
+																 	@endforelse
+																 	<br>
 																  <p>Description: {{$room->description}}</p>
 																  <div class="table-responsive">
 																  	<table class="table table-bordered table-inverse table-hover">

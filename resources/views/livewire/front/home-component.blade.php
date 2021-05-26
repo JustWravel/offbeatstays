@@ -40,9 +40,9 @@
                         <div class="container">
                             <div class="section-title">
                                 <div class="section-title-separator"><span></span></div>
-                                <h2>Popular Destination</h2>
+                                <h2>Trending States</h2>
                                 <span class="section-separator"></span>
-                                <p>Explore some of the best tips from around the city from our partners and friends.</p>
+                                <p>Explore our Selection of the Best Offbeat Stays Across India.</p>
                             </div>
 						 </div>
                          <style type="text/css" media="screen">
@@ -96,7 +96,7 @@
                                 
                             </div>
                             <!-- portfolio end -->
-                            <a href="listing.html" class="btn    color-bg">Explore All Cities<i class="fas fa-caret-right"></i></a>
+                            <a href="{{route('front.state.all')}}" class="btn    color-bg">Explore All States<i class="fas fa-caret-right"></i></a>
                     </section>
                     <!-- section end -->
                     <!-- section-->
@@ -105,9 +105,9 @@
                         <div class="container">
                             <div class="section-title">
                                 <div class="section-title-separator"><span></span></div>
-                                <h2>Recently Added Hotels</h2>
+                                <h2>Featured Stays</h2>
                                 <span class="section-separator"></span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar.</p>
+                                <p>Hand-picked selection of the Best Offbeat Stays</p>
                             </div>
                         </div>
                         <!-- container end-->
@@ -153,11 +153,10 @@
                                                                 @endforelse
                                                 </ul>
                                                 <div class="geodir-category-footer fl-wrap">
-                                                    <div class="geodir-category-price">Awg/Night <span>$ 320</span></div>
+                                                    <div class="geodir-category-price"><span><i class="fas fa-rupee-sign"></i> {{$recently_added_property->price}}</span> / Night</div>
                                                     <div class="geodir-opt-list">
-                                                        <a href="#" class="single-map-item" data-newlatitude="40.72956781" data-newlongitude="-73.99726866"><i class="fal fa-map-marker-alt"></i><span class="geodir-opt-tooltip">On the map</span></a>
-                                                        <a href="#" class="geodir-js-favorite"><i class="fal fa-heart"></i><span class="geodir-opt-tooltip">Save</span></a>
-                                                        <a href="#" class="geodir-js-booking"><i class="fal fa-exchange"></i><span class="geodir-opt-tooltip">Find Directions</span></a>
+                                                        <a href="{{ route('front.property.show', ['state'=> $recently_added_property->state->slug, 'location'=> $recently_added_property->location->slug, 'category'=> $recently_added_property->category->slug, 'slug'=> $recently_added_property->slug])}}" class="btn    color-bg" >Detail</a>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>

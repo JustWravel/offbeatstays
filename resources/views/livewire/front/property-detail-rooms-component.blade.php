@@ -27,7 +27,8 @@
                                                         <p>{{$room->description}}</p>
                                                         <div class="facilities-list fl-wrap">
                                                             <ul>
-                                                            	@foreach(json_decode($room->amenity) as $amenity)
+                                                            	@foreach((array)json_decode($room->amenity) as $amenity)
+                                                            	
                                                             		@livewire('front.front-property-detail-amenity-show-by-id-component', ['amenity_id'=>$amenity, 'withname'=>false])
                                                             	@endforeach
                                                             </ul>

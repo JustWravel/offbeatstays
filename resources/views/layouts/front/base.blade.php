@@ -16,6 +16,7 @@
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         <link type="text/css" rel="stylesheet" href="{{ asset('front-assets/css/reset.css') }}">
         <link type="text/css" rel="stylesheet" href="{{ asset('front-assets/css/plugins.css') }}">
+        <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" />
         <link type="text/css" rel="stylesheet" href="{{ asset('front-assets/css/style.css') }}">
         <link type="text/css" rel="stylesheet" href="{{ asset('front-assets/css/color.css') }}">
         <!--=============== favicons ===============-->

@@ -21,7 +21,7 @@
 									<div class="d-flex align-items-baseline flex-wrap mr-5">
 
 										<!--begin::Page Title-->
-										<h5 class="text-dark font-weight-bold my-1 mr-5">Add New Amenity</h5>
+										<h5 class="text-dark font-weight-bold my-1 mr-5">Add New Feature</h5>
 
 										<!--end::Page Title-->
 									</div>
@@ -57,7 +57,7 @@
 										<!--begin::Card-->
 										<div class="card card-custom gutter-b example example-compact">
 											<div class="card-header">
-												<h3 class="card-title">Add New Amenity</h3>
+												<h3 class="card-title">Add New Feature</h3>
 												<div class="card-toolbar">
 													<div class="example-tools justify-content-center">
 														<span class="example-toggle" data-toggle="tooltip" title="View code"></span>
@@ -84,7 +84,7 @@
 													@csrf
 													<div class="form-group row">
 														<div class="col-lg-6 offset-lg-3">
-															<label>Amenity Name:</label>
+															<label>Feature Name:</label>
 															<input type="text" class="form-control" placeholder="Enter feature name" name="name" value="{{ old('name') }}" />
 															<span class="form-text text-muted">Please enter feature name</span>
 														</div>

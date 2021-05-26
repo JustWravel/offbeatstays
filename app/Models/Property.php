@@ -63,6 +63,13 @@ class Property extends Model
         
     }
 
+    public function getFeaturesAttribute()
+    {
+        $data = (array)json_decode($this->feature);
+        return Feature::whereIn('id', $data)->get();
+        
+    }
+
     public function getPriceAttribute()
     {
         return PropertyRoom::where('property_id', $this->id)->get()->min('cost_per_night');

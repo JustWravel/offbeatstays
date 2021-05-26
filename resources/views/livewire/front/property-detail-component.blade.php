@@ -10,9 +10,9 @@
                                         <h2><span>{{ $property->name }}</span></h2>
                                         <div class="list-single-header-contacts fl-wrap">
                                             <ul>
-                                                <li><i class="far fa-phone"></i><a  href="#">+7(111)123456789</a></li>
-                                                <li><i class="far fa-map-marker-alt"></i><a  href="#">USA 27TH Brooklyn NY</a></li>
-                                                <li><i class="far fa-envelope"></i><a  href="#">yourmail@domain.com</a></li>
+                                                <li><i class="far fa-phone"></i><a  href="tel:+91 96670 51161">+91 96670 51161</a></li>
+                                                <li><i class="fab fa-whatsapp"></i><a  href="#">Whatsapp Now</a></li>
+                                                <li><i class="far fa-envelope"></i><a  href="mailto:info@offbeatstays.in">info@offbeatstays.in</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -87,7 +87,7 @@
                                     	<a href="{{ route('front.category.show', ['slug'=> $property->category->slug])}}">{{$property->category->name}}</a>
                                     	<span>{{$property->name}}</span>
                                     </div>
-                                    <div class="list-single-hero-price">AWG/NIGHT<span>$ 320</span></div>
+                                    <div class="list-single-hero-price">starting from <span><i class="fas fa-rupee-sign"></i> {{$property->price}}</span>/NIGHT</div>
                                 </div>
                             </div>
                         </div>
@@ -232,33 +232,26 @@
                                                     @empty
                                                         <li><i class="fal fa-"></i><span></span></li>
                                                     @endforelse
-                                                    
-                                                    {{-- <li><i class="fal fa-rocket"></i> Elevator in building</li>
-                                                    <li><i class="fal fa-wifi"></i> Free Wi Fi</li>
-                                                    <li><i class="fal fa-parking"></i> Free Parking</li>
-                                                    <li><i class="fal fa-snowflake"></i> Air Conditioned</li>
-                                                    <li><i class="fal fa-plane"></i>Airport Shuttle</li>
-                                                    <li><i class="fal fa-paw"></i> Pet Friendly</li>
-                                                    <li><i class="fal fa-utensils"></i> Restaurant Inside</li>
-                                                    <li><i class="fal fa-wheelchair"></i> Wheelchair Friendly</li> --}}
                                                 </ul>
                                             </div>
                                             <span class="fw-separator"></span>
                                             <div class="list-single-main-item-title no-dec-title fl-wrap">
-                                                <h3>Tags</h3>
+                                                <h3>Features</h3>
                                             </div>
-                                            <div class="list-single-tags tags-stylwrap">
-                                                <a href="#">Hotel</a>
-                                                <a href="#">Hostel</a>
-                                                <a href="#">Room</a>
-                                                <a href="#">Spa</a>
-                                                <a href="#">Restourant</a>
-                                                <a href="#">Parking</a>                                                                               
+                                            <div class="listing-features fl-wrap">
+                                                <ul>
+                                                    @forelse($property->features as $feature)
+                                                        <li><i class="fas fa-check" style="color:green"></i><span>{{$feature->name}}</span></li>
+                                                    @empty
+                                                        
+                                                    @endforelse
+                                                    
+                                                </ul>
                                             </div>
                                         </div>
                                         <!--   list-single-main-item end -->     
                                         <!-- accordion-->
-                                        <div class="accordion mar-top">
+                                        {{-- <div class="accordion mar-top">
                                             <a class="toggle act-accordion" href="#"> Details option   <span></span></a>
                                             <div class="accordion-inner visible">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.</p>
@@ -271,7 +264,7 @@
                                             <div class="accordion-inner">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.</p>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <!-- accordion end -->                                                     
                                         <!--   list-single-main-item -->
                                         @livewire('front.property-detail-rooms-component', ['property'=> $property])

@@ -74,11 +74,17 @@ class AdminPropertyRoomsComponent extends Component
         $propertyroom->breakfast_included = @$this->rooms['breakfast_included'] ?? false;
         $propertyroom->extra_person_cost = @$this->rooms['extra_person_cost'] ?? false;
         // $propertyroom->breakfast_included = $this->rooms['breakfast_included'];
+        $propertyroom_images = array();
         if(@$this->rooms['room_image']){
-                $imageName = $this->property->name.'-'.$this->property->location->name.'-'.$this->property->state->name.'-'.$this->property->category->name.'-OffBeat-Stays-'.md5(time()).'.'.$this->rooms['room_image']->getClientOriginalExtension();
-                $propertyroom->image = '/storage/' .$this->rooms['room_image']->storeAs('uploads/properties/original', $imageName, 'public');
+            foreach ($this->rooms['room_image'] as $key => $value) {
+                $imageName = $this->property->name.'-'.$this->property->location->name.'-'.$this->property->state->name.'-'.$this->property->category->name.'-OffBeat-Stays-'.md5(time()).$key.'.'.$value->getClientOriginalExtension();
+                $propertyroom_images[] = '/storage/' .$value->storeAs('uploads/properties/original', $imageName, 'public');
+            }
+                
                 
         }
+
+        $propertyroom->image = json_encode($propertyroom_images);
         $propertyroom->amenity = json_encode(@$this->rooms['amenity']);
         
        
