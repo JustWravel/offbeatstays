@@ -122,8 +122,8 @@
                                     <div class="listing-item">
                                         <article class="geodir-category-listing fl-wrap">
                                             <div class="geodir-category-img">
-                                                <a href="listing-single.html"><img src="{{ $recently_added_property->images[0]->name ?? asset('front-assets/images/gal/1.jpg') }}" alt=""></a>
-                                                <div class="listing-avatar"><a href="author-single.html"><img src="{{ asset('front-assets/images/avatar/1.jpg') }}" alt=""></a>
+                                                <a href="{{ route('front.property.show', ['state'=> $recently_added_property->state->slug, 'location'=> $recently_added_property->location->slug, 'category'=> $recently_added_property->category->slug, 'slug'=> $recently_added_property->slug])}}"><img src="{{ $recently_added_property->images[0]->name ?? asset('front-assets/images/gal/1.jpg') }}" alt=""></a>
+                                                {{-- <div class="listing-avatar"><a href="author-single.html"><img src="{{ asset('front-assets/images/avatar/1.jpg') }}" alt=""></a>
                                                     <span class="avatar-tooltip">Added By  <strong>Alisa Noory</strong></span>
                                                 </div>
                                                 <div class="sale-window">Sale 20%</div>
@@ -133,21 +133,24 @@
                                                         <div class="score"><strong>Very Good</strong>27 Reviews </div>
                                                         <span>5.0</span>                                             
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <div class="geodir-category-content fl-wrap title-sin_item">
                                                 <div class="geodir-category-content-title fl-wrap">
                                                     <div class="geodir-category-content-title-item">
-                                                        <h3 class="title-sin_map"><a href="listing-single.html">{{$recently_added_property->name}}</a></h3>
+                                                        <h3 class="title-sin_map"><a href="{{ route('front.property.show', ['state'=> $recently_added_property->state->slug, 'location'=> $recently_added_property->location->slug, 'category'=> $recently_added_property->category->slug, 'slug'=> $recently_added_property->slug])}}">{{$recently_added_property->name}}</a></h3>
                                                         <div class="geodir-category-location fl-wrap"><a href="#" class="map-item"><i class="fas fa-map-marker-alt"></i> {{$recently_added_property->location->name}}, {{$recently_added_property->state->name}}</a></div>
                                                     </div>
                                                 </div>
-                                                <p>Sed interdum metus at nisi tempor laoreet. Integer gravida orci a justo sodales.</p>
+                                                <div style="text-align: justify;">
+                                                                {{ html_entity_decode(substr(strip_tags($recently_added_property->description), 0, 100)) }}
+                                                            </div>
                                                 <ul class="facilities-list fl-wrap">
-                                                    <li><i class="fal fa-wifi"></i><span>Free WiFi</span></li>
-                                                    <li><i class="fal fa-parking"></i><span>Parking</span></li>
-                                                    <li><i class="fal fa-smoking-ban"></i><span>Non-smoking Rooms</span></li>
-                                                    <li><i class="fal fa-utensils"></i><span> Restaurant</span></li>
+                                                    @forelse($recently_added_property->amenities as $amenity)
+                                                                    <li><i class="{{$amenity->iconclass}}"></i><span>{{$amenity->name}}</span></li>
+                                                                @empty
+                                                                    <li><i class="fal fa-"></i><span></span></li>
+                                                                @endforelse
                                                 </ul>
                                                 <div class="geodir-category-footer fl-wrap">
                                                     <div class="geodir-category-price">Awg/Night <span>$ 320</span></div>
@@ -173,7 +176,7 @@
                     </section>
                     <!-- section end -->
                     <!--section -->
-                    <section class="parallax-section" data-scrollax-parent="true">
+                    {{-- <section class="parallax-section" data-scrollax-parent="true">
                         <div class="bg"  data-bg="{{ asset('front-assets/images/bg/1.jpg') }}" data-scrollax="properties: { translateY: '100px' }"></div>
                         <div class="overlay op7"></div>
                         <!--container-->
@@ -238,7 +241,7 @@
                                                 <div class="hotel-card fl-wrap title-sin_item">
                                                     <div class="geodir-category-img">
                                                         <a href="listing-single.html"><img src="{{ asset('front-assets/images/gal/1.jpg') }}" alt=""></a>
-                                                        <div class="listing-counter">Awg/Night <strong>$120</strong></div>
+                                                        <div class="listing-counter"> <strong>$120</strong>/Night</div>
                                                         <div class="sale-window">Sale 10%</div>
                                                         <div class="geodir-category-opt">
                                                             <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div>
@@ -262,7 +265,7 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section> --}}
                     <!-- section end -->
                     <!--section -->
                     <section>
@@ -365,7 +368,7 @@
                     </section>
                     <!-- section end -->
                     <!--section -->
-                    <section class="color-bg hidden-section">
+                    {{-- <section class="color-bg hidden-section">
                         <div class="wave-bg wave-bg2"></div>
                         <div class="container">
                             <div class="row">
@@ -379,7 +382,7 @@
                                             <a href="#" class=" down-btn color3-bg"><i class="fab fa-android"></i> Download for Android</a>
                                         </div>
                                     </div>
-                                    <!--process-wrap   end-->                                
+                                    process-wrap   end                                
                                 </div>
                                 <div class="col-md-6">
                                     <div class="collage-image">
@@ -394,7 +397,7 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section> --}}
                     <!-- section end -->
                     <!--section -->
                     <section>
@@ -415,44 +418,44 @@
                                 <!--slick-item -->
                                 <div class="slick-item">
                                     <div class="text-carousel-item">
-                                        <div class="popup-avatar"><img src="{{ asset('front-assets/images/avatar/1.jpg') }}" alt=""></div>
+                                        <div class="popup-avatar"><img src="{{ asset('front-assets/images/testimonial-user/1.jpg') }}" alt=""></div>
                                         <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
-                                        <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
-                                        <p> "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."</p>
-                                        <a href="#" class="testim-link">Via Facebook</a>
+                                        <div class="review-owner fl-wrap">Kashish Aneja  - <span>RJ, Red FM</span></div>
+                                        <p> "I booked a property in Manali with Offbeat Stays and undoubtedly, it ended up becoming my best decision after lockdown. From the peaceful state of mind, the breathtakingly beautiful views and location, the class-apart services provided to me and to paying heed to the tiniest of my requirements I simply cannot complain about a single thing. Can't wait to be back at it again."</p>
+                                        {{-- <a href="#" class="testim-link">Via Facebook</a> --}}
                                     </div>
                                 </div>
                                 <!--slick-item end -->
                                 <!--slick-item -->
                                 <div class="slick-item">
                                     <div class="text-carousel-item">
-                                        <div class="popup-avatar"><img src="{{ asset('front-assets/images/avatar/1.jpg') }}" alt=""></div>
+                                        <div class="popup-avatar"><img src="{{ asset('front-assets/images/testimonial-user/2.jpg') }}" alt=""></div>
                                         <div class="listing-rating card-popup-rainingvis" data-starrating2="4"> </div>
-                                        <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
-                                        <p> "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."</p>
-                                        <a href="#" class="testim-link">Via Facebook</a>
+                                        <div class="review-owner fl-wrap">Rythm Chaudhary  - <span>Software Engineer, TCS</span></div>
+                                        <p> "So after spending literally an eternity in this lockdown i was craving for a beach view property and of course along with the lavishness I deserved after all this while. I got in touch with off beat stays and the experience has been wonderfully inexplicable."</p>
+                                        {{-- <a href="#" class="testim-link">Via Facebook</a> --}}
                                     </div>
                                 </div>
                                 <!--slick-item end -->
                                 <!--slick-item -->
                                 <div class="slick-item">
                                     <div class="text-carousel-item">
-                                        <div class="popup-avatar"><img src="{{ asset('front-assets/images/avatar/1.jpg') }}" alt=""></div>
+                                        <div class="popup-avatar"><img src="{{ asset('front-assets/images/testimonial-user/3.jpg') }}" alt=""></div>
                                         <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
-                                        <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
-                                        <p> "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."</p>
-                                        <a href="#" class="testim-link">Via Facebook</a>
+                                        <div class="review-owner fl-wrap">Apoorva Sharma  - <span>Freelancer, SEO & SEM </span></div>
+                                        <p> "At first I was quite confused about this work from mountains thing as I was going to travel solo but later on over a period of time I made up my mind and booked my staycation with Offbeat Stays.  Got an amazing and cozy homestay in Himachal surrounded with lush green scenery and Himalayan range. The best part was the sunsets from my room balcony. Didn't really feels like you're away from home. I would really recommend it to all those seeking staycations around Himalayas."</p>
+                                        {{-- <a href="#" class="testim-link">Via Facebook</a> --}}
                                     </div>
                                 </div>
                                 <!--slick-item end -->
                                 <!--slick-item -->
                                 <div class="slick-item">
                                     <div class="text-carousel-item">
-                                        <div class="popup-avatar"><img src="{{ asset('front-assets/images/avatar/1.jpg') }}" alt=""></div>
+                                        <div class="popup-avatar"><img src="{{ asset('front-assets/images/testimonial-user/4.jpg') }}" alt=""></div>
                                         <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
-                                        <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
-                                        <p> "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."</p>
-                                        <a href="#" class="testim-link">Via Facebook</a>
+                                        <div class="review-owner fl-wrap">Parth Shukla  - <span>Auditing Executive, Deloitte</span></div>
+                                        <p> "You do not always want to be on a vacation at a really populous destination amidst the crowd. At times it is more about exploring the unexplored and connecting with the nature merely. And that's when I found this amazing mud house in Himachal through offbeat stays which was the exact crystal clear representation of the image I had painted in my mind."</p>
+                                        {{-- <a href="#" class="testim-link">Via Facebook</a> --}}
                                     </div>
                                 </div>
                                 <!--slick-item end -->
@@ -461,7 +464,7 @@
                         <!--slider-carousel-wrap end-->
                     </section>
                     <!-- section end-->
-                    <section class="parallax-section" data-scrollax-parent="true">
+                    {{-- <section class="parallax-section" data-scrollax-parent="true">
                         <div class="bg"  data-bg="{{ asset('front-assets/images/bg/1.jpg') }}" data-scrollax="properties: { translateY: '100px' }"></div>
                         <div class="overlay"></div>
                         <!--container-->
@@ -480,10 +483,10 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section> --}}
                     <!-- section end -->
                     <!--section -->                       
-                    <section class=" middle-padding">
+                    {{-- <section class=" middle-padding">
                         <div class="container">
                             <div class="section-title">
                                 <div class="section-title-separator"><span></span></div>
@@ -563,4 +566,4 @@
                             <a href="blog.html" class="btn    color-bg ">Read All News<i class="fas fa-caret-right"></i></a>
                         </div>
                         <div class="section-decor"></div>
-                    </section>
+                    </section> --}}

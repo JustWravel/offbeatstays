@@ -1,22 +1,22 @@
 <section class="parallax-section single-par" data-scrollax-parent="true">
-                        <div class="bg par-elem "  data-bg="images/bg/1.jpg" data-scrollax="properties: { translateY: '30%' }"></div>
+                        <div class="bg par-elem "  data-bg="{{ $state?->image ?? $category?->image}}" data-scrollax="properties: { translateY: '30%' }"></div>
                         <div class="overlay"></div>
                         <div class="container">
                             <div class="section-title center-align big-title">
                                 <div class="section-title-separator"><span></span></div>
-                                <h2><span>New York Hotels</span></h2>
+                                <h2><span>{{ $category?->name ?? 'Stays'}} in {{ $state?->name ?? 'India' }}</span></h2>
                                 <span class="section-separator"></span>
-                                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec tincidunt arcu, sit amet fermentum sem.</h4>
+                                {{-- <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec tincidunt arcu, sit amet fermentum sem.</h4> --}}
                             </div>
                         </div>
-                        <div class="header-sec-link">
+                        {{-- <div class="header-sec-link">
                             <div class="container"><a href="#sec1" class="custom-scroll-link color-bg"><i class="fal fa-angle-double-down"></i></a></div>
-                        </div>
+                        </div> --}}
                     </section>
                     <!--  section  end-->
                     <div class="breadcrumbs-fs fl-wrap">
                         <div class="container">
-                            <div class="breadcrumbs fl-wrap"><a href="#">Home</a><a href="#">Listings</a><span>Listings Without Map</span></div>
+                            <div class="breadcrumbs fl-wrap"><a href="#">Home</a><a href="#">Search</a><span>{{ $category?->name ?? 'Stays'}} & {{ $state?->name ?? 'India' }}</span></div>
                         </div>
                     </div>
                     <!--section -->

@@ -9,7 +9,7 @@
                                                             {{-- <div class="listing-avatar"><a href="author-single.html"><img src="images/avatar/1.jpg" alt=""></a>
                                                                 <span class="avatar-tooltip">Added By  <strong>Alisa Noory</strong></span>
                                                             </div> --}}
-                                                            <div class="sale-window">{{$property->category->name}}</div>
+                                                            <div class="sale-window" style="background: #18458b">{{$property->category->name}}</div>
                                                             <div class="geodir-category-opt">
                                                                 {{-- <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div> --}}
                                                                 {{-- <div class="rate-class-name">
@@ -31,7 +31,7 @@
                                                             </div>
                                                             <ul class="facilities-list fl-wrap">
                                                             	@forelse($property->amenities as $amenity)
-                                                            		<li><i class="fal fa-{{$amenity->iconclass}}"></i><span>{{$amenity->name}}</span></li>
+                                                            		<li><i class="{{$amenity->iconclass}}"></i><span>{{$amenity->name}}</span></li>
                                                             	@empty
                                                             		<li><i class="fal fa-"></i><span></span></li>
                                                             	@endforelse
@@ -40,10 +40,10 @@
                                                             <div class="geodir-category-footer fl-wrap">
                                                                 <div class="geodir-category-price"><span> <i class="fal fas far fa-rupee-sign"></i> {{$property->price}}</span> /Night </div>
                                                                 <div class="geodir-opt-list">
-                                                                    <a href="#Detail" class="single-map-item" data-newlatitude="40.72956781" data-newlongitude="-73.99726866"><i class="fal fa-map-marker-alt"></i><span class="geodir-opt-tooltip">On the map</span></a>
-                                                                    {{-- <a href="#" class="single-map-item" data-newlatitude="40.72956781" data-newlongitude="-73.99726866"><i class="fal fa-map-marker-alt"></i><span class="geodir-opt-tooltip">On the map</span></a>
-                                                                    <a href="#" class="geodir-js-favorite"><i class="fal fa-heart"></i><span class="geodir-opt-tooltip">Save</span></a>
-                                                                    <a href="#" class="geodir-js-booking"><i class="fal fa-exchange"></i><span class="geodir-opt-tooltip">Find Directions</span></a> --}}
+                                                                    <a href="#Detail" class="single-map-item" style="background: green" data-newlatitude="40.72956781" data-newlongitude="-73.99726866"><i class="fab fa-whatsapp" style="color:#fff"></i><span class="geodir-opt-tooltip">On the map</span></a>
+                                                                    {{-- <a href="#" class="single-map-item" data-newlatitude="40.72956781" data-newlongitude="-73.99726866"><i class="fal fa-map-marker-alt"></i><span class="geodir-opt-tooltip">On the map</span></a> --}}
+                                                                    {{-- <a href="#" class="geodir-js-favorite"><i class="fal fa-heart"></i><span class="geodir-opt-tooltip">Save</span></a> --}}
+                                                                    <a href="#" class="geodir-js-booking"><i class="fal fa-exchange"></i><span class="geodir-opt-tooltip">Find Directions</span></a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -54,6 +54,6 @@
                                             </div>
                                             <!-- listing-item-container end-->
                                             <!-- pagination-->
-                                            {{-- {{ $properties->links('livewire.front.pagination-links-view') }} --}}
+                                            {{ $properties->links('livewire.front.pagination-links-view') }}
                                             
                                             </div>

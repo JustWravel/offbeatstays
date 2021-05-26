@@ -6,24 +6,31 @@ use Livewire\Component;
 use App\Models\Property;
 use App\Models\State;
 use App\Models\Location;
+use App\Models\Category;
 
 class ListingComponent extends Component
 {
 	public $sortby;
-	protected $queryString = ['sortby'];
+	public $stay_location;
+	public $stay_type;
+	public $state;
+	public $location;
+	public $category;
+	protected $queryString = ['stay_location', 'stay_type', 'sortby'];
 
-	// public function mount(){
-	// 	$this->stay_location="";
-	// }
-	public function sortbyUpdated($name, $value)
-	{
-		// dd($name);
-		$this->sortby = $value;
+	public function mount(){
+		$this->state = State::where(['slug'=>$this->stay_location])->first();
+    	$this->location = Location::where(['slug'=>$this->stay_location])->first();
+    	$this->category = Category::where(['slug'=>$this->stay_type])->first();
 	}
+	// public function sortbyUpdated($name, $value)
+	// {
+	// 	// dd($name);
+	// 	$this->sortby = $value;
+	// }
     public function render()
     {
-    	// $state_id = State::where(['slug'=>$this->stay_location])->get();
-    	// $location_id = Location::where(['slug'=>$this->stay_location])->get();
+    	
     	// dd($location_id);
 
 

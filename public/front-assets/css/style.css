@@ -3641,6 +3641,8 @@ input[type=number]
 }
 .geodir-category-content h3 a{
 	color: #46A5DC;
+	    
+
 }
 .geodir-category-content-tags {
 	margin-top:10px;
@@ -3736,6 +3738,8 @@ input[type=number]
 	width:100%;
 	position:relative;
 	z-index:1;
+	white-space: nowrap;
+    overflow-x: hidden;
 }
 .facilities-list {
 	margin:12px 0 12px;
@@ -3900,8 +3904,9 @@ input[type=number]
 	z-index:3;
 	background:#5ECFB1;
 	padding:8px 18px;
-	border-top-right-radius:4px;
-	border-bottom-right-radius:4px;
+	/*border-top-right-radius:4px;
+	border-bottom-right-radius:4px;*/
+	border-radius: 4px;
 	font-size:11px;
 	color:#fff;
 	-webkit-transform: translate3d(0,0,0);
@@ -3913,7 +3918,7 @@ input[type=number]
     height: 0;
  	left:0;
 }
-.sale-window:after {
+/*.sale-window:after {
     border-bottom: 14px solid #5ECFB1;
     border-left: 16px solid transparent;
     margin-left: -16px;
@@ -3924,7 +3929,7 @@ input[type=number]
     border-left: 16px solid transparent;
     margin-left: -16px;
     margin-top: -8px;
-}
+}*/
 .sale-window.big-sale:after {
 	border-bottom: 14px solid #3AACED;
 }
@@ -6437,7 +6442,7 @@ article.post-article .list-single-main-item {
 	font-size: 13px;
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-style: italic;
-	text-align: left;
+	text-align: justify;
 }
 .text-carousel-item a.testim-link {
 	float: left;

@@ -37,7 +37,7 @@ class ListingItemComponent extends Component
         		'category_id'=>$category->id ?? '',
         		'state_id'=>$state->id ?? '',
         		'location_id'=>$location->id ?? '',
-        	])->with('rooms')->get();
+        	])->with('rooms')->paginate(9);
     	if($this->sortby == 'pricedesc'){
     		$properties = $properties->sortByDesc('price');
     	}
