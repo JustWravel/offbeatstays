@@ -1,4 +1,5 @@
 <div>
+    @if(isset($property->rooms[$room_id]))
     @php
                                                         $roomimagearray = array();
                                                         foreach ((array)json_decode($property->rooms[$room_id]->image) as $key => $value) {
@@ -95,8 +96,8 @@
                             <h3>Room Amenities</h3>
                             <div class="listing-features fl-wrap">
                                 <ul>
-                                    @foreach((array)json_decode(@$property->rooms[$room_id]->amenity) as $amenity)
-                                        @livewire('front.front-property-detail-amenity-show-by-id-component', ['amenity_id'=>$amenity, 'withname'=>true])
+                                    @foreach($property->rooms[$room_id]->amenities as $amenity)
+                                        <li><i class="{{$amenity->iconclass}}"></i>  {{$amenity->name}} </li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -110,5 +111,6 @@
             <!--ajax-modal-wrap end -->
         </div>
         <!--ajax-modal-container end -->
+        @endif
     
 </div>

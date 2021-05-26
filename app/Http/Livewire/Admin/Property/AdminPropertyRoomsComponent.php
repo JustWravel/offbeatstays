@@ -57,7 +57,7 @@ class AdminPropertyRoomsComponent extends Component
     	// dd($this->rooms);
         $this->validate([
             'rooms.name'=>'required',
-            'rooms.description'=>'max:500',
+            'rooms.description'=>'max:5000',
             'rooms.cost_per_night'=>'required|numeric',
             'rooms.cost_per_night_weekly'=>'numeric',
             'rooms.cost_per_night_fortnightly'=>'numeric',
@@ -185,7 +185,7 @@ class AdminPropertyRoomsComponent extends Component
 
         $this->validate([
             'rooms.name'=>'required',
-            'rooms.description'=>'max:500',
+            'rooms.description'=>'max:5000',
             'rooms.cost_per_night'=>'required|numeric',
             'rooms.cost_per_night_weekly'=>'numeric',
             'rooms.cost_per_night_fortnightly'=>'numeric',
