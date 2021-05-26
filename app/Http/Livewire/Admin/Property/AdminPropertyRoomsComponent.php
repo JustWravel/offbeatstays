@@ -65,7 +65,7 @@ class AdminPropertyRoomsComponent extends Component
         $propertyroom = new PropertyRoom;
         $propertyroom->name = $this->rooms['name'];
         $propertyroom->description = @$this->rooms['description'] ?? ' ';
-        $propertyroom->number_of_rooms = @$this->rooms['number_of_rooms'] ?? ' ';
+        $propertyroom->number_of_rooms = @$this->rooms['number_of_rooms'] ?? 1;
         $propertyroom->cost_per_night = @$this->rooms['cost_per_night'];
         $propertyroom->cost_per_night_weekly = @$this->rooms['cost_per_night_weekly'];
         $propertyroom->cost_per_night_fortnightly = @$this->rooms['cost_per_night_fortnightly'];
@@ -195,11 +195,17 @@ class AdminPropertyRoomsComponent extends Component
         $propertyroom->cost_per_night_weekend = $this->rooms['cost_per_night_weekend'];
         $propertyroom->breakfast_included = $this->rooms['breakfast_included'];
         $propertyroom->extra_person_cost = $this->rooms['extra_person_cost'];
+        $propertyroom_images = (array)json_decode($propertyroom->image);
         if(@$this->rooms['room_image']){
-                $imageName = $this->property->name.'-'.$this->property->location->name.'-'.$this->property->state->name.'-'.$this->property->category->name.'-OffBeat-Stays-'.md5(time()).'.'.$this->rooms['room_image']->getClientOriginalExtension();
-                $propertyroom->image = '/storage/' .$this->rooms['room_image']->storeAs('uploads/properties/original', $imageName, 'public');
+            foreach ($this->rooms['room_image'] as $key => $value) {
+                $imageName = $this->property->name.'-'.$this->property->location->name.'-'.$this->property->state->name.'-'.$this->property->category->name.'-OffBeat-Stays-'.md5(time()).$key.'.'.$value->getClientOriginalExtension();
+                $propertyroom_images[] = '/storage/' .$value->storeAs('uploads/properties/original', $imageName, 'public');
+            }
+                
                 
         }
+
+        $propertyroom->image = json_encode($propertyroom_images);
         $propertyroom->amenity = json_encode(@$this->rooms['amenity']);
         $propertyroom->number_of_rooms = @$this->rooms['number_of_rooms'];
 

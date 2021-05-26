@@ -77,7 +77,7 @@
 
                         <label>Room Images:</label>
                         <img src="{{$room_image}}" height="150" alt="" class="img-thumbnail">
-                        <input type="file" class="form-control" wire:model="rooms.room_image"/>
+                        <input type="file" multiple class="form-control" wire:model="rooms.room_image"/>
                         <span class="form-text text-muted">Please upload property room image</span>
                     </div>
 
