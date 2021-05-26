@@ -8994,3 +8994,15 @@ section.hero-section  {
 	background-position:center;
 }
 }
+
+.select2-container--default .select2-results__group {
+    cursor: default;
+    display: block;
+    padding: 6px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #18458b;
+    padding: 10px 30px;
+    font-style: italic;
+    text-align: justify;
+}

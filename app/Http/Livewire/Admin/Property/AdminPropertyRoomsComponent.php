@@ -48,6 +48,8 @@ class AdminPropertyRoomsComponent extends Component
         $this->rooms['room_image'] = '';
         $this->rooms['amenity'] = '';
         $this->rooms['description'] = '';
+        $this->rooms['number_of_rooms'] = 0;
+        $this->rooms['extra_person_cost'] = 0;
        
     }
 
@@ -91,7 +93,7 @@ class AdminPropertyRoomsComponent extends Component
         
         $propertyroom->property_id = $this->property->id;
         $propertyroom->save();
-        // $this->clearAddRoomInput();
+        $this->clearAddRoomInput();
         $this->emit('roomAdded');
         $this->clearAddRoomInput();
         $this->emit('refreshProperty');
@@ -183,7 +185,12 @@ class AdminPropertyRoomsComponent extends Component
 
         $this->validate([
             'rooms.name'=>'required',
-            'rooms.description'=>'required',
+            'rooms.description'=>'max:160',
+            'rooms.cost_per_night'=>'required|numeric',
+            'rooms.cost_per_night_weekly'=>'numeric',
+            'rooms.cost_per_night_fortnightly'=>'numeric',
+            'rooms.cost_per_night_monthly'=>'numeric',
+            'rooms.cost_per_night_weekend'=>'numeric',
         ]);
         $propertyroom = PropertyRoom::find($this->rooms['id']);;
         $propertyroom->name = $this->rooms['name'];
@@ -217,6 +224,8 @@ class AdminPropertyRoomsComponent extends Component
         $propertyroom->save();
         $this->clearAddRoomInput();
         $this->emit('roomUpdated');
+        $this->clearAddRoomInput();
+        
         $this->emit('refreshProperty');
         // $this->property = Property::find($property_id);
 

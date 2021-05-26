@@ -26,19 +26,7 @@
 		        @endforeach
 		    </select>
 		</div>
-		<style>
-			.select2-container--default .select2-results__group {
-    cursor: default;
-    display: block;
-    padding: 6px;
-    text-transform: uppercase;
-    color: #fff;
-    background: #18458b;
-    padding: 10px 30px;
-    font-style: italic;
-    text-align: justify;
-}
-		</style>
+		
                                         {{-- <div class="main-search-input-item location" id="autocomplete-container">
                                             <span class="inpt_dec"><i class="fal fa-map-marker"></i></span>
                                             <input type="text" placeholder="Hotel , City..." class="autocomplete-input" id="autocompleteid2"  value=""/>

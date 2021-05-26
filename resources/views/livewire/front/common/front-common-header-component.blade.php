@@ -215,26 +215,43 @@
                     <div class="container">
                         <div class="row">
                             <!-- header-search-input-item -->
+                        	<form action="search">
                             <div class="col-sm-4">
-                                <div class="header-search-input-item fl-wrap location autocomplete-container">
-                                    <label>Destination or Hotel Name</label>
-                                    <span class="header-search-input-item-icon"><i class="fal fa-map-marker-alt"></i></span>
-                                    <input type="text" placeholder="Location" class="autocomplete-input" id="autocompleteid" value=""/>
-                                    <a href="#"><i class="fal fa-dot-circle"></i></a>
+                                <div wire:ignore class="header-search-input-item fl-wrap ">
+                                    <label>Stay Type</label>
+                                    <select class="form-control" id="category-h" name="stay_type">
+		        <option value="">StayType</option>
+		        @foreach($categories as $category)
+		        <option value="{{ $category->slug }}">{{ $category->name }}</option>
+		        @endforeach
+		    </select>
                                 </div>
                             </div>
                             <!-- header-search-input-item end -->
                             <!-- header-search-input-item -->
                             <div class="col-sm-3">
-                                <div class="header-search-input-item fl-wrap date-parent">
-                                    <label>Date In-Out </label>
-                                    <span class="header-search-input-item-icon"><i class="fal fa-calendar-check"></i></span>
-                                    <input type="text" placeholder="When" name="header-search"   value=""/>
+                                <div class="header-search-input-item fl-wrap ">
+                                    <label>Location </label>
+                                    <select class="form-control" id="location-h"  name="stay_location">
+		        <option value="">Location</option>
+		        @foreach($states as $state)
+		        <optgroup label="{{ $state->name }}">
+		        	<option value="{{ $state->slug }}"> All {{ $state->name }}</option>
+			        	@foreach($state->locations as $location)
+			        
+			        	<option value="{{ $location->slug }}">{{ $location->name }}</option>
+		       
+		        
+		        		@endforeach
+		        </optgroup>
+		        
+		        @endforeach
+		    </select>
                                 </div>
                             </div>
                             <!-- header-search-input-item end -->                             
                             <!-- header-search-input-item -->
-                            <div class="col-sm-3">
+                            {{-- <div class="col-sm-3">
                                 <div class="header-search-input-item fl-wrap">
                                     <div class="quantity-item">
                                         <label>Rooms</label>
@@ -255,18 +272,38 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <!-- header-search-input-item end -->                             
                             <!-- header-search-input-item -->
                             <div class="col-sm-2">
                                 <div class="header-search-input-item fl-wrap">
-                                    <button class="header-search-button" onclick="window.location.href='listing.html'">Search <i class="far fa-search"></i></button>
+                                    <button class="header-search-button" >Search <i class="far fa-search"></i></button>
                                 </div>
                             </div>
+                            </form>
                             <!-- header-search-input-item end -->                                                          
                         </div>
                     </div>
                     <div class="close-header-search"><i class="fal fa-angle-double-up"></i></div>
                 </div>
                 <!-- header-search  end -->
+                    @push('scripts')
+
+<script>
+    $(document).ready(function () {
+        $('#category-h').select2();
+        $('#category-h').on('change', function (e) {
+            // var item = $('#category').select2("val");
+            {{-- @this.set('viralSongs', item); --}}
+        });
+        $('#location-h').select2();
+        $('#location-h').on('change', function (e) {
+            // var item = $('#location').select2("val");
+            {{-- @this.set('viralSongs', item); --}}
+        });
+    });
+
+</script>
+
+@endpush
             </header>

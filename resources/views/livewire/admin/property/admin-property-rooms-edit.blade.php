@@ -13,18 +13,27 @@
                    
                     <div class="col-lg-12">
                         <label>Room Name:</label>
-                        <input type="text" class="form-control" placeholder="Enter Room name" value="" wire:model="rooms.name" />
+                        <input type="text" class="form-control @error('rooms.name') is-invalid @enderror" placeholder="Enter Room name" value="" wire:model="rooms.name"/>
+                        @error('rooms.name')
+                            <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                         <span class="form-text text-muted">Please enter property name</span>
-                        {{-- @error('rooms.name') --}}
+
                     </div>
                     <div class="col-lg-12">
                         <label>Room Desciption (In Short):</label>
-                        <textarea class="form-control" placeholder="Enter Room Description" wire:model="rooms.description" rows="5" id="roomdescription" ></textarea>
+                        <textarea class="form-control @error('rooms.description') is-invalid @enderror" placeholder="Enter Room Description" wire:model="rooms.description" rows="5" id="roomdescription" ></textarea>
+                        @error('rooms.description')
+                            <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                         <span class="form-text text-muted">Please enter property name</span>
                     </div>
                     <div class="col-lg-12">
                         <label>Number Of Rooms:</label>
-                        <input type="text" class="form-control" placeholder="Enter Number of rooms" value="" wire:model="rooms.number_of_rooms" />
+                        <input type="text" class="form-control @error('rooms.number_of_rooms') is-invalid @enderror" placeholder="Enter Number of rooms" value="" wire:model="rooms.number_of_rooms" />
+                        @error('rooms.number_of_rooms')
+                            <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                         <span class="form-text text-muted">Please enter number of rooms of this type</span>
                         {{-- @error('rooms.name') --}}
                     </div>

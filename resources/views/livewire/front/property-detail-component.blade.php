@@ -97,12 +97,12 @@
                     <section class="grey-blue-bg small-padding scroll-nav-container" id="sec2">
                         <!--  scroll-nav-wrapper  -->
                         <div class="scroll-nav-wrapper fl-wrap">
-                            <div class="hidden-map-container fl-wrap">
+                            {{-- <div class="hidden-map-container fl-wrap">
                                 <input id="pac-input" class="controls fl-wrap controls-mapwn" type="text" placeholder="What Nearby ?   Bar , Gym , Restaurant ">
                                 <div class="map-container">
                                     <div id="singleMap" data-latitude="40.7427837" data-longitude="-73.11445617675781"></div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="clearfix"></div>
                             <div class="container">
                                 <nav class="scroll-nav scroll-init">
@@ -114,7 +114,7 @@
                                         <li><a href="#sec5">Reviews</a></li>
                                     </ul>
                                 </nav>
-                                <a href="#" class="show-hidden-map">  <span>On The Map</span> <i class="fal fa-map-marked-alt"></i></a>
+                                {{-- <a href="#" class="show-hidden-map">  <span>On The Map</span> <i class="fal fa-map-marked-alt"></i></a> --}}
                             </div>
                         </div>
                         <!--  scroll-nav-wrapper end  -->                    

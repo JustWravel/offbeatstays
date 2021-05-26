@@ -21,7 +21,7 @@
                                                     	
                                                     	
                                                         <img src="{{ asset(@json_decode($room->image)[0] ?? 'front-assets/images/gal/1.jpg')}}" alt="">
-                                                        <div class="dynamic-gal more-photos-button" data-dynamicPath="{{json_encode($roomimagearray)}}">  View Gallery <span>{{count(json_decode($room->image))}} photos</span> <i class="far fa-long-arrow-right"></i></div>
+                                                        <div class="dynamic-gal more-photos-button" data-dynamicPath="{{json_encode($roomimagearray)}}">  View Gallery <span>{{@count(json_decode($room->image))}} photos</span> <i class="far fa-long-arrow-right"></i></div>
                                                     </div>
                                                     <div class="rooms-details">
                                                         <div class="rooms-details-header fl-wrap">
@@ -35,7 +35,7 @@
                                                         	<ul>
                                                             	@foreach($room->amenities as $amenity)
                                                             	
-                                                            		<li><i class="{{$amenity->iconclass}}"></i> <span>{{$amenity->name}}</span> </li>
+                                                            		<li><i class="{{$amenity?->iconclass}}"></i> <span>{{$amenity?->name}}</span> </li>
                                                             	@endforeach
                                                             </ul>
                                                             
