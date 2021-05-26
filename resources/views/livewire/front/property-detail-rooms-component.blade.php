@@ -12,10 +12,16 @@
                                                 <!--  rooms-item -->
                                                 <div class="rooms-item fl-wrap">
                                                     <div class="rooms-media">
-                                                        <img src="{{ asset($room->image ?? 'front-assets/images/gal/1.jpg')}}" alt="">
-                                                        <div class="dynamic-gal more-photos-button" data-dynamicPath="[
-                                                            {'src': '{{$room->image}}'},
-                                                         ]">  View Gallery <span>1 photo {{-- {{count($property->images)}} photos --}}</span> <i class="far fa-long-arrow-right"></i></div>
+                                                    	@php
+                                                    	$roomimagearray = array();
+                                                    	foreach (json_decode($room->image) as $key => $value) {
+                                                    		array_push($roomimagearray, (object)array('src'=>$value));
+                                                    	}
+                                                    	@endphp
+                                                    	
+                                                    	
+                                                        <img src="{{ asset(@json_decode($room->image)[0] ?? 'front-assets/images/gal/1.jpg')}}" alt="">
+                                                        <div class="dynamic-gal more-photos-button" data-dynamicPath="{{json_encode($roomimagearray)}}">  View Gallery <span>{{count(json_decode($room->image))}} photos</span> <i class="far fa-long-arrow-right"></i></div>
                                                     </div>
                                                     <div class="rooms-details">
                                                         <div class="rooms-details-header fl-wrap">
@@ -26,10 +32,10 @@
                                                         {{-- <p>Morbi varius, nulla sit amet rutrum elementum, est elit finibus tellus, ut tristique elit risus at metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> --}}
                                                         <p>{{$room->description}}</p>
                                                         <div class="facilities-list fl-wrap">
-                                                            <ul>
-                                                            	@foreach((array)json_decode($room->amenity) as $amenity)
+                                                        	<ul>
+                                                            	@foreach($room->amenities as $amenity)
                                                             	
-                                                            		@livewire('front.front-property-detail-amenity-show-by-id-component', ['amenity_id'=>$amenity, 'withname'=>false])
+                                                            		<li><i class="{{$amenity->iconclass}}"></i> <span>{{$amenity->name}}</span> </li>
                                                             	@endforeach
                                                             </ul>
                                                             

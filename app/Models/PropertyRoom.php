@@ -15,17 +15,12 @@ class PropertyRoom extends Model
     ];
 
 
-    public function getAmenitiesAttribute($value)
+    public function getAmenitiesAttribute()
     {
-        $data = (array)json_decode($value);
+        $data = (array)json_decode($this->amenity);
         return Amenity::whereIn('id', $data)->get();
         
     }
 
-    // public function getImagesAttribute()
-    // {
-    //     $data = (array)json_decode($this->value);
-    //     return Amenity::whereIn('id', $data)->get();
-        
-    // }
+    
 }

@@ -1,5 +1,10 @@
 <div>
-    
+    @php
+                                                        $roomimagearray = array();
+                                                        foreach (json_decode($property->rooms[$room_id]->image) as $key => $value) {
+                                                            array_push($roomimagearray, (object)array('src'=>$value));
+                                                        }
+                                                        @endphp
         <div id="ajax-modal" class="fl-wrap" style="display: none;" >
             <!--ajax-modal-wrap -->
             <div class="ajax-modal-wrap fl-wrap" style="">
@@ -7,12 +12,12 @@
                 <!--ajax-modal-item-->
                 <div class="ajax-modal-item fl-wrap">
                     <div class="ajax-modal-media fl-wrap">
-                        <img src="{{ $property->rooms[$room_id]->image ?? asset('front-assets/images/gal/1.jpg')}}" alt="">
+                        <img src="{{ json_decode($property->rooms[$room_id]->image)[0] ?? asset('front-assets/images/gal/1.jpg')}}" alt="{{json_decode($property->rooms[$room_id]->image)[0]}}">
                         <div class="ajax-modal-title">
                             <div class="section-title-separator"><span></span></div>
                             {{@$property->rooms[$room_id]->name}}
                         </div>
-                        {{-- <div class="ajax-modal-photos-btn dynamic-gal" data-dynamicPath="[{'src': '{{ $property->rooms[$room_id]->image ?? asset('front-assets/images/gal/1.jpg')}}'}]">Photos (<span>3</span>)</div> --}}
+                        <div class="ajax-modal-photos-btn dynamic-gal" data-dynamicPath="{{json_encode($roomimagearray)}}">Photos (<span>{{count($roomimagearray)}}</span>)</div>
                     </div>
                     <div class="ajax-modal-list fl-wrap">
                         <ul>

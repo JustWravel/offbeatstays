@@ -11,7 +11,7 @@
                                         <div class="list-single-header-contacts fl-wrap">
                                             <ul>
                                                 <li><i class="far fa-phone"></i><a  href="tel:+91 96670 51161">+91 96670 51161</a></li>
-                                                <li><i class="fab fa-whatsapp"></i><a  href="#">Whatsapp Now</a></li>
+                                                <li><i class="fab fa-whatsapp"></i><a  href="">Whatsapp Now</a></li>
                                                 <li><i class="far fa-envelope"></i><a  href="mailto:info@offbeatstays.in">info@offbeatstays.in</a></li>
                                             </ul>
                                         </div>
@@ -142,7 +142,7 @@
                                             <div class="single-slider-wrapper fl-wrap">
                                                 <div class="slider-for fl-wrap"  >
                                                 	@foreach($property->images as $property_image)
-                                                    <div class="slick-slide-item"><img src="{{$property_image->name}}" alt="{{$property_image->name}}" height="450" style="height: 450px"></div>
+                                                    <div class="slick-slide-item"><img src="{{$property_image->name}}" alt="{{$property_image->name}}"></div>
                                                     @endforeach
                                                 </div>
                                                 <div class="swiper-button-prev sw-btn"><i class="fal fa-long-arrow-left"></i></div>
@@ -151,7 +151,7 @@
                                             <div class="single-slider-wrapper fl-wrap">
                                                 <div class="slider-nav fl-wrap">
                                                 	@foreach($property->images as $property_image)
-                                                    <div class="slick-slide-item"><img src="{{$property_image->name}}" alt="{{$property_image->name}}" style="height: 100px"></div>
+                                                    <div class="slick-slide-item"><img src="{{$property_image->name}}" alt="{{$property_image->name}}" ></div>
                                                     @endforeach</div>
                                             </div>
                                         </div>
@@ -271,7 +271,7 @@
                                         
                                         <!-- list-single-main-item end -->
                                         <!-- list-single-main-item -->   
-                                        <div class="list-single-main-item fl-wrap" id="sec5">
+                                        {{-- <div class="list-single-main-item fl-wrap" id="sec5">
                                             <div class="list-single-main-item-title fl-wrap">
                                                 <h3>Item Reviews -  <span> 2 </span></h3>
                                             </div>
@@ -364,10 +364,10 @@
                                                 </div>
                                                 <!--reviews-comments-item end-->                                                                  
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <!-- list-single-main-item end -->   
                                         <!-- list-single-main-item -->   
-                                        <div class="list-single-main-item fl-wrap" id="sec6">
+                                        {{-- <div class="list-single-main-item fl-wrap" id="sec6">
                                             <div class="list-single-main-item-title fl-wrap">
                                                 <h3>Add Review</h3>
                                             </div>
@@ -432,7 +432,7 @@
                                                 </form>
                                             </div>
                                             <!-- Add Review Box / End -->
-                                        </div>
+                                        </div> --}}
                                         <!-- list-single-main-item end -->                                    
                                     </div>
                                 </div>
@@ -442,7 +442,7 @@
                                     <!--box-widget-wrap -->  
                                     <div class="box-widget-wrap">
                                         <!--box-widget-item -->
-                                        <div class="box-widget-item fl-wrap">
+                                        {{-- <div class="box-widget-item fl-wrap">
                                             <div class="box-widget">
                                                 <div class="box-widget-content">
                                                     <div class="box-widget-item-header">
@@ -496,7 +496,7 @@
                                                     </form>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <!--box-widget-item end -->                                      
                                         <!--box-widget-item -->
                                         {{-- <div class="box-widget-item fl-wrap">
