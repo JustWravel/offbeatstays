@@ -48,7 +48,7 @@ class adminCategoryController extends Controller
         $category->slug = SlugService::createSlug(Category::class, 'slug', $request->name);
         $category->description = $request->description;
         if($request->file('image')){
-            $imageName = $request->name.'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
+            $imageName = str_replace(' ', '-', $request->name).'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
             $category->image = '/storage/' .$request->file('image')->storeAs('uploads/categories/original', $imageName, 'public');
         }
         $category->meta_title = $request->meta_title;
@@ -100,7 +100,7 @@ class adminCategoryController extends Controller
         // $category->slug = SlugService::createSlug(Category::class, 'slug', $request->name);
         $category->description = $request->description;
         if($request->file('image')){
-            $imageName = $request->name.'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
+            $imageName = str_replace(' ', '-', $request->name).'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
             $category->image = '/storage/' .$request->file('image')->storeAs('uploads/categories/original', $imageName, 'public');
         }
         $category->meta_title = $request->meta_title;

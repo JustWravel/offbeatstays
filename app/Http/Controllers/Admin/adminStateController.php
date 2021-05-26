@@ -48,7 +48,7 @@ class adminStateController extends Controller
         $state->slug = SlugService::createSlug(State::class, 'slug', $request->name);
         $state->description = $request->description;
         if($request->file('image')){
-            $imageName = $request->name.'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
+            $imageName = str_replace(' ', '-', $request->name).'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
             $state->image = '/storage/' .$request->file('image')->storeAs('uploads/states/original', $imageName, 'public');
         }
         $state->meta_title = $request->meta_title;
@@ -104,7 +104,7 @@ class adminStateController extends Controller
         // $state->slug = SlugService::createSlug(State::class, 'slug', $request->name);
         $state->description = $request->description;
         if($request->file('image')){
-            $imageName = $request->name.'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
+            $imageName = str_replace(' ', '-', $request->name).'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
             $state->image = '/storage/' .$request->file('image')->storeAs('uploads/states/original', $imageName, 'public');
         }
         $state->meta_title = $request->meta_title;

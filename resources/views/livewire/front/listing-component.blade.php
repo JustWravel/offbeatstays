@@ -1,10 +1,10 @@
 <section class="parallax-section single-par" data-scrollax-parent="true">
-                        <div class="bg par-elem "  data-bg="{{ $state?->image ?? $category?->image}}" data-scrollax="properties: { translateY: '30%' }"></div>
+                        <div class="bg par-elem "  data-bg="{{ $state?->image ?? $location?->state?->image ?? $category?->image}}" data-scrollax="properties: { translateY: '30%' }"></div>
                         <div class="overlay"></div>
                         <div class="container">
                             <div class="section-title center-align big-title">
                                 <div class="section-title-separator"><span></span></div>
-                                <h2><span>{{ $category?->name ?? 'Stays'}} in {{ $state?->name ?? 'India' }}</span></h2>
+                                <h2><span>{{ $category?->name ?? 'Stays'}} in {{ $state?->name ?? $location?->name ?? 'India' }}</span></h2>
                                 <span class="section-separator"></span>
                                 {{-- <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec tincidunt arcu, sit amet fermentum sem.</h4> --}}
                             </div>

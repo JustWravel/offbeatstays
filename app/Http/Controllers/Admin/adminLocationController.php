@@ -53,7 +53,7 @@ class adminLocationController extends Controller
         $location->state_id = $request->state_id;
         $location->description = $request->description;
         if($request->file('image')){
-            $imageName = $request->name.'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
+            $imageName = str_replace(' ', '-', $request->name).'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
             $location->image = '/storage/' .$request->file('image')->storeAs('uploads/locations/original', $imageName, 'public');
         }
         $location->meta_title = $request->meta_title;
@@ -108,7 +108,7 @@ class adminLocationController extends Controller
         $location->state_id = $request->state_id;
         $location->description = $request->description;
         if($request->file('image')){
-            $imageName = $request->name.'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
+            $imageName = str_replace(' ', '-', $request->name).'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
             $location->image = '/storage/' .$request->file('image')->storeAs('uploads/locations/original', $imageName, 'public');
         }
         $location->meta_title = $request->meta_title;

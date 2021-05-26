@@ -215,7 +215,7 @@
                     <div class="container">
                         <div class="row">
                             <!-- header-search-input-item -->
-                        	<form action="search">
+                        	<form action="/search">
                             <div class="col-sm-4">
                                 <div wire:ignore class="header-search-input-item fl-wrap ">
                                     <label>Stay Type</label>
