@@ -68,10 +68,11 @@
 												<tr>
 													<th>Record ID</th>
 													<th>Property</th>
+													<th>Image</th>
 													<th>State</th>
 													<th>Location</th>
-													<th>Image</th>
-													<th>Description</th>
+													<th>Category</th>
+													
 													
 													<th>Actions</th>
 												</tr>
@@ -80,11 +81,12 @@
 												@foreach($properties as $property)
 												<tr>
 													<td>{{ $property->id }}</td>
-													<td><a class="text-dark-50 text-hover-primary" href="{{ $property->slug }}">{{ $property->name }}</a></td>
+													<td><a class="text-dark-50 text-hover-primary" href="{{ route('front.property.show', ['state'=> $property->state->slug, 'location'=> $property->location->slug, 'category'=> $property->category->slug, 'slug'=> $property->slug])}}" target="_blank">{{ $property->name }}</a></td>
+													<td><img src="{{ $property->images[0]?->name }}" style="width: 40px" alt=""></td>
 													<td>{{ $property->state->name }}</td>
 													<td>{{ $property->location->name }}</td>
-													<td>{{-- <img src="{{ $property->images[0]->name }}" style="width: 40px" alt=""> --}}</td>
-													<td>{!! $property->description !!}</td>
+													<td>{{ $property->category->name }}</td>
+													
 													
 													<td nowrap="nowrap">
 														<a href="{{ route('admin.property.edit', ['property' => $property->id]) }}" class="btn btn-sm btn-primary btn-icon" title="Edit details">
