@@ -14,7 +14,7 @@
                                                     <div class="rooms-media">
                                                     	@php
                                                     	$roomimagearray = array();
-                                                    	foreach (json_decode($room->image) as $key => $value) {
+                                                    	foreach ((array)json_decode($room->image) as $key => $value) {
                                                     		array_push($roomimagearray, (object)array('src'=>$value));
                                                     	}
                                                     	@endphp

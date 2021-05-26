@@ -1,7 +1,7 @@
 <div>
     @php
                                                         $roomimagearray = array();
-                                                        foreach (json_decode($property->rooms[$room_id]->image) as $key => $value) {
+                                                        foreach ((array)json_decode($property->rooms[$room_id]->image) as $key => $value) {
                                                             array_push($roomimagearray, (object)array('src'=>$value));
                                                         }
                                                         @endphp
