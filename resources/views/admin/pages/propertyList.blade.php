@@ -82,7 +82,7 @@
 												<tr>
 													<td>{{ $property->id }}</td>
 													<td><a class="text-dark-50 text-hover-primary" href="{{ route('front.property.show', ['state'=> $property->state->slug, 'location'=> $property->location->slug, 'category'=> $property->category->slug, 'slug'=> $property->slug])}}" target="_blank">{{ $property->name }}</a></td>
-													<td><img src="{{ $property->images[0]?->name }}" style="width: 40px" alt=""></td>
+													<td><img src="{{ @$property->images[0]?->name }}" style="width: 40px" alt=""></td>
 													<td>{{ $property->state->name }}</td>
 													<td>{{ $property->location->name }}</td>
 													<td>{{ $property->category->name }}</td>
