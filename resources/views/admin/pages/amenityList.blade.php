@@ -79,7 +79,7 @@
 												<tr>
 													<td>{{ $amenity->id }}</td>
 													<td><a class="text-dark-50 text-hover-primary" href="{{ $amenity->slug }}">{{ $amenity->name }}</a></td>
-													<td><i class="fas fa-{{$amenity->iconclass}}"></i> <i class="far fa-{{$amenity->iconclass}}"></i></td>
+													<td><i class="{{$amenity->iconclass}}"></i></td>
 													
 													
 													<td nowrap="nowrap">
