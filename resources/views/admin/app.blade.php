@@ -26,6 +26,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+		<link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" />
 
 		<!--end::Fonts-->
 
@@ -37,6 +38,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Global Theme Styles(used by all pages)-->
 		<link href="{{ asset('admin-assets/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
 		<link href="{{ asset('admin-assets/assets/plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet" type="text/css" />
+
 		<link href="{{ asset('admin-assets/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 
 		<!--end::Global Theme Styles-->
