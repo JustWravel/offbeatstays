@@ -3,13 +3,13 @@
 namespace App\Http\Livewire\Front;
 
 use Livewire\Component;
-use App\Models\State;
+use App\Models\Category;
 use App\Models\Property;
 use Livewire\WithPagination;
 
-class FrontListingCardListWithLoadMoreComponent extends Component
+class CategoryItemComponent extends Component
 {
-	use WithPagination;
+    use WithPagination;
 	public $slug;
     public $perPage;
     public $perPage1;
@@ -17,7 +17,7 @@ class FrontListingCardListWithLoadMoreComponent extends Component
         'load-more' => 'loadMore'
     ];
 
-	public function mount($slug)
+    public function mount($slug)
 	{
 		$this->slug = $slug;
 		$this->perPage = 8;
@@ -32,10 +32,11 @@ class FrontListingCardListWithLoadMoreComponent extends Component
     }
     public function render()
     {
-    	$state = State::where('slug', $this->slug)->first();
-    	$properties = Property::where('state_id', $state->id)->paginate($this->perPage);
-        return view('livewire.front.front-listing-card-list-with-load-more-component', [
-        				'state' => $state,
+    	$category = Category::where('slug', $this->slug)->first();
+    	$properties = Property::where('category_id', $category->id)->paginate($this->perPage);
+    	
+        return view('livewire.front.category-item-component', [
+        				'category' => $category,
         				'properties' => $properties,
         			]);
     }

@@ -1,10 +1,10 @@
 <section class="parallax-section single-par" data-scrollax-parent="true">
-                        <div class="bg par-elem "  data-bg="{{ asset($state->image ?? 'front-assets/images/bg/1.jpg') }}" style="background-image: url('{{ asset($state->image ?? 'front-assets/images/bg/1.jpg') }}')" data-scrollax="properties: { translateY: '30%' }"></div>
+                        <div class="bg par-elem "  data-bg="{{ asset($location->image ?? 'front-assets/images/bg/location.jpg') }}" style="background-image: url('{{ asset($location->image ?? 'front-assets/images/bg/1.jpg') }}')" data-scrollax="properties: { translateY: '30%' }"></div>
                         <div class="overlay"></div>
                         <div class="container">
                             <div class="section-title center-align big-title">
                                 {{-- <div class="section-title-separator"><span></span></div> --}}
-                                <h2><span>{{ $state->name}}</span></h2>
+                                <h2><span>{{ $location->name}}</span></h2>
                                 <span class="section-separator"></span>
                                 
                             </div>
@@ -16,7 +16,7 @@
                     <!--  section  end-->
                     <div class="breadcrumbs-fs fl-wrap">
                         <div class="container">
-                            <div class="breadcrumbs fl-wrap"><a href="{{ route('front.home') }}">Home</a><a href="{{ route('front.state.all') }}">India</a><span>{{ $state->name }}</span></div>
+                            <div class="breadcrumbs fl-wrap"><a href="{{ route('front.home') }}">Home</a><a href="{{ route('front.state.all') }}">India</a><a href="{{ route('front.state.show', ['slug'=>$location->state->slug]) }}">{{ $location->state->name }}</a><span>{{ $location->name }}</span></div>
                         </div>
                     </div>
                     <!--  section-->
@@ -177,7 +177,7 @@
                                                 <div class="price-opt">
                                                     <span class="price-opt-title">Sort results by:</span>
                                                     <div class="listsearch-input-item">
-                                                        <select data-placeholder="Popularity" class="chosen-select no-search-select" wire:model="sortby" wire:change="changeSort" >
+                                                        <select data-placeholder="Popularity" class="chosen-select no-search-select" >
                                                             <option>Popularity</option>
                                                             <option>Average rating</option>
                                                             <option>Price: low to high</option>
@@ -197,7 +197,7 @@
                                             </div> --}}
                                             <!-- list-main-wrap-opt end-->
                                             {{-- {{ $slug}} --}}
-                                            @livewire('front.front-listing-card-list-with-load-more-component', [
+                                            @livewire('front.location-item-component', [
                                                     'slug'=>$slug
                                                 ])
                                         </div>

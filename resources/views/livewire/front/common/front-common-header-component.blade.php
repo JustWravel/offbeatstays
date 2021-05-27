@@ -7,7 +7,7 @@
                         </div>
                         <a href="{{ route('admin.dashboard')}}" class="add-hotel">Add Your Hotel <span><i class="far fa-plus"></i></span></a>                     
                         {{-- <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Sign In</div> --}}
-                        <a href="tel:919540785489" class="show-reg-form"><i class="fa fa-phone"></i>+91 9540 7854 89</a>
+                        <a href="tel:+919667051161" class="show-reg-form"><i class="fa fa-phone"></i>+91 96670 51161</a>
                         {{-- <a href="mailto:info@offbeatstays.in" class="show-reg-form"><i class="fa fa-envelope"></i>info@offbeatstays.in</a> --}}
                         {{-- <div class="lang-wrap">
                             <div class="show-lang"><img src="{{ asset('front-assets/images/lan/1.png') }}" alt=""> <span>Eng</span><i class="fa fa-caret-down"></i></div>

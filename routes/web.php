@@ -18,6 +18,7 @@ use App\Http\Livewire\Front\AllStatesComponent;
 use App\Http\Livewire\Front\StateComponent;
 use App\Http\Livewire\Front\AllCategoriesComponent;
 use App\Http\Livewire\Front\CategoryComponent;
+use App\Http\Livewire\Front\LocationComponent;
 use App\Http\Livewire\Front\PropertyDetailComponent;
 
 
@@ -46,7 +47,7 @@ Route::get('/', HomeComponent::class)->name('front.home');
 Route::get('/search', ListingComponent::class)->name('front.listing');
 Route::get('/india', AllStatesComponent::class)->name('front.state.all');
 Route::get('/property/{slug}', StateComponent::class)->name('front.state.show');
-// Route::get('/property/{state}/{slug}', LocationComponent::class)->name('front.location.show');
+Route::get('/property/{state}/{slug}', LocationComponent::class)->name('front.location.show');
 Route::get('/stay-types', AllCategoriesComponent::class)->name('front.category.all');
 Route::get('/stay-type/{slug}', CategoryComponent::class)->name('front.category.show');
 

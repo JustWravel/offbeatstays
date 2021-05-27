@@ -203,8 +203,7 @@
                                                     <span class="price-opt-title">Sort results by:</span>
                                                     <div class="listsearch-input-item">
                                                         <select data-placeholder="Popularity" wire:model="sortby" id="sortby" >
-                                                            <option value="">Popularity</option>
-                                                            <option value="a">Average rating</option>
+                                                            
                                                             <option value="priceasc">Price: low to high</option>
                                                             <option value="pricedesc">Price: high to low</option>
                                                         </select>

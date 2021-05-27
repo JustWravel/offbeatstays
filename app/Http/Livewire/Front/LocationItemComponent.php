@@ -3,11 +3,11 @@
 namespace App\Http\Livewire\Front;
 
 use Livewire\Component;
-use App\Models\State;
+use App\Models\Location;
 use App\Models\Property;
 use Livewire\WithPagination;
 
-class FrontListingCardListWithLoadMoreComponent extends Component
+class LocationItemComponent extends Component
 {
 	use WithPagination;
 	public $slug;
@@ -17,7 +17,7 @@ class FrontListingCardListWithLoadMoreComponent extends Component
         'load-more' => 'loadMore'
     ];
 
-	public function mount($slug)
+    public function mount($slug)
 	{
 		$this->slug = $slug;
 		$this->perPage = 8;
@@ -32,11 +32,12 @@ class FrontListingCardListWithLoadMoreComponent extends Component
     }
     public function render()
     {
-    	$state = State::where('slug', $this->slug)->first();
-    	$properties = Property::where('state_id', $state->id)->paginate($this->perPage);
-        return view('livewire.front.front-listing-card-list-with-load-more-component', [
-        				'state' => $state,
+    	$location = Location::where('slug', $this->slug)->first();
+    	$properties = Property::where('location_id', $location->id)->paginate($this->perPage);
+        return view('livewire.front.location-item-component', [
+        				'location' => $location,
         				'properties' => $properties,
         			]);
     }
+
 }
