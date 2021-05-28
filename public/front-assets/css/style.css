@@ -1006,24 +1006,37 @@ nav li ul a:before , nav li ul a:after {
     transition: all 200ms linear;
 }
 .header-user-menu {
-	float:right;
+	/*float:right;
 	position:relative;
 	top:8px;
-	margin-right:50px;
+	margin-right:50px;*/
+	    color: #fff;
+    float: right;
+    position: relative;
+    width: 60px;
+    top: 0;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    border-left: 1px solid rgba(0,0,0,0.21);
+    box-sizing: border-box;
 }
 .header-user-name {
-	position:relative;
-	float:left;
-	cursor:pointer;
-	color:#fff;
-	transition: 0.2s;
+	    position: relative;
+    /* float: left; */
+    cursor: pointer;
+    color: #5d6579;
+    transition: 0.2s;
     white-space: nowrap;
     text-overflow: ellipsis;
-	padding-top:10px;
-	font-weight:700;
-	font-size:12px;
+    padding: 0px 15px;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: left;
 }
-.header-user-name:before , .qty-dropdown-header:before , .main-search-input-item_small:before {
+/*.header-user-name:before , */.qty-dropdown-header:before , .main-search-input-item_small:before {
 	font-family: Font Awesome\ 5 Pro;
 	content: "\f0d7";
 	position:absolute;
@@ -1043,26 +1056,27 @@ nav li ul a:before , nav li ul a:after {
 	bottom:-2px;
 }
 .header-user-name span {
-	position:absolute;
-	width:32px;
-	height:32px;
-	border-radius:100%;
-	overflow:hidden;
-	top:0;
-	left:-50px;
+	    position: relative;
+    width: 32px;
+    height: 32px;
+    /* border-radius: 100%; */
+    /* overflow: hidden; */
+    /* top: 0; */
+    /* left: 0px;*/
 }
 .header-user-name span img {
-	width:100%;
-	height:100%;
+	width: 35px;
+    height: 35px;
+    border-radius: 100%;
 }
 .header-user-menu ul {
 	margin: 10px 0 0 0;
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    min-width: 150px;
+    min-width: 250px;
     top: 60px;
-    left: -50px;
+    left: -100px;
     z-index: 1;
     padding: 10px 0;
     background: #fff;
@@ -1092,6 +1106,7 @@ nav li ul a:before , nav li ul a:after {
 	font-size:12px;
     text-align: left;
     padding: 6px 15px;
+    line-height: 20px;
 }
 /*------footer -------------------------------------------------*/
 .main-footer  , .footer-inner , .sub-footer , .top-footer{

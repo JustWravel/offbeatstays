@@ -16,19 +16,24 @@
                 <div class="header-inner fl-wrap">
                     <div class="container">
                         <div class="show-search-button"><span>Search</span> <i class="fas fa-search"></i> </div>
-                        <div class="wishlist-link"><i class="fal fa-heart"></i><span class="wl_counter">3</span></div>
+                        {{-- <div class="wishlist-link"><i class="fal fa-heart"></i><span class="wl_counter">3</span></div> --}}
+                        
                         <div class="header-user-menu">
+                        	<i class="fad fa-user"></i>
                         	@auth
-	                            <div class="header-user-name">
-	                                <span>
+	                            
+	                            <ul>
+	                            	<li>
+	                            		<div class="header-user-name">
+	                            			<span>
 	                                	 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
 	                                	 <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}">
 	                                	 @endif
 	                                	
 	                                </span>
 	                                {{ Auth::user()->name }}
-	                            </div>
-	                            <ul>
+	                            		</div>
+	                            	</li>
 	                                <li><a href="{{ route('profile.show') }}"> Edit profile</a></li>
 	                                {{-- <li><a href="dashboard-add-listing.html"> Add Listing</a></li> --}}
 	                                {{-- <li><a href="dashboard-bookings.html">  Bookings  </a></li> --}}
@@ -47,7 +52,8 @@
 
 	                            </ul>
 	                        @else
-	                        	<div class="header-user-name">
+	                        	{{-- <div class="header-user-name">
+	                        		<i class="fad fa-user"></i>
 	                                <span>
 	                                	 
 	                                	 <img src="{{ asset('front-assets/images/avatar/1.jpg') }}" alt="Guest">
@@ -55,7 +61,7 @@
 	                                	
 	                                </span>
 	                                Guest
-	                            </div>
+	                            </div> --}}
 	                            <ul>
 	                                <li><a href="{{ route('login') }}"> Login</a></li>
 	                                <li><a href="{{ route('register') }}"> Register</a></li>

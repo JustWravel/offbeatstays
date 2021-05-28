@@ -1033,7 +1033,7 @@ function  initEasybook() {
             $(".bg-ser").css("background-image", "url(" + a + ")");
         }
     });
-    $(".header-user-name").on("click", function () {
+    $(".header-user-menu").on("click", function () {
         $(".header-user-menu ul").toggleClass("hu-menu-vis");
         $(this).toggleClass("hu-menu-visdec");
     });
