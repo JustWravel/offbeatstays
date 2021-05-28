@@ -1,33 +1,16 @@
 <header class="main-header">
                 <!-- header-top-->
-                <div class="header-top fl-wrap">
+                {{-- <div class="header-top fl-wrap">
                     <div class="container">
                         <div class="logo-holder">
                             <a href="{{ route('front.home')}}"><img src="{{ asset('front-assets/images/logo.png') }}" alt=""></a>
                         </div>
                         <a href="{{ route('admin.dashboard')}}" class="add-hotel">Add Your Hotel <span><i class="far fa-plus"></i></span></a>                     
-                        {{-- <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Sign In</div> --}}
+                        <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Sign In</div>
                         <a href="tel:+919667051161" class="show-reg-form"><i class="fa fa-phone"></i>+91 96670 51161</a>
-                        {{-- <a href="mailto:info@offbeatstays.in" class="show-reg-form"><i class="fa fa-envelope"></i>info@offbeatstays.in</a> --}}
-                        {{-- <div class="lang-wrap">
-                            <div class="show-lang"><img src="{{ asset('front-assets/images/lan/1.png') }}" alt=""> <span>Eng</span><i class="fa fa-caret-down"></i></div>
-                            <ul class="lang-tooltip green-bg">
-                                <li><a href="#"><img src="{{ asset('front-assets/images/lan/4.png') }}" alt=""> De</a></li>
-                                <li><a href="#"><img src="{{ asset('front-assets/images/lan/5.png') }}" alt=""> It</a></li>
-                                <li><a href="#"><img src="{{ asset('front-assets/images/lan/2.png') }}" alt=""> Fr</a></li>
-                                <li><a href="#"><img src="{{ asset('front-assets/images/lan/3.png') }}" alt=""> Es</a></li>
-                            </ul>
-                        </div>
-                        <div class="currency-wrap">
-                            <div class="show-currency-tooltip"><i class="fas fa-dollar-sign"></i> <span>USD <i class="fa fa-caret-down"></i> </span></div>
-                            <ul class="currency-tooltip">
-                                <li><a href="#"><i class="far fa-euro-sign"></i> EUR</a></li>
-                                <li><a href="#"><i class="far fa-pound-sign"></i> GBP</a></li>
-                                <li><a href="#"><i class="far fa-ruble-sign"></i>RUR</a></li>
-                            </ul>
-                        </div> --}}
+                        
                     </div>
-                </div>
+                </div> --}}
                 <!-- header-top end-->
                 <!-- header-inner-->
                 <div class="header-inner fl-wrap">
@@ -71,7 +54,7 @@
 	                                	 
 	                                	
 	                                </span>
-	                                Guest Account
+	                                Guest
 	                            </div>
 	                            <ul>
 	                                <li><a href="{{ route('login') }}"> Login</a></li>
@@ -80,7 +63,11 @@
 	                        @endauth
 
                         </div>
+                        <div class="home-btn home-btn1">
+                            <a href="{{ route('front.home')}}"><img src="{{ asset('front-assets/images/logo.png') }}" alt=""></a>
+                        </div>
                         <div class="home-btn"><a href="{{ route('front.home')}}"><i class="fas fa-home"></i></a></div>
+
                         <!-- nav-button-wrap-->
                         <div class="nav-button-wrap color-bg">
                             <div class="nav-button">

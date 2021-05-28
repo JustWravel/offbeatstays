@@ -14,11 +14,9 @@ class HomeComponent extends Component
 
 	public function mount()
 	{
-		$this->popular_destinations = State::has('properties')->with('properties')->with('locations')->get()->sortByDesc(function($state){
-			    return $state->properties->count();
-			});
+		$this->popular_destinations = State::has('properties')->with('properties')->withCount('properties')->with('locations')->orderBy('properties_count', 'desc')->take(6)->get();
 
-		$this->recently_added_properties = Property::first()->take(5)->get();
+		$this->recently_added_properties = Property::first()->take(10)->get();
 		// dd($this->popular_destinations);
 	}
 	
