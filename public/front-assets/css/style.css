@@ -18,6 +18,25 @@ html{
 	overflow-x:hidden !important;
 	height: 100%;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 body{
 	font-weight: 600;
 	font-size: 13px;
@@ -514,6 +533,24 @@ transform: rotate(360deg);
 	font-size:13px;
 	font-weight:400;
 }
+
+.header-phone-number {
+	float: right;
+    color: #fff !important;
+    cursor: pointer;
+    margin-right: 40px;
+    position: relative;
+    top: 0;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.header-phone-number i  {
+	padding-right:10px;
+	font-size: 22px;
+}
+
 .show-reg-form:before {
 	content:'';
 	position:absolute;
@@ -534,11 +571,17 @@ transform: rotate(360deg);
 	top:0;
 	height:50px;
 	line-height:50px;
-	font-size:13px;
+	font-size:16px;
 	cursor:pointer;
-	font-weight:500;
+	font-weight:700;
 	border-right:1px solid rgba(0,0,0,0.21);
 	box-sizing:border-box;
+	    background: #77b135;
+}
+.show-search-button .fas{
+	color:#fff;
+	font-size: 22px;
+	
 }
 .wishlist-link {
 	color:#fff;
@@ -730,7 +773,7 @@ transform: rotate(360deg);
 }
 .header-search {
 	position:absolute;
-	top:110px;
+	top:50px;
 	left:0;
 	width:100%;
 	padding:20px 30px 30px;
@@ -862,8 +905,8 @@ transform: rotate(360deg);
 }
 .home-btn {
 	float:left;
-	width:50px;
-	height: 50px;
+	width:40px;
+	height: 40px;
 	margin-right:15px;
 	line-height:50px;
 	color:#fff;
@@ -913,6 +956,8 @@ transform: rotate(360deg);
 	border-radius:6px;
 	border:1px solid #eee;
 	transition: all .2s ease-in-out;
+	max-height: 80vh;
+    overflow-y: auto;
 }
 .nav-holder nav li:hover > ul {
 	opacity: 1;
@@ -2148,6 +2193,7 @@ section.hero-section   {
 .main-search-input-item .select2 {
 	
 	height:50px;
+	    width: 100% !important;
 	
 }
 .select2-selection__rendered {
@@ -3848,7 +3894,7 @@ input[type=number]
 .geodir-opt-list a:hover  i , .show-search-button:hover i{
 	transition: all .2s ease-in-out;
     animation: bounce 1s;
-	color:#fff;
+	color:#fff !important;
 }
 @keyframes bounce {
     0%, 20%, 60%, 100% {
@@ -9032,4 +9078,120 @@ section.hero-section  {
     padding: 10px 30px;
     font-style: italic;
     text-align: justify;
+}
+
+.label-container{
+	position:fixed;
+	bottom:48px;
+	right:105px;
+	display:table;
+	visibility: hidden;
+}
+
+.label-text{
+	color:#FFF;
+	background:rgba(51,51,51,0.5);
+	display:table-cell;
+	vertical-align:middle;
+	padding:10px;
+	border-radius:3px;
+}
+
+.label-arrow{
+	display:table-cell;
+	vertical-align:middle;
+	color:#333;
+	opacity:0.5;
+}
+
+.float {
+    position: fixed;
+    width: 45PX;
+    height: 45PX;
+    bottom: 45PX;
+    right: 20px;
+    background-color: #3aaced;
+    color: #FFF;
+    border-radius: 5PX;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    border: 4px solid #ccc;
+    z-index: 1000;
+    animation: bot-to-top 2s ease-out;
+}
+
+
+
+.menu-share-container ul{
+	position: fixed;
+    right: 20px;
+    padding-bottom: 10px;
+    bottom: 80px;
+    z-index: 100;
+}
+
+.menu-share-container ul li{
+	list-style:none;
+	margin-bottom:10px;
+}
+
+.menu-share-container ul li a{
+	    background-color: #3aaced;
+    color: #FFF;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    width: 45px;
+    height: 45px;
+    display: block;
+    border: 3px solid;
+    line-height: 18px;
+}
+
+.menu-share-container ul:hover{
+	visibility:visible!important;
+	opacity:1!important;
+}
+
+
+.my-float {
+    font-size: 17px;
+    margin-top: 13px;
+}
+
+a#menu-share + .menu-share-container ul{
+  visibility: hidden;
+}
+
+a#menu-share:hover + .menu-share-container ul{
+  visibility: visible;
+  animation: scale-in 0.5s;
+}
+
+a#menu-share i{
+	animation: rotate-in 0.5s;
+}
+
+a#menu-share:hover > i{
+	animation: rotate-out 0.5s;
+}
+
+@keyframes bot-to-top {
+    0%   {bottom:-40px}
+    50%  {bottom:40px}
+}
+
+@keyframes scale-in {
+    from {transform: scale(0);opacity: 0;}
+    to {transform: scale(1);opacity: 1;}
+}
+
+@keyframes rotate-in {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes rotate-out {
+    from {transform: rotate(360deg);}
+    to {transform: rotate(0deg);}
 }

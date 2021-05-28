@@ -12,8 +12,8 @@ class FrontCommonHeaderComponent extends Component
 	public $categories;
 	public function mount()
 	{
-		$this->states = State::has('properties')->with('properties')->get();
-		$this->categories = Category::has('properties')->with('properties')->get();
+		$this->states = State::has('properties')->with('locations')->get();
+		$this->categories = Category::has('properties')->get();
 	}
     public function render()
     {

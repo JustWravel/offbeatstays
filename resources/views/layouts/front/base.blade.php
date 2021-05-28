@@ -12,7 +12,7 @@
         <meta name="keywords" content=""/>
         <meta name="description" content=""/>
         <!--=============== css  ===============-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         <link type="text/css" rel="stylesheet" href="{{ asset('front-assets/css/reset.css') }}">
         <link type="text/css" rel="stylesheet" href="{{ asset('front-assets/css/plugins.css') }}">
@@ -133,7 +133,24 @@
                 </div>
             </div>
             <!--register form end -->
-            <a class="to-top"><i class="fas fa-caret-up"></i></a>
+            {{-- <a class="to-top"><i class="fas fa-caret-up"></i></a> --}}
+            <a href="#" class="float" id="menu-share">
+<i class="fad fa-phone my-float"></i>
+</a>
+<div class="menu-share-container">
+    <ul>
+<li><a href="#">
+<i class="fas fa-envelope my-float"></i>
+</a></li>
+<li><a href="#">
+<i class="fab fa-whatsapp my-float"></i>
+</a></li>
+<li><a href="#">
+<i class="fas fa-phone-volume my-float"></i>
+</a></li>
+</ul>
+</div>
+
             {{-- @yield('modal') --}}
             @stack('sidepopup')
             <!--ajax-modal-container-->

@@ -16,9 +16,10 @@
                 <div class="header-inner fl-wrap">
                     <div class="container">
                         <div class="show-search-button"><span>Search</span> <i class="fas fa-search"></i> </div>
+                        <a href="tel:+919667051161" class="header-phone-number"><i class="fas fa-phone-volume"></i>+91 96670 51161</a>
                         {{-- <div class="wishlist-link"><i class="fal fa-heart"></i><span class="wl_counter">3</span></div> --}}
                         
-                        <div class="header-user-menu">
+                        {{-- <div class="header-user-menu">
                         	<i class="fad fa-user"></i>
                         	@auth
 	                            
@@ -35,9 +36,7 @@
 	                            		</div>
 	                            	</li>
 	                                <li><a href="{{ route('profile.show') }}"> Edit profile</a></li>
-	                                {{-- <li><a href="dashboard-add-listing.html"> Add Listing</a></li> --}}
-	                                {{-- <li><a href="dashboard-bookings.html">  Bookings  </a></li> --}}
-	                                {{-- <li><a href="dashboard-review.html"> Reviews </a></li> --}}
+	                                
 	                                <li>
 	                                	<!-- Authentication -->
 	                            <form method="POST" action="{{ route('logout') }}">
@@ -52,23 +51,14 @@
 
 	                            </ul>
 	                        @else
-	                        	{{-- <div class="header-user-name">
-	                        		<i class="fad fa-user"></i>
-	                                <span>
-	                                	 
-	                                	 <img src="{{ asset('front-assets/images/avatar/1.jpg') }}" alt="Guest">
-	                                	 
-	                                	
-	                                </span>
-	                                Guest
-	                            </div> --}}
+	                        	
 	                            <ul>
 	                                <li><a href="{{ route('login') }}"> Login</a></li>
 	                                <li><a href="{{ route('register') }}"> Register</a></li>
 	                            </ul>
 	                        @endauth
 
-                        </div>
+                        </div> --}}
                         <div class="home-btn home-btn1">
                             <a href="{{ route('front.home')}}"><img src="{{ asset('front-assets/images/logo.png') }}" alt=""></a>
                         </div>
@@ -86,16 +76,15 @@
                         <div class="nav-holder main-menu">
                             <nav>
                                 <ul>
-                                	<li>
-                                        <a href="{{ route('front.category.all') }}">Stay Types</a>
-                                    </li>
-                                	<li>
-                                        <a href="{{ route('front.state.all') }}">India</a>
-                                    </li>
+                                	
+                                	
                                     <li>
                                         <a href="{{ route('front.category.all') }}" class="{{ (strpos(Route::currentRouteName(), 'front.category') === 0 ) ? 'act-link' : '' }}">Categories <i class="fas fa-caret-down"></i></a>
                                         <!--second level -->
                                         <ul>
+                                            <li>
+                                                <a href="{{ route('front.category.all') }}"> All Stay Category</a>
+                                            </li>
                                         	@foreach($categories as $category)
                                             <li><a href="{{ route('front.category.show', ['slug'=>$category->slug]) }}" class="{{ (strpos(Route::currentRouteName(), 'front.category.show') === 0 ) && (Route::current()->parameter('slug') == $category->slug) ? 'act-link' : '' }}">{{$category->name}}</a></li>
                                             @endforeach
@@ -104,10 +93,13 @@
                                         <!--second level end-->
                                     </li>
                                     <li>
-                                        <a href="{{ route('front.state.all') }}" class="{{ (strpos(Route::currentRouteName(), 'front.state') === 0 ) ? 'act-link' : '' }}">India <i class="fas fa-caret-down"></i></a>
+                                        <a href="{{ route('front.state.all') }}" class="{{ (strpos(Route::currentRouteName(), 'front.state') === 0 ) ? 'act-link' : '' }}">All Locations <i class="fas fa-caret-down"></i></a>
                                         <!--second level -->
                                         
                                         <ul>
+                                            <li>
+                                                <a href="{{ route('front.state.all') }}">All States</a>
+                                            </li>
                                         	@foreach($states as $state)
                                             <li><a href="{{ route('front.state.show', ['slug'=>$state->slug]) }}" class="{{ (strpos(Route::currentRouteName(), 'front.state.show') === 0 ) && (Route::current()->parameter('slug') == $state->slug) ? 'act-link' : '' }}">{{$state->name}}</a></li>
                                             {{-- <li>

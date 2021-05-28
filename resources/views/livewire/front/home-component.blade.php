@@ -58,7 +58,7 @@
                                 <div class="gallery-item">
                                     <div class="grid-item-holder">
                                         <div class="listing-item-grid">
-                                            <div class="listing-counter"><span>{{count($popular_destination->properties)}} </span> @if(count($popular_destination->properties) > 1) Properties @else Property @endif</div>
+                                            <div class="listing-counter"><span>{{$popular_destination->properties_count}} </span> @if($popular_destination->properties_count > 1) Properties @else Property @endif</div>
                                             <a href="{{ route('front.state.show', ['slug'=>$popular_destination->slug])}}">
                                                 <img  src="{{ $popular_destination->image ?? asset('front-assets/images/city/1.jpg') }}"   alt="{{$popular_destination->name}} - Offbeat Stays">
                                             </a>
@@ -122,7 +122,7 @@
                                     <div class="listing-item">
                                         <article class="geodir-category-listing fl-wrap">
                                             <div class="geodir-category-img">
-                                                <a href="{{ route('front.property.show', ['state'=> $recently_added_property->state->slug, 'location'=> $recently_added_property->location->slug, 'category'=> $recently_added_property->category->slug, 'slug'=> $recently_added_property->slug])}}"><img src="{{ $recently_added_property->images[0]->name ?? asset('front-assets/images/gal/1.jpg') }}" alt=""></a>
+                                                <a href="{{ route('front.property.show', ['state'=> $recently_added_property->state->slug, 'location'=> $recently_added_property->location->slug, 'category'=> $recently_added_property->category->slug, 'slug'=> $recently_added_property->slug])}}"><img src="{{ $recently_added_property->image[0]->name ?? asset('front-assets/images/gal/1.jpg') }}" alt=""></a>
                                                 {{-- <div class="listing-avatar"><a href="author-single.html"><img src="{{ asset('front-assets/images/avatar/1.jpg') }}" alt=""></a>
                                                     <span class="avatar-tooltip">Added By  <strong>Alisa Noory</strong></span>
                                                 </div>

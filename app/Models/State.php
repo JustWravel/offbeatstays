@@ -32,7 +32,7 @@ class State extends Model
         return $this->hasMany(Location::class,'state_id');
     }
 
-    public function properties($value='')
+    public function properties()
     {
         return $this->hasMany(Property::class,'state_id');
     }

@@ -45,7 +45,7 @@ Route::get('/home', function () {
 
 Route::get('/', HomeComponent::class)->name('front.home');
 Route::get('/search', ListingComponent::class)->name('front.listing');
-Route::get('/india', AllStatesComponent::class)->name('front.state.all');
+Route::get('/all-locations', AllStatesComponent::class)->name('front.state.all');
 Route::get('/property/{slug}', StateComponent::class)->name('front.state.show');
 Route::get('/property/{state}/{slug}', LocationComponent::class)->name('front.location.show');
 Route::get('/stay-types', AllCategoriesComponent::class)->name('front.category.all');

@@ -50,6 +50,12 @@ class Property extends Model
         return $this->hasMany(PropertyImage::class,'property_id');
     }
 
+        public function image()
+    {
+        return $this->hasMany(PropertyImage::class,'property_id')->latest();
+    }
+
+
     public function rooms()
     {
         return $this->hasMany(PropertyRoom::class,'property_id');

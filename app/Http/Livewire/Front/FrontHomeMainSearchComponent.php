@@ -14,8 +14,8 @@ class FrontHomeMainSearchComponent extends Component
 	public $categories;
 	public function mount()
 	{
-		$this->states = State::has('properties')->get();
-		$this->locations = Location::has('properties')->get();
+		$this->states = State::has('properties')->with('locations')->get();
+		// $this->locations = Location::has('properties')->get();
 		$this->categories = Category::has('properties')->get();
 		// dd($this->categories);
 	}
