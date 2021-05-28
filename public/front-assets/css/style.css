@@ -8721,6 +8721,9 @@ section.hero-section  {
 .home-btn , .show-search-button span{
 	display:none;
 }
+.home-btn1{
+	display:block;
+}
 .nav-button-wrap   {
 	margin-left:10px;
 }
@@ -8956,7 +8959,7 @@ section.hero-section  {
     right: 10px;
 }
 .ajax-modal-container {
-    width: 500px;
+    width: 100%;
 }
 .ajax-modal-details {
     padding: 20px 25px;
@@ -8990,7 +8993,7 @@ section.hero-section  {
     margin-right: 30px;
 }
 .ajax-modal-container {
-    width: 400px;
+    width: 100%;
 }	
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
