@@ -19,15 +19,8 @@
                         </div>
                     </div>
                     <!--section -->
-                    <section id="sec2">
-                        {{-- <div class="container">
-                            <div class="section-title">
-                                <div class="section-title-separator"><span></span></div>
-                                <h2>Popular Destination</h2>
-                                <span class="section-separator"></span>
-                                <p>Explore some of the best tips from around the city from our partners and friends.</p>
-                            </div>
-						 </div> --}}
+                    <div id="sec2">
+                        
 						 <div class="container">
 						 	<div class="row">
 						 		
@@ -38,7 +31,7 @@
                                 <div class="gallery-item">
                                     <div class="grid-item-holder">
                                         <div class="listing-item-grid">
-                                            <div class="listing-counter"><span>79 </span> Hotels</div>
+                                            <div class="listing-counter"><span>{{ $state->properties_count}} </span> @if($state->properties_count > 1) Properties @else Property @endif</div>
                                             <a href="{{ route('front.state.show', ['slug' => $state->slug]) }}">
                                             <img  src="{{ asset($state->image ?? 'front-assets/images/city/1.jpg') }}"   alt="">
 
@@ -56,28 +49,13 @@
                                 @empty
                                 <p>No States to Show</p>
                                 @endforelse
-                                <!-- gallery-item-->
-                                <div class="gallery-item gallery-item-second">
-                                    <div class="grid-item-holder">
-                                        <div class="listing-item-grid">
-                                            <img  src="{{ asset('front-assets/images/city/3.jpg') }}"   alt="">
-                                            <div class="listing-counter"><span>43 </span> Hotels</div>
-                                            <div class="listing-item-cat">
-                                                <h3><a href="listing.html">Paris</a></h3>
-                                                <div class="weather-grid"   data-grcity="Paris"></div>
-                                                <div class="clearfix"></div>
-                                                <p>Constant care and attention to the patients makes good record</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- gallery-item end-->
+                                
                                 
                             </div>
 
 						 	</div>
 						 </div>
                             <!-- portfolio end -->
-                            <a href="listing.html" class="btn    color-bg">Explore All Cities<i class="fas fa-caret-right"></i></a>
-                    </section>
+                            {{-- <a href="listing.html" class="btn    color-bg">Explore All Cities<i class="fas fa-caret-right"></i></a> --}}
+                    </div>
                     <!-- section end -->

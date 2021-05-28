@@ -160,7 +160,7 @@
                     </section>
                     <!-- section end -->
                     <!--section -->
-                    <section id="sec2">
+                    {{-- <section id="sec2">
                         <div class="container">
                             <div class="section-title">
                                 <h2>Our Team</h2>
@@ -236,7 +236,7 @@
                                 <!-- team-item end  -->
                             </div>
                         </div>
-                    </section>
+                    </section> --}}
                     <!-- section end -->
                     <section class="parallax-section" data-scrollax-parent="true">
                         <div class="bg par-elem "  data-bg="{{ asset('front-assets/images/banners/about.jpg') }}" data-scrollax="properties: { translateY: '30%' }"></div>
@@ -253,6 +253,7 @@
                     <section>
                         <div class="container">
                             <div class="section-title">
+                                <div class="section-title-separator"><span></span></div>
                                 <h2>Testimonials</h2>
                                 <span class="section-separator"></span>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar.</p>
@@ -263,53 +264,52 @@
                         <div class="slider-carousel-wrap text-carousel-wrap fl-wrap">
                             <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
                             <div class="swiper-button-next sw-btn"><i class="fa fa-long-arrow-right"></i></div>
-                            <div class="text-carousel single-carousel cur_carousel-slider-container fl-wrap">
+                            <div class="text-carousel single-carousel fl-wrap">
                                 <!--slick-item -->
                                 <div class="slick-item">
                                     <div class="text-carousel-item">
-                                        <div class="popup-avatar"><img src="{{ asset('front-assets/images/avatar/1.jpg') }}" alt=""></div>
+                                        <div class="popup-avatar"><img src="{{ asset('front-assets/images/testimonial-user/1.jpg') }}" alt=""></div>
                                         <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
-                                        <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
-                                        <p> "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."</p>
-                                        <a href="#" class="testim-link">Via Facebook</a>
+                                        <div class="review-owner fl-wrap">Kashish Aneja  - <span>RJ, Red FM</span></div>
+                                        <p> "I booked a property in Manali with Offbeat Stays and undoubtedly, it ended up becoming my best decision after lockdown. From the peaceful state of mind, the breathtakingly beautiful views and location, the class-apart services provided to me and to paying heed to the tiniest of my requirements I simply cannot complain about a single thing. Can't wait to be back at it again."</p>
+                                        {{-- <a href="#" class="testim-link">Via Facebook</a> --}}
                                     </div>
                                 </div>
                                 <!--slick-item end -->
                                 <!--slick-item -->
                                 <div class="slick-item">
                                     <div class="text-carousel-item">
-                                        <div class="popup-avatar"><img src="{{ asset('front-assets/images/avatar/1.jpg') }}" alt=""></div>
+                                        <div class="popup-avatar"><img src="{{ asset('front-assets/images/testimonial-user/2.jpg') }}" alt=""></div>
                                         <div class="listing-rating card-popup-rainingvis" data-starrating2="4"> </div>
-                                        <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
-                                        <p> "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."</p>
-                                        <a href="#" class="testim-link">Via Facebook</a>
+                                        <div class="review-owner fl-wrap">Rythm Chaudhary  - <span>Software Engineer, TCS</span></div>
+                                        <p> "So after spending literally an eternity in this lockdown i was craving for a beach view property and of course along with the lavishness I deserved after all this while. I got in touch with off beat stays and the experience has been wonderfully inexplicable."</p>
+                                        {{-- <a href="#" class="testim-link">Via Facebook</a> --}}
                                     </div>
                                 </div>
                                 <!--slick-item end -->
                                 <!--slick-item -->
                                 <div class="slick-item">
                                     <div class="text-carousel-item">
-                                        <div class="popup-avatar"><img src="{{ asset('front-assets/images/avatar/1.jpg') }}" alt=""></div>
+                                        <div class="popup-avatar"><img src="{{ asset('front-assets/images/testimonial-user/3.jpg') }}" alt=""></div>
                                         <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
-                                        <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
-                                        <p> "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."</p>
-                                        <a href="#" class="testim-link">Via Facebook</a>
+                                        <div class="review-owner fl-wrap">Apoorva Sharma  - <span>Freelancer, SEO & SEM </span></div>
+                                        <p> "At first I was quite confused about this work from mountains thing as I was going to travel solo but later on over a period of time I made up my mind and booked my staycation with Offbeat Stays.  Got an amazing and cozy homestay in Himachal surrounded with lush green scenery and Himalayan range. The best part was the sunsets from my room balcony. Didn't really feels like you're away from home. I would really recommend it to all those seeking staycations around Himalayas."</p>
+                                        {{-- <a href="#" class="testim-link">Via Facebook</a> --}}
                                     </div>
                                 </div>
                                 <!--slick-item end -->
                                 <!--slick-item -->
                                 <div class="slick-item">
                                     <div class="text-carousel-item">
-                                        <div class="popup-avatar"><img src="{{ asset('front-assets/images/avatar/1.jpg') }}" alt=""></div>
+                                        <div class="popup-avatar"><img src="{{ asset('front-assets/images/testimonial-user/4.jpg') }}" alt=""></div>
                                         <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
-                                        <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
-                                        <p> "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."</p>
-                                        <a href="#" class="testim-link">Via Facebook</a>
+                                        <div class="review-owner fl-wrap">Parth Shukla  - <span>Auditing Executive, Deloitte</span></div>
+                                        <p> "You do not always want to be on a vacation at a really populous destination amidst the crowd. At times it is more about exploring the unexplored and connecting with the nature merely. And that's when I found this amazing mud house in Himachal through offbeat stays which was the exact crystal clear representation of the image I had painted in my mind."</p>
+                                        {{-- <a href="#" class="testim-link">Via Facebook</a> --}}
                                     </div>
                                 </div>
                                 <!--slick-item end -->
                             </div>
                         </div>
                         <!--slider-carousel-wrap end-->
-                        <div class="section-decor"></div>
                     </section>
