@@ -24,8 +24,12 @@
                                 <div class="home-intro">
                                     <div class="section-title-separator"><span></span></div>
                                     <h2>Offbeat Stays in India</h2>
-                                    <span class="section-separator"></span>                                    
-                                    <h3>The Best Stay options in offbeat destinations in India. Experiential Stays , Nature Therapy and for your memorable holiday experience.</h3>
+                                    <span class="section-separator"></span> 
+                                    <div id="rotate" style="font-size:22px; color: #fff;">
+                                        <div>It's Currently Under Construction</div>
+                                        <div>Were doing our best to Launch Asap</div>
+                                    </div>                                   
+                                    {{-- <h3>The Best Stay options in offbeat destinations in India. Experiential Stays , Nature Therapy and for your memorable holiday experience.</h3> --}}
                                 </div>
                                 @livewire('front.front-home-main-search-component')
                             </div>
@@ -403,9 +407,9 @@
                         <div class="container">
                             <div class="section-title">
                                 <div class="section-title-separator"><span></span></div>
-                                <h2>Testimonials</h2>
+                                <h2>What our Guest Says</h2>
                                 <span class="section-separator"></span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar.</p>
+                                <p>The biggest reward is to satisfy our guest and share their experience with us</p>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -566,3 +570,47 @@
                         </div>
                         <div class="section-decor"></div>
                     </section> --}}
+
+                    @push('scripts')
+                    <script type="text/javascript">
+            (function($){
+                $.fn.extend({ 
+                    rotaterator: function(options) {
+             
+                        var defaults = {
+                            fadeSpeed: 500,
+                            pauseSpeed: 100,
+                            child:null
+                        };
+                         
+                        var options = $.extend(defaults, options);
+                     
+                        return this.each(function() {
+                              var o =options;
+                              var obj = $(this);                
+                              var items = $(obj.children(), obj);
+                              items.each(function() {$(this).hide();})
+                              if(!o.child){var next = $(obj).children(':first');
+                              }else{var next = o.child;
+                              }
+                              $(next).fadeIn(o.fadeSpeed, function() {
+                                    $(next).delay(o.pauseSpeed).fadeOut(o.fadeSpeed, function() {
+                                        var next = $(this).next();
+                                        if (next.length == 0){
+                                                next = $(obj).children(':first');
+                                        }
+                                        $(obj).rotaterator({child : next, fadeSpeed : o.fadeSpeed, pauseSpeed : o.pauseSpeed});
+                                    })
+                                });
+                        });
+                    }
+                });
+            })(jQuery);
+            
+             $(document).ready(function() {
+                    $('#rotate').rotaterator({fadeSpeed:500, pauseSpeed:1500});
+             });        
+                 
+                 
+        </script>  
+                    @endpush

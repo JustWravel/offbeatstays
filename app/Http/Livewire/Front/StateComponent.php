@@ -25,7 +25,7 @@ class StateComponent extends Component
     public function render()
     {
     	$state = State::where('slug', $this->slug)->first();
-    	$properties = Property::where('state_id', $state->id)->paginate(8);
+    	$properties = Property::with('state', 'location', 'category')->where('state_id', $state->id)->paginate(8);
         return view('livewire.front.state-component', [
         				'state' => $state,
         				'properties' => $properties,

@@ -41,7 +41,7 @@
                                         <p>We strongly have our voices on the <b>#VocalForLocal</b> and hence we make an effort to connect your pleasant and an enjoyable stay with homely properties that are owned by generations of families and are family run properties, thereby provide them also with a social platform and make sure they have a voice and simultaneously provide a handcrafted, perfected and an exclusive experience for the <b>“Stayers”</b></p>
                                         <p>With destinations not spoken much, and with roads not taken that often, we aim to give you an experience that is not the usual one- We are with you to facilitate, provide and let you on a wild exploratory voyage into the wilderness, snows, the dense forests , the lofty hills and what not! Hop on for something which is truly <b>Offbeat</b> and off the maps!</p>
                                         
-                                        <a href="#sec2" class="btn  color-bg float-btn custom-scroll-link">View Our Team <i class="fal fa-users"></i></a>
+                                        {{-- <a href="#sec2" class="btn  color-bg float-btn custom-scroll-link">View Our Team <i class="fal fa-users"></i></a> --}}
                                     </div>
                                 </div>
                             </div>
@@ -50,52 +50,52 @@
                                 <!-- inline-facts -->
                                 <div class="inline-facts-wrap">
                                     <div class="inline-facts">
-                                        <i class="fal fa-users"></i>
+                                        <i class="fab fa-facebook"></i>
                                         <div class="milestone-counter">
                                             <div class="stats animaper">
-                                                <div class="num" data-content="0" data-num="254">154</div>
+                                                <div class="num" data-content="0" data-num="154">154</div>
                                             </div>
                                         </div>
-                                        <h6>New Visiters Every Week</h6>
+                                        <h6>Followers on Facebook</h6>
                                     </div>
                                 </div>
                                 <!-- inline-facts end -->
                                 <!-- inline-facts  -->
                                 <div class="inline-facts-wrap">
                                     <div class="inline-facts">
-                                        <i class="fal fa-thumbs-up"></i>
+                                        <i class="fab fa-instagram"></i>
                                         <div class="milestone-counter">
                                             <div class="stats animaper">
-                                                <div class="num" data-content="0" data-num="12168">12168</div>
+                                                <div class="num" data-content="0" data-num="3000">3000</div>
                                             </div>
                                         </div>
-                                        <h6>Happy customers every year</h6>
+                                        <h6>Instagram Followers</h6>
                                     </div>
                                 </div>
                                 <!-- inline-facts end -->
                                 <!-- inline-facts  -->
                                 <div class="inline-facts-wrap">
                                     <div class="inline-facts">
-                                        <i class="fal fa-award"></i>
+                                        <i class="fab fa-linkedin"></i>
                                         <div class="milestone-counter">
                                             <div class="stats animaper">
-                                                <div class="num" data-content="0" data-num="172">172</div>
+                                                <div class="num" data-content="0" data-num="200">200</div>
                                             </div>
                                         </div>
-                                        <h6>Won Awards</h6>
+                                        <h6>Followers on LinkedIn</h6>
                                     </div>
                                 </div>
                                 <!-- inline-facts end -->
                                 <!-- inline-facts  -->
                                 <div class="inline-facts-wrap">
                                     <div class="inline-facts">
-                                        <i class="fal fa-hotel"></i>
+                                        <i class="fab fa-google"></i>
                                         <div class="milestone-counter">
                                             <div class="stats animaper">
-                                                <div class="num" data-content="0" data-num="732">732</div>
+                                                <div class="num" data-content="0" data-num="100">100</div>
                                             </div>
                                         </div>
-                                        <h6>New Listing Every Week</h6>
+                                        <h6>Google Reviews</h6>
                                     </div>
                                 </div>
                                 <!-- inline-facts end -->
@@ -238,7 +238,7 @@
                         </div>
                     </section> --}}
                     <!-- section end -->
-                    <section class="parallax-section" data-scrollax-parent="true">
+                    {{-- <section class="parallax-section" data-scrollax-parent="true">
                         <div class="bg par-elem "  data-bg="{{ asset('front-assets/images/banners/about.jpg') }}" data-scrollax="properties: { translateY: '30%' }"></div>
                         <div class="overlay"></div>
                         <!--container-->
@@ -249,14 +249,14 @@
                                 <a class="btn  color-bg" href="contacts.html">Get in Touch <i class="fal fa-envelope"></i></a>
                             </div>
                         </div>
-                    </section>
+                    </section> --}}
                     <section>
                         <div class="container">
                             <div class="section-title">
                                 <div class="section-title-separator"><span></span></div>
-                                <h2>Testimonials</h2>
+                                <h2>What our Guest Says</h2>
                                 <span class="section-separator"></span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar.</p>
+                                <p>The biggest reward is to satisfy our guest and share their experience with us.</p>
                             </div>
                         </div>
                         <div class="clearfix"></div>

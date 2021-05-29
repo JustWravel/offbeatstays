@@ -21,7 +21,7 @@ class CategoryComponent extends Component
     public function render()
     {
         $category = Category::where('slug', $this->slug)->first();
-        $properties = Property::where('category_id', $category->id)->paginate(8);
+        $properties = Property::where('category_id', $category->id)->paginate(1);
         return view('livewire.front.category-component', [
                         'category' => $category,
                         'properties' => $properties,

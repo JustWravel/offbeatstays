@@ -39,7 +39,7 @@
                                 <div class="gallery-item">
                                     <div class="grid-item-holder">
                                         <div class="listing-item-grid">
-                                            <div class="listing-counter"><span>79 </span> Hotels</div>
+                                            <div class="listing-counter"><span>{{$category->properties_count}} </span> Hotels</div>
                                             <img  src="{{ asset($category->image ?? 'front-assets/images/city/1.jpg') }}"   alt="">
                                             <div class="listing-item-cat">
                                                 <h3><a href="{{ route('front.category.show', ['slug' => $category->slug]) }}">{{ $category->name }}</a></h3>
@@ -54,28 +54,13 @@
                                 @empty
                                 <p>No States to Show</p>
                                 @endforelse
-                                <!-- gallery-item-->
-                                <div class="gallery-item gallery-item-second">
-                                    <div class="grid-item-holder">
-                                        <div class="listing-item-grid">
-                                            <img  src="{{ asset('front-assets/images/city/3.jpg') }}"   alt="">
-                                            <div class="listing-counter"><span>43 </span> Hotels</div>
-                                            <div class="listing-item-cat">
-                                                <h3><a href="listing.html">Paris</a></h3>
-                                                <div class="weather-grid"   data-grcity="Paris"></div>
-                                                <div class="clearfix"></div>
-                                                <p>Constant care and attention to the patients makes good record</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- gallery-item end-->
+                                
                                 
                             </div>
 
 						 	</div>
 						 </div>
                             <!-- portfolio end -->
-                            <a href="listing.html" class="btn    color-bg">Explore All Cities<i class="fas fa-caret-right"></i></a>
+                            {{-- <a href="listing.html" class="btn    color-bg">Explore All Cities<i class="fas fa-caret-right"></i></a> --}}
                     </section>
                     <!-- section end -->

@@ -7,7 +7,7 @@
                             <div class="col-md-6">
                                 <div class="subscribe-header">
                                     <h3>Subscribe</h3>
-                                    <p>Want to be notified when we launch a new template or an udpate. Just sign up and we'll send you a notification by email.</p>
+                                    <p>Get Exclusive deals and offers on Stays on 200+ locations across India. Special Offers on LoongStays and Staycations.</p>
                                 </div>
                             </div>
                             <div class="col-md-1"></div>
@@ -155,10 +155,10 @@
                         <!--footer-widget -->
                         <div class="footer-widget">
                             <div class="row">
-                                <div class="col-md-4"><a class="contact-btn color-bg" href="contact.html">Get In Touch<i class="fal fa-envelope"></i></a></div>
+                                <div class="col-md-4"><a class="contact-btn color-bg" href="{{route('front.contact')}}">Get In Touch<i class="fal fa-envelope"></i></a></div>
                                 <div class="col-md-8">
                                     <div class="customer-support-widget fl-wrap">
-                                        <h4>Customer support : </h4>
+                                        <h4>For Queries related to Long Stays and Experiences, you can reach out to us</h4>
                                         <a href="tel:+919667051161" class="cs-mumber">+91 966 705 1161</a>
                                         <a href="tel:+919667051161" class="cs-mumber-button color2-bg">Call Now <i class="far fa-phone-volume"></i></a>
                                     </div>

@@ -33,7 +33,7 @@ class CategoryItemComponent extends Component
     public function render()
     {
     	$category = Category::where('slug', $this->slug)->first();
-    	$properties = Property::where('category_id', $category->id)->paginate($this->perPage);
+    	$properties = Property::with('state', 'location', 'category', 'images')->where('category_id', $category->id)->paginate($this->perPage);
     	
         return view('livewire.front.category-item-component', [
         				'category' => $category,

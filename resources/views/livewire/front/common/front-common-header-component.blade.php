@@ -79,7 +79,7 @@
                                 	
                                 	
                                     <li>
-                                        <a href="{{ route('front.category.all') }}" class="{{ (strpos(Route::currentRouteName(), 'front.category') === 0 ) ? 'act-link' : '' }}">Categories <i class="fas fa-caret-down"></i></a>
+                                        <a href="{{ route('front.category.all') }}" class="{{ (strpos(Route::currentRouteName(), 'front.category') === 0 ) ? 'act-link' : '' }}">All Stay Category <i class="fas fa-caret-down"></i></a>
                                         <!--second level -->
                                         <ul>
                                             <li>
