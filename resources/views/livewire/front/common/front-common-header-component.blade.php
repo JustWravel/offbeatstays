@@ -59,11 +59,6 @@
 	                        @endauth
 
                         </div> --}}
-                        <div class="home-btn home-btn1">
-                            <a href="{{ route('front.home')}}"><img src="{{ asset('front-assets/images/logo.png') }}" alt=""></a>
-                        </div>
-                        <div class="home-btn"><a href="{{ route('front.home')}}"><i class="fas fa-home"></i></a></div>
-
                         <!-- nav-button-wrap-->
                         <div class="nav-button-wrap color-bg">
                             <div class="nav-button">
@@ -71,6 +66,11 @@
                             </div>
                         </div>
                         <!-- nav-button-wrap end-->
+                        <div class="home-btn home-btn1">
+                            <a href="{{ route('front.home')}}"><img src="{{ asset('front-assets/images/logo.png') }}" alt=""></a>
+                        </div>
+                        <div class="home-btn"><a href="{{ route('front.home')}}"><i class="fas fa-home"></i></a></div>
+
                         
                         <!--  navigation -->
                         <div class="nav-holder main-menu">

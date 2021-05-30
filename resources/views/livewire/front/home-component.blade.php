@@ -28,8 +28,11 @@
                                     <h2>Offbeat Stays in India</h2>
                                     <span class="section-separator"></span> 
                                     <div id="rotate">
-                                        <div>It's Currently Under Construction</div>
-                                        <div>Were doing our best to Launch Asap</div>
+                                        <div>A Collection of 786 Stays</div>
+                                        <div>Home Away from Home</div>
+                                        <div>Find your perfect Staycation</div>
+                                        <div>OffbeatStays at Offbeat Destinations</div>
+                                        <div>Choose your Work with View</div>
                                     </div>                                   
                                     {{-- <h3>The Best Stay options in offbeat destinations in India. Experiential Stays , Nature Therapy and for your memorable holiday experience.</h3> --}}
                                 </div>
@@ -273,7 +276,7 @@
                     </section> --}}
                     <!-- section end -->
                     <!--section -->
-                    <section>
+                    {{-- <section>
                         <div class="container">
                             <div class="section-title">
                                 <div class="section-title-separator"><span></span></div>
@@ -370,7 +373,7 @@
                                 <!-- inline-facts end -->
                             </div>
                         </div>
-                    </section>
+                    </section> --}}
                     <!-- section end -->
                     <!--section -->
                     {{-- <section class="color-bg hidden-section">
@@ -491,7 +494,7 @@
                     </section> --}}
                     <!-- section end -->
                     <!--section -->                       
-                    <section class=" middle-padding">
+                    <section class="grey-blue-bg middle-padding">
                         <div class="container">
                             <div class="section-title">
                                 <div class="section-title-separator"><span></span></div>
@@ -523,7 +526,7 @@
                                 @endforeach
                                 
                             </div>
-                            <a href="{{route('front.blog.all')}}" class="btn    color-bg ">Read All News<i class="fas fa-caret-right"></i></a>
+                            <a href="{{route('front.blog.all')}}" class="btn    color-bg ">Read All Blogs<i class="fas fa-caret-right"></i></a>
                         </div>
                         <div class="section-decor"></div>
                     </section>

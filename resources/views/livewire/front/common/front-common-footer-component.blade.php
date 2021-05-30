@@ -112,7 +112,7 @@
                             <!--footer-widget -->
                             <div class="col-md-4">
                                 <div class="footer-widget fl-wrap">
-                                    <h3>Our Last News</h3>
+                                    <h3>Our Latest Blogs</h3>
                                     <div class="widget-posts fl-wrap">
                                         <ul>
                                             @foreach($latestpost as $blog)
@@ -133,9 +133,33 @@
                             <!--footer-widget -->
                             <div class="col-md-4">
                                 <div class="footer-widget fl-wrap">
-                                    <h3>Our  Twitter</h3>
-                                    <div id="footer-twiit" class="fl-wrap"></div>
-                                    <a href="#" class="twitter-link" target="_blank">Follow</a>
+                                    <h3>Links</h3>
+                                    <div class="widget-links fl-wrap">
+                                        <p>Categories</p>
+                                        <ul>
+                                            @foreach($categories as $category)
+                                            <li class="">
+                                                <a href="{{ route('front.category.show', ['slug'=> $category->slug]) }}"  class="">{{ $category->name }} - ( {{$category->properties_count}} )</a>
+                                                
+                                            </li>
+                                            @endforeach
+                                            
+                                        </ul>
+                                        
+                                        <p>&nbsp;</p>
+                                        <p>States:</p>
+                                        <ul>
+                                            @foreach($states as $state)
+                                            <li class="">
+                                                <a href="{{ route('front.state.show', ['slug'=> $state->slug]) }}"  class="">{{ $state->name }} - ( {{$state->properties_count}} )</a>
+                                                
+                                            </li>
+                                            @endforeach
+                                            
+                                        </ul>
+                                    </div>
+                                    
+                                    
                                 </div>
                             </div>
                             <!--footer-widget end-->

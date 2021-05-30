@@ -538,7 +538,7 @@ transform: rotate(360deg);
 	float: right;
     color: #fff !important;
     cursor: pointer;
-    margin-right: 40px;
+    margin-right: 20px;
     position: relative;
     top: 0;
     height: 50px;
@@ -1678,6 +1678,31 @@ nav li ul a:before , nav li ul a:after {
 	margin-bottom:10px;
 	width:100%;
 	float:left;
+}
+.footer-widget .widget-links p{
+	padding: 6px 0;
+    margin-bottom: 2px;
+    width: 100%;
+    display: block;
+    float: left;
+    text-align: justify;
+    color: #fff;
+    font-size: 16px;
+}
+
+.footer-widget .widget-links li{
+	padding: 4px 0;
+    margin-bottom: 2px;
+    width: 50%;
+    float: left;
+    text-align: justify;
+}
+
+.footer-widget .widget-links li a{
+	color: #fff;
+	font-size: 13px;
+	font-weight: 700;
+
 }
 .box-widget-content .widget-posts li {
 	border-bottom:1px solid #eee;
@@ -8800,6 +8825,7 @@ section.hero-section  {
 }
 .nav-button-wrap   {
 	margin-left:10px;
+	margin-right:10px;
 }
 .show-search-button {
     width: 60px;
