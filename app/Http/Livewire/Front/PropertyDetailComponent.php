@@ -12,11 +12,17 @@ class PropertyDetailComponent extends Component
 	public $slug;
     public $room_id = 1;
     public $property;
+    public $similar_properties;
 
 	public function mount($slug)
 	{
         $this->slug = $slug;
-        $this->property = Property::where('slug', $this->slug)->first();
+        $this->property = Property::with(
+            'state','location', 'category', 'image'
+        )->where('slug', $this->slug)->first();
+        $this->similar_properties = Property::with(
+            'state','location', 'category', 'image'
+        )->where('state_id', $this->property->state->id)->take(4)->get();
 		
         
 	}

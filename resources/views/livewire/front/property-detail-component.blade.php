@@ -19,7 +19,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="col-md-5">
+                                    {{-- <div class="col-md-5">
                                         <!--  list-single-hero-details-->
                                         <div class="list-single-hero-details fl-wrap">
                                             <!--  list-single-hero-rating-->
@@ -79,7 +79,7 @@
                                             <!--  list-single-hero-links end-->                                            
                                         </div>
                                         <!--  list-single-hero-details  end-->
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="breadcrumbs-hero-buttom fl-wrap">
                                     <div class="breadcrumbs">
@@ -114,7 +114,7 @@
                                         <li><a href="#sec2">Details</a></li>
                                         <li><a href="#sec3">Amenities</a></li>
                                         <li><a href="#sec4">Rooms</a></li>
-                                        <li><a href="#sec5">Reviews</a></li>
+                                        {{-- <li><a href="#sec5">Reviews</a></li> --}}
                                     </ul>
                                 </nav>
                                 {{-- <a href="#" class="show-hidden-map">  <span>On The Map</span> <i class="fal fa-map-marked-alt"></i></a> --}}
@@ -135,9 +135,9 @@
                                                 <div class="share-holder fixed-scroll-column-share-container">
                                                     <div class="share-container  isShare"></div>
                                                 </div>
-                                                <a class="fc-button custom-scroll-link" href="#sec6"><i class="far fa-comment-alt-check"></i> <span>  Add review </span></a>
-                                                <a class="fc-button" href="#"><i class="far fa-heart"></i> <span>Save</span></a>
-                                                <a class="fc-button" href="booking-single.html"><i class="far fa-bookmark"></i> <span> Book Now </span></a>
+                                                {{-- <a class="fc-button custom-scroll-link" href="#sec6"><i class="far fa-comment-alt-check"></i> <span>  Add review </span></a> --}}
+                                                {{-- <a class="fc-button" href="#"><i class="far fa-heart"></i> <span>Save</span></a> --}}
+                                                {{-- <a class="fc-button" href="booking-single.html"><i class="far fa-bookmark"></i> <span> Book Now </span></a> --}}
                                             </div>
                                         </div>
                                         <!-- fixed-scroll-column end   -->
@@ -145,7 +145,10 @@
                                             <div class="single-slider-wrapper fl-wrap">
                                                 <div class="slider-for fl-wrap"  >
                                                 	@foreach($property->images as $property_image)
-                                                    <div class="slick-slide-item"><img src="{{$property_image->name}}" alt="{{$property_image->name}}"></div>
+                                                    <div class="slick-slide-item">
+                                                        <img src="{{$property_image->name}}" alt="{{$property_image->caption}}">
+                                                        @if($property_image->caption)<figcaption class="caption">{{$property_image->caption}}</figcaption>@endif
+                                                    </div>
                                                     @endforeach
                                                 </div>
                                                 <div class="swiper-button-prev sw-btn"><i class="fal fa-long-arrow-left"></i></div>
@@ -167,7 +170,7 @@
                                                     <i class="fal fa-bed"></i>
                                                     <div class="milestone-counter">
                                                         <div class="stats animaper">
-                                                            45
+                                                            {{$property->totalrooms}}
                                                         </div>
                                                     </div>
                                                     <h6>Hotel Rooms</h6>
@@ -220,7 +223,7 @@
                                                 <h3>About Hotel </h3>
                                             </div>
                                             {!! $property->description!!}
-                                            <a href="https://vimeo.com/70851162" class="btn flat-btn color-bg big-btn float-btn image-popup">Video Presentation <i class="fal fa-play"></i></a>
+                                            {{-- <a href="https://vimeo.com/70851162" class="btn flat-btn color-bg big-btn float-btn image-popup">Video Presentation <i class="fal fa-play"></i></a> --}}
                                         </div>
                                         <!--   list-single-main-item end -->
                                         <!--   list-single-main-item -->
@@ -542,20 +545,21 @@
                                                     </div>
                                                     <div class="box-widget-list">
                                                         <ul>
-                                                            <li><span><i class="fal fa-map-marker"></i> Adress :</span> <a href="#">USA 27TH Brooklyn NY</a></li>
-                                                            <li><span><i class="fal fa-phone"></i> Phone :</span> <a href="#">+7(123)987654</a></li>
-                                                            <li><span><i class="fal fa-envelope"></i> Mail :</span> <a href="#">AlisaNoory@domain.com</a></li>
-                                                            <li><span><i class="fal fa-browser"></i> Website :</span> <a href="#">themeforest.net</a></li>
+                                                            {{-- <li><span><i class="fal fa-map-marker"></i> Adress :</span> <a href="#">USA 27TH Brooklyn NY</a></li> --}}
+                                                            <li><span><i class="fal fa-phone-volume"></i> Phone :</span> <a href="tel:+919667051161">+91 96670 51161</a></li>
+                                                            <li><span><i class="fal fa-phone-volume"></i> Phone :</span> <a href="tel:+918882204145">+91 88822 04145</a></li>
+                                                            <li><span><i class="fal fa-envelope"></i> Mail :</span> <a href="#">info@offbeatstays.in</a></li>
+                                                            {{-- <li><span><i class="fal fa-browser"></i> Website :</span> <a href="#">themeforest.net</a></li> --}}
                                                         </ul>
                                                     </div>
-                                                    <div class="list-widget-social">
+                                                    {{-- <div class="list-widget-social">
                                                         <ul>
                                                             <li><a href="#" target="_blank" ><i class="fab fa-facebook-f"></i></a></li>
                                                             <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
                                                             <li><a href="#" target="_blank" ><i class="fab fa-vk"></i></a></li>
                                                             <li><a href="#" target="_blank" ><i class="fab fa-instagram"></i></a></li>
                                                         </ul>
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
                                             </div>
                                         </div>
@@ -653,37 +657,23 @@
                                             <div class="box-widget">
                                                 <div class="box-widget-content">
                                                     <div class="box-widget-item-header">
-                                                        <h3>Similar Listings</h3>
+                                                        <h3>Similar Properties</h3>
                                                     </div>
                                                     <div class="widget-posts fl-wrap">
                                                         <ul>
+                                                            
+                                                            @foreach($similar_properties as $similar)
                                                             <li class="clearfix">
-                                                                <a href="#"  class="widget-posts-img"><img src="{{asset('front-assets/images/gal/1.jpg')}}" class="respimg" alt=""></a>
+                                                                <a href="{{route('front.property.show', ['state'=>$similar->state->slug, 'location'=>$similar->location->slug, 'category'=>$similar->category->slug, 'slug'=>$similar->slug])}}" title="{{$similar->name}}"  class="widget-posts-img"><img src="{{$similar->image[0]->name}}" class="respimg" alt="{{$similar->name}}"></a>
                                                                 <div class="widget-posts-descr">
-                                                                    <a href="#" title="">Park Central</a>
-                                                                    <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div>
-                                                                    <div class="geodir-category-location fl-wrap"><a href="#"><i class="fas fa-map-marker-alt"></i> 40 JOURNAL SQUARE PLAZA, NJ, US</a></div>
-                                                                    <span class="rooms-price">$80 <strong> /  Awg</strong></span>
+                                                                    <a href="{{route('front.property.show', ['state'=>$similar->state->slug, 'location'=>$similar->location->slug, 'category'=>$similar->category->slug, 'slug'=>$similar->slug])}}" title="{{$similar->name}}">{{$similar->name}}</a>
+                                                                    {{-- <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div> --}}
+                                                                    <div class="geodir-category-location fl-wrap"><a href="#"><i class="fas fa-map-marker-alt"></i> {{$similar->location->name}}, {{$similar->state->name}}</a></div>
+                                                                    {{-- <span class="rooms-price"><i class="far fa-rupee-sign"></i>{{$similar->price}} <strong> /  Awg</strong></span> --}}
                                                                 </div>
                                                             </li>
-                                                            <li class="clearfix">
-                                                                <a href="#"  class="widget-posts-img"><img src="{{asset('front-assets/images/gal/1.jpg')}}" class="respimg" alt=""></a>
-                                                                <div class="widget-posts-descr">
-                                                                    <a href="#" title="">Holiday Home</a>
-                                                                    <div class="listing-rating card-popup-rainingvis" data-starrating2="3"></div>
-                                                                    <div class="geodir-category-location fl-wrap"><a href="#"><i class="fas fa-map-marker-alt"></i> 75 PRINCE ST, NY, USA</a></div>
-                                                                    <span class="rooms-price">$50 <strong> /   Awg</strong></span>
-                                                                </div>
-                                                            </li>
-                                                            <li class="clearfix">
-                                                                <a href="#"  class="widget-posts-img"><img src="{{asset('front-assets/images/gal/1.jpg')}}" class="respimg" alt=""></a>
-                                                                <div class="widget-posts-descr">
-                                                                    <a href="#" title="">Moonlight Hotel</a>
-                                                                    <div class="listing-rating card-popup-rainingvis" data-starrating2="4"></div>
-                                                                    <div class="geodir-category-location fl-wrap"><a href="#"><i class="fas fa-map-marker-alt"></i>  70 BRIGHT ST NEW YORK, USA</a></div>
-                                                                    <span class="rooms-price">$105 <strong> /  Awg</strong></span>
-                                                                </div>
-                                                            </li>
+                                                            @endforeach
+                                                            
                                                         </ul>
                                                         <a class="widget-posts-link" href="#">See All Listing <i class="fal fa-long-arrow-right"></i> </a>
                                                     </div>

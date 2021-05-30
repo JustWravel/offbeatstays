@@ -23,6 +23,7 @@
         <link rel="shortcut icon" href="{{ asset('front-assets/images/favicon.ico') }}">
 
         @livewireStyles
+        @livewire('front.common.front-common-analytics-code-component')
     </head>
     <body>
         <!--loader-->
@@ -168,7 +169,7 @@
         <script type="text/javascript" src="{{ asset('front-assets/js/plugins.js') }}"></script>
         <script type="text/javascript" src="{{ asset('front-assets/js/scripts.js') }}"></script>
 
-        {{-- <script src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEYHERE&libraries=places&callback=initAutocomplete"></script>  --}}
+        {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwJSRi0zFjDemECmFl9JtRj1FY7TiTRRo&libraries=places&callback=initAutocomplete"></script>  --}}
         {{-- <script type="text/javascript" src="{{ asset('front-assets/js/map-single.js') }}"></script>          --}}
         @livewireScripts
         @stack('scripts')

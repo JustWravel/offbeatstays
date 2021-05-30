@@ -81,4 +81,10 @@ class Property extends Model
         return PropertyRoom::where('property_id', $this->id)->get()->min('cost_per_night');
         
     }
+
+    public function getTotalroomsAttribute()
+    {
+        return PropertyRoom::where('property_id', $this->id)->get()->sum('number_of_rooms');
+        
+    }
 }
