@@ -5,12 +5,12 @@
         <meta charset="UTF-8">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'OffBeat Stays') }}</title>
+        <title>@yield('meta_title', config('app.name', 'OffBeat Stays'))</title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="robots" content="index, follow"/>
-        <meta name="keywords" content=""/>
-        <meta name="description" content=""/>
+        <meta name="keywords" content="@yield('meta_keywords')"/>
+        <meta name="description" content="@yield('meta_description')"/>
         <!--=============== css  ===============-->
         {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />

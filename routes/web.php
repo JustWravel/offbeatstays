@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\adminAmenityController;
 use App\Http\Controllers\Admin\adminFeatureController;
 use App\Http\Controllers\Admin\adminPropertyController;
 
+use App\Http\Controllers\Admin\adminBlogPostController;
+
 //For components
 use App\Http\Livewire\Front\HomeComponent;
 use App\Http\Livewire\Front\AboutComponent;
@@ -20,6 +22,9 @@ use App\Http\Livewire\Front\AllCategoriesComponent;
 use App\Http\Livewire\Front\CategoryComponent;
 use App\Http\Livewire\Front\LocationComponent;
 use App\Http\Livewire\Front\PropertyDetailComponent;
+
+use App\Http\Livewire\Front\FrontBlogPostComponent;
+use App\Http\Livewire\Front\FrontAllBlogPostsComponent;
 
 
 /*
@@ -59,6 +64,12 @@ Route::get('/property/{state}/{location}/{category}/{slug}', PropertyDetailCompo
 Route::get('/about', AboutComponent::class)->name('front.about');
 Route::get('/contact', ContactUsComponent::class)->name('front.contact');
 
+
+Route::get('/blogs', FrontAllBlogPostsComponent::class)->name('front.blog.all');
+Route::get('/blog/{slug}', FrontBlogPostComponent::class)->name('front.blog.detail');
+
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
@@ -84,8 +95,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'verified'])
         'amenity' => adminAmenityController::class,
         'feature' => adminFeatureController::class,
 	    'property' => adminPropertyController::class,
-	    // 'posts' => PostController::class,
+	    'blogpost' => adminBlogPostController::class,
 	]);
+    Route::get('blog/import', [adminBlogPostController::class, 'import'])->name('blog.import');
 });
 
 

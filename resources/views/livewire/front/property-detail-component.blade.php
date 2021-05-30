@@ -1,4 +1,7 @@
-<div wire:ignore.self ><section class="list-single-hero" data-scrollax-parent="true" id="sec1">
+@section('meta_title', $property->meta_title ?? $property->name)
+@section('meta_description', 'About us - Offbeat Stays')
+@section('meta_keywords', 'About us - Offbeat Stays')
+                    <div wire:ignore.self ><section class="list-single-hero" data-scrollax-parent="true" id="sec1">
                         <div class="bg par-elem "  data-bg="{{ $property->images[0]->name ?? asset('front-assets/images/bg/1.jpg')}}" style="background-image: url('{{ $property->images[0]->name ?? asset('front-assets/images/bg/1.jpg')}}');" data-scrollax="properties: { translateY: '30%' }"></div>
                         <div class="list-single-hero-title fl-wrap">
                             <div class="container">

@@ -1,4 +1,9 @@
-					<section class="parallax-section single-par" data-scrollax-parent="true">
+					@section('meta_title', 'About us - Offbeat Stays')
+                    @section('meta_description', 'About us - Offbeat Stays')
+                    @section('meta_keywords', 'About us - Offbeat Stays')
+                    
+                   
+                    <section class="parallax-section single-par" data-scrollax-parent="true">
                         <div class="bg par-elem "  data-bg="{{ asset('front-assets/images/banners/about.jpg') }}" data-scrollax="properties: { translateY: '30%' }"></div>
                         <div class="overlay"></div>
                         <div class="container">

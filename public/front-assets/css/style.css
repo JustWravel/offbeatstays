@@ -2128,6 +2128,9 @@ section.hero-section   {
 	color:#fff;
 	font-family: 'Quicksand', sans-serif;
 }
+#rotate{
+	font-size:22px; color: #fff;
+}
 .home-intro-card {
 	margin-top:50px;
 }
@@ -2184,11 +2187,12 @@ section.hero-section   {
 	float:left;
 	width:50%;
 	box-sizing:border-box;
-	border-left:1px solid #eee;
+	/*border-left:1px solid #eee;*/
 	height:50px;
 	position:relative;
 	background:#fff;
 	text-align: left;
+	border-radius: 4px;
 }
 .main-search-input-item .select2 {
 	
@@ -2196,11 +2200,16 @@ section.hero-section   {
 	    width: 100% !important;
 	
 }
+.select2-results__option {
+    padding: 13px;
+    border-bottom: 1px solid #eee;
+}
 .select2-selection__rendered {
     line-height: 50px !important;
 }
 .select2-container .select2-selection--single {
     height: 50px !important;
+    border: none;
 }
 .select2-selection__arrow {
     height: 50px !important;
@@ -8801,6 +8810,9 @@ section.hero-section  {
 }
 .home-intro h2 , .home-intro-card h3   , section.parallax-section .section-title.big-title h2  , .list-single-hero-title h2 {
 	font-size:24px;
+}
+#rotate{
+	font-size: 16px;
 }
 section.hero-section  {
 	padding:50px 0 100px;

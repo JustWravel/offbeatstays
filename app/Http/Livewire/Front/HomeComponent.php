@@ -6,15 +6,19 @@ use Livewire\Component;
 use Illuminate\Support\Facades\Http;
 use App\Models\State;
 use App\Models\Property;
+use App\Models\BlogPost;
 use \Cache;
 
 class HomeComponent extends Component
 {
 	public $popular_destinations;
 	public $recently_added_properties;
+	public $latestblogpost;
+
 
 	public function mount()
 	{
+		$this->latestblogpost = BlogPost::latest()->take(3)->get();
 		$this->popular_destinations = State::has('properties')->withCount('properties')->orderBy('properties_count', 'desc')->take(6)->get();
 
 		$this->recently_added_properties = Cache::remember('articles', 60, function() {

@@ -114,29 +114,18 @@
                                 <div class="footer-widget fl-wrap">
                                     <h3>Our Last News</h3>
                                     <div class="widget-posts fl-wrap">
-                                        {{-- <ul>
+                                        <ul>
+                                            @foreach($latestpost as $blog)
                                             <li class="clearfix">
-                                                <a href="#"  class="widget-posts-img"><img src="{{ asset('front-assets/images/all/1.jpg') }}" class="respimg" alt=""></a>
+                                                <a href="{{ route('front.blog.detail', ['slug'=> $blog->slug]) }}"  class="widget-posts-img"><img src="{{ $blog->image }}" class="respimg" alt="" style="height: 70px;"></a>
                                                 <div class="widget-posts-descr">
-                                                    <a href="#" title="">Vivamus dapibus rutrum</a>
-                                                    <span class="widget-posts-date"> 21 Mar 09.05 </span>
+                                                    <a href="{{ route('front.blog.detail', ['slug'=> $blog->slug]) }}" title="">{{ $blog->name }}</a>
+                                                    <span class="widget-posts-date"> {{ $blog->created_at->diffForHumans() }} </span>
                                                 </div>
                                             </li>
-                                            <li class="clearfix">
-                                                <a href="#"  class="widget-posts-img"><img src="{{ asset('front-assets/images/all/1.jpg') }}" class="respimg" alt=""></a>
-                                                <div class="widget-posts-descr">
-                                                    <a href="#" title=""> In hac habitasse platea</a>
-                                                    <span class="widget-posts-date"> 7 Mar 18.21 </span>
-                                                </div>
-                                            </li>
-                                            <li class="clearfix">
-                                                <a href="#"  class="widget-posts-img"><img src="{{ asset('front-assets/images/all/1.jpg') }}" class="respimg" alt=""></a>
-                                                <div class="widget-posts-descr">
-                                                    <a href="#" title="">Tortor tempor in porta</a>
-                                                    <span class="widget-posts-date"> 7 Mar 16.42 </span>
-                                                </div>
-                                            </li>
-                                        </ul> --}}
+                                            @endforeach
+                                            
+                                        </ul>
                                     </div>
                                 </div>
                             </div>

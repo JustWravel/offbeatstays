@@ -1,4 +1,6 @@
-                    <section class="hero-section" data-scrollax-parent="true" id="sec1">
+@section('meta_title', 'OffbeatStays - A Collection of 786 properties.')
+                    @section('meta_description', 'OffbeatStays - A Collection of 786 properties.')
+                    @section('meta_keywords', 'Offbeat Stays, OffbeatStays, Home Stays, Resorts, Villa, Hostel, Workcations, Staycations')                    <section class="hero-section" data-scrollax-parent="true" id="sec1">
                         <div class="hero-parallax">
                         <div class="slideshow-container" data-scrollax="properties: { translateY: '200px' }" >
                             <!-- slideshow-item -->	
@@ -25,7 +27,7 @@
                                     <div class="section-title-separator"><span></span></div>
                                     <h2>Offbeat Stays in India</h2>
                                     <span class="section-separator"></span> 
-                                    <div id="rotate" style="font-size:22px; color: #fff;">
+                                    <div id="rotate">
                                         <div>It's Currently Under Construction</div>
                                         <div>Were doing our best to Launch Asap</div>
                                     </div>                                   
@@ -489,7 +491,7 @@
                     </section> --}}
                     <!-- section end -->
                     <!--section -->                       
-                    {{-- <section class=" middle-padding">
+                    <section class=" middle-padding">
                         <div class="container">
                             <div class="section-title">
                                 <div class="section-title-separator"><span></span></div>
@@ -498,78 +500,33 @@
                                 <p>Browse the latest articles from our blog.</p>
                             </div>
                             <div class="row home-posts">
+                                @foreach($latestblogpost as $blog)
                                 <div class="col-md-4">
                                     <article class="card-post">
                                         <div class="card-post-img fl-wrap">
-                                            <a href="blog-single.html"><img  src="{{ asset('front-assets/images/all/1.jpg') }}"   alt=""></a>
+                                            <a href="{{route('front.blog.detail', ['slug'=>$blog->slug])}}"><img  src="{{ $blog->image }}"   alt="{{ $blog->name }}" style="height: 200px;"></a>
                                         </div>
                                         <div class="card-post-content fl-wrap">
-                                            <h3><a href="blog-single.html">Blog Post Title.</a></h3>
-                                            <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. </p>
-                                            <div class="post-author"><a href="#"><img src="{{ asset('front-assets/images/avatar/1.jpg') }}" alt=""><span>By , Mery Lynn</span></a></div>
+                                            <h3><a href="{{route('front.blog.detail', ['slug'=>$blog->slug])}}">{{ $blog->name }}</a></h3>
+                                            {{-- <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. </p> --}}
+                                            <div class="post-author"><a href="#"><img src="{{ $blog->author->profile_photo_url }}" alt="{{ $blog->author->name }}"><span>By , {{$blog->author->name}}</span></a></div>
                                             <div class="post-opt">
                                                 <ul>
-                                                    <li><i class="fal fa-calendar"></i> <span>25 April 2018</span></li>
-                                                    <li><i class="fal fa-eye"></i> <span>264</span></li>
-                                                    <li><i class="fal fa-tags"></i> <a href="#">Design</a>  </li>
+                                                    <li><i class="fal fa-calendar"></i> <span>{{ date('d-m-Y', strtotime($blog->created_at)) }}</span></li>
+                                                    {{-- <li><i class="fal fa-eye"></i> <span>264</span></li> --}}
+                                                    <li><i class="fal fa-tags"></i> <a href="{{$blog->categories[0]->slug}}">{{$blog->categories[0]->name}}</a>  </li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </article>
                                 </div>
-                                <div class="col-md-4">
-                                    <article class="card-post">
-                                        <div class="card-post-img fl-wrap">
-                                            <div class="list-single-main-media fl-wrap">
-                                                <div class="single-slider-wrapper fl-wrap">
-                                                    <div class="single-slider fl-wrap"  >
-                                                        <div class="slick-slide-item"><img src="{{ asset('front-assets/images/all/1.jpg') }}" alt=""></div>
-                                                        <div class="slick-slide-item"><img src="{{ asset('front-assets/images/all/1.jpg') }}" alt=""></div>
-                                                        <div class="slick-slide-item"><img src="{{ asset('front-assets/images/all/1.jpg') }}" alt=""></div>
-                                                    </div>
-                                                    <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
-                                                    <div class="swiper-button-next sw-btn"><i class="fa fa-long-arrow-right"></i></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-post-content fl-wrap">
-                                            <h3><a href="blog-single.html">Blog Post Title.</a></h3>
-                                            <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. </p>
-                                            <div class="post-author"><a href="#"><img src="{{ asset('front-assets/images/avatar/1.jpg') }}" alt=""><span>By , Mery Lynn</span></a></div>
-                                            <div class="post-opt">
-                                                <ul>
-                                                    <li><i class="fal fa-calendar"></i> <span>25 April 2018</span></li>
-                                                    <li><i class="fal fa-eye"></i> <span>264</span></li>
-                                                    <li><i class="fal fa-tags"></i> <a href="#">Design</a>  </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-                                <div class="col-md-4">
-                                    <article class="card-post">
-                                        <div class="card-post-img fl-wrap">
-                                            <a href="blog-single.html"><img  src="{{ asset('front-assets/images/all/1.jpg') }}"   alt=""></a>
-                                        </div>
-                                        <div class="card-post-content fl-wrap">
-                                            <h3><a href="blog-single.html">Blog Post Title.</a></h3>
-                                            <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. </p>
-                                            <div class="post-author"><a href="#"><img src="{{ asset('front-assets/images/avatar/1.jpg') }}" alt=""><span>By , Mery Lynn</span></a></div>
-                                            <div class="post-opt">
-                                                <ul>
-                                                    <li><i class="fal fa-calendar"></i> <span>25 April 2018</span></li>
-                                                    <li><i class="fal fa-eye"></i> <span>264</span></li>
-                                                    <li><i class="fal fa-tags"></i> <a href="#">Design</a>  </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
+                                @endforeach
+                                
                             </div>
-                            <a href="blog.html" class="btn    color-bg ">Read All News<i class="fas fa-caret-right"></i></a>
+                            <a href="{{route('front.blog.all')}}" class="btn    color-bg ">Read All News<i class="fas fa-caret-right"></i></a>
                         </div>
                         <div class="section-decor"></div>
-                    </section> --}}
+                    </section>
 
                     @push('scripts')
                     <script type="text/javascript">
