@@ -23,20 +23,20 @@
                     <div class="ajax-modal-list fl-wrap">
                         <ul>
                             <li>
-                                <i class="fal fa-user-alt"></i>
-                                <h5><span>3</span> Persons</h5>
+                                <i class="fal fa-house-user"></i>
+                                <h5><span>{{$property->rooms[$room_id]->number_of_rooms}}</span> Rooms</h5>
                             </li>
                             <li>
-                                <i class="fal fa-chalkboard"></i>
-                                <h5><span>52</span> Ft²</h5>
+                                <i class="fal fa-bed"></i>
+                                <h5><span>2 + 1 </span> Beds</h5>
+                            </li>
+                            <li>
+                                <i class="fal fa-utensils-alt"></i>
+                                <h5><span>Breakfast</span> Included</h5>
                             </li>
                             <li>
                                 <i class="fal fa-bath"></i>
                                 <h5><span>1</span> Bathroom</h5>
-                            </li>
-                            <li>
-                                <i class="fal fa-hand-holding-usd"></i>
-                                <h5><span>81$</span> / Per Night</h5>
                             </li>
                         </ul>
                     </div>
@@ -46,36 +46,106 @@
                             <h3>Details</h3>
                             <p>{{@$property->rooms[$room_id]->description}}</p>
                         </div>
+<style type="text/css">
+    /* Create two equal columns that floats next to each other */
+.column {
+float: left;
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #eee;
+    background: #0e2952;
+    color: #fff;
+  
+}
+.column p{
+        font-size: 16px;
+    line-height: 16px;
+    padding: 4px;
+    font-weight: 700;
+    color: #fff;
+}
 
+/* Clear floats after the columns */
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
                         <div class="ajax-modal-details-box">
                             <h3>Price</h3>
-
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <caption>Price Per Night</caption>
-                                    <thead>
-                                        <tr>
-                                            <th>Basis</th>
-                                            <th>Nightly</th>
-                                            <th>On Weekend</th>
-                                            <th>Weekly</th>
-                                            <th>Fortnightly</th>
-                                            <th>Monthly</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th>Price</th>
-                                            <td>{{@$property->rooms[$room_id]->cost_per_night}}</td>
-                                            <td>{{@$property->rooms[$room_id]->cost_per_night_weekend}}</td>
-                                            <td>{{@$property->rooms[$room_id]->cost_per_night_weekly}}</td>
-                                            <td>{{@$property->rooms[$room_id]->cost_per_night_fortnightly}}</td>
-                                            <td>{{@$property->rooms[$room_id]->cost_per_night_monthly}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                
+                            @if($property->rooms[$room_id]->cost_per_night)
+                            <div class="row1">
+                              <div class="column column-parameter">
+                                <p>Booking Basis</p>
+                              </div>
+                              <div class="column column-value">
+                                <p>Price /Room /Night</p>
+                              </div>
                             </div>
+                            @endif
+                            @if(@$property->rooms[$room_id]->cost_per_night)
+                            <div class="row1">
+                              <div class="column column-parameter">
+                                <p>Nightly</p>
+                              </div>
+                              <div class="column column-value">
+                                <p><i class="fal fa-rupee-sign"></i> {{@$property->rooms[$room_id]->cost_per_night ?? 0}}</p>
+                              </div>
+                            </div>
+                            @endif
+                            @if(@$property->rooms[$room_id]->cost_per_night_weekend)
+                            <div class="row1">
+                              <div class="column column-parameter">
+                                <p>On Weekend</p>
+                              </div>
+                              <div class="column column-value">
+                                <p>{{@$property->rooms[$room_id]->cost_per_night_weekend ?? 0}}</p>
+                              </div>
+                            </div>
+                            @endif
+                            @if(@$property->rooms[$room_id]->cost_per_night_weekly)
+                            <div class="row1">
+                              <div class="column column-parameter">
+                                <p>Weekly</p>
+                              </div>
+                              <div class="column column-value">
+                                <p>{{@$property->rooms[$room_id]->cost_per_night_weekly ?? 0}}</p>
+                              </div>
+                            </div>
+                            @endif
+                            @if(@$property->rooms[$room_id]->cost_per_night_fortnightly)
+                            <div class="row1">
+                              <div class="column column-parameter">
+                                <p>Fortnightly</p>
+                              </div>
+                              <div class="column column-value">
+                                <p>{{@$property->rooms[$room_id]->cost_per_night_fortnightly ?? 0}}</p>
+                              </div>
+                            </div>
+                            @endif
+                            @if(@$property->rooms[$room_id]->cost_per_night_monthly)
+                            <div class="row1">
+                              <div class="column column-parameter">
+                                <p>Monthly</p>
+                              </div>
+                              <div class="column column-value">
+                                <p>{{@$property->rooms[$room_id]->cost_per_night_monthly ?? 0}}</p>
+                              </div>
+                            </div>
+                            @endif
+                            @if(@$property->rooms[$room_id]->extra_person_cost)
+                            <div class="row1">
+                              <div class="column column-parameter">
+                                <p>Extra Person</p>
+                              </div>
+                              <div class="column column-value">
+                                <p>{{@$property->rooms[$room_id]->extra_person_cost}}</p>
+                              </div>
+                            </div>
+                            @endif
+
+                            
                         </div>
                         <!--ajax-modal-details-box end-->
                         <!--ajax-modal-details-box-->

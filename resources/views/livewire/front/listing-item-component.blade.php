@@ -9,7 +9,7 @@
                                                             {{-- <div class="listing-avatar"><a href="author-single.html"><img src="images/avatar/1.jpg" alt=""></a>
                                                                 <span class="avatar-tooltip">Added By  <strong>Alisa Noory</strong></span>
                                                             </div> --}}
-                                                            <div class="sale-window" style="background: #18458b">{{$property->category->name}}</div>
+                                                            <div class="sale-window" style="background: {{$property->category->color}}">{{$property->category->name}}</div>
                                                             <div class="geodir-category-opt">
                                                                 {{-- <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div> --}}
                                                                 {{-- <div class="rate-class-name">
@@ -54,6 +54,6 @@
                                             </div>
                                             <!-- listing-item-container end-->
                                             <!-- pagination-->
-                                            {{ $properties->links('livewire.front.pagination-links-view') }}
+                                            {{-- {{ $properties->links('livewire.front.pagination-links-view') }} --}}
                                             
                                             </div>

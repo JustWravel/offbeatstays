@@ -89,6 +89,7 @@
                                 <div class="footer-widget fl-wrap">
                                     <h3>About Us</h3>
                                     <div class="footer-contacts-widget fl-wrap">
+                                        <p style="font-size: 16px;">Offbeat Stays - <strong>A product of <a href="https://www.justwravel.com" target="_blank" style="color:#3aaced">JustWravel</a></strong></p>
                                         <p>Offbeat stays is for all your experiential stay in a homely feel alongside nature- Be it a rejuvenating workcation , or a leisure trip with your family to spend some quality time or maybe a digital detox amongst the mountains and beaches- Offbeat stays got your back.</p>
                                         <ul  class="footer-contacts fl-wrap">
                                             <li><span><i class="fal fa-envelope"></i> Mail :</span><a href="mailto:info@offbeatstays.in" target="_blank">info@offbeatstays.in</a></li>
@@ -187,7 +188,7 @@
                 <!--sub-footer-->
                 <div class="sub-footer">
                     <div class="container">
-                        <div class="copyright"> &#169; Offbeat Stays {{date('Y')}} .  All rights reserved.</div>
+                        <div class="copyright"> &#169; {{date('Y')}} Offbeat Stays - A product of <a href="https://www.justwravel.com/" target="_blank" style="color:#3aaced">JustWravel</a>  .  All rights reserved.</div>
                         {{-- <div class="subfooter-lang">
                             <div class="subfooter-show-lang"><span>Eng</span><i class="fa fa-caret-up"></i></div>
                             <ul class="subfooter-lang-tooltip">

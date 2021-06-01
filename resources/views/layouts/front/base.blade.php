@@ -6,15 +6,30 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>@yield('meta_title', config('app.name', 'OffBeat Stays'))</title>
-        
+        <link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+        <link rel='dns-prefetch' href='//kit-pro.fontawesome.com' />
+        <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+        {{-- <link rel='dns-prefetch' href='//s.w.org' /> --}}
+        {{-- <link rel='dns-prefetch' href='//c0.wp.com' /> --}}
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        {{-- <link rel="alternate" type="application/rss+xml" title="Offbeat Stays in India - OffBeat Stays &raquo; Feed" href="https://offbeatstays.in/wp/feed/" />
+        <link rel="alternate" type="application/rss+xml" title="Offbeat Stays in India - OffBeat Stays &raquo; Comments Feed" href="https://offbeatstays.in/wp/comments/feed/" />
+         --}}
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="robots" content="index, follow"/>
         <meta name="keywords" content="@yield('meta_keywords')"/>
         <meta name="description" content="@yield('meta_description')"/>
+
+        <meta property="og:title" content="@yield('meta_title')"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="{{url()->current()}}"/>
+        <meta property="og:site_name" content="OffBeat Stays"/>
+        <meta property="og:image" content="{{asset('/front-assets/images/logo.png')}}"/>
+    
         <!--=============== css  ===============-->
         {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-        <link type="text/css" rel="stylesheet" href="{{ asset('front-assets/css/reset.css') }}">
+        {{-- <link type="text/css" rel="stylesheet" href="{{ asset('front-assets/css/reset.css') }}"> --}}
         <link type="text/css" rel="stylesheet" href="{{ asset('front-assets/css/plugins.css') }}">
         <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" />
         <link type="text/css" rel="stylesheet" href="{{ asset('front-assets/css/style.css') }}">
@@ -22,7 +37,12 @@
         <!--=============== favicons ===============-->
         <link rel="shortcut icon" href="{{ asset('front-assets/images/favicon.ico') }}">
 
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
         @livewireStyles
+
+        <!-- Scripts -->
+        <script src="{{ mix('js/app.js') }}"></script>
         @livewire('front.common.front-common-analytics-code-component')
         {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
     </head>

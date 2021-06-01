@@ -25,9 +25,10 @@
                             <div class="container">
                                 <div class="home-intro">
                                     <div class="section-title-separator"><span></span></div>
-                                    <h2>Offbeat Stays in India</h2>
+                                    <h1>Offbeat Stays in India</h1>
                                     <span class="section-separator"></span> 
                                     <div id="rotate">
+                                        <div>A product of Justwravel</div>
                                         <div>A Collection of 786 Stays</div>
                                         <div>Home Away from Home</div>
                                         <div>Find your perfect Staycation</div>

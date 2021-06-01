@@ -13,20 +13,27 @@ use App\Models\Category;
 class ListingItemComponent extends Component
 {
 	use WithPagination;
+    public $perPage;
 	public $stay_location;
 	public $stay_type;
 	public $sortby;
 	protected $queryString = ['stay_location', 'stay_type', 'sortby'];
+	protected $listeners = [
+        'load-more' => 'loadMore'
+    ];
 
-	// public function getQueryString()
- //    {
- //        return ['stay_location', 'stay_type', 'sortby'];
- //    }
-	public function sortbyUpdated($name, $value)
-	{
-		dd($value);
-		$this->sortby = $value;
-	}
+	public function mount()
+    {
+        $this->perPage = 8;
+        
+    }
+
+
+    public function loadMore()
+    {
+        // dd('sdfsdf');
+        $this->perPage = $this->perPage + 8;
+    }
     public function render()
     {
 
@@ -37,7 +44,7 @@ class ListingItemComponent extends Component
         		'category_id'=>$category->id ?? '',
         		'state_id'=>$state->id ?? '',
         		'location_id'=>$location->id ?? '',
-        	])->with('rooms')->paginate(9);
+        	])->with('rooms', 'state', 'location', 'category', 'images')->paginate($this->perPage);
     	if($this->sortby == 'pricedesc'){
     		$properties = $properties->sortByDesc('price');
     	}

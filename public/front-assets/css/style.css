@@ -2147,7 +2147,7 @@ section.hero-section   {
 .slider-container .slider-item{
 	padding:150px 80px;
 } 
-.home-intro h2 , .home-intro-card h3{
+.home-intro h1 ,.home-intro h2 , .home-intro-card h3{
 	font-size:44px;
 	font-weight:700;
 	color:#fff;

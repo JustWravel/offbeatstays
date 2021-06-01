@@ -178,7 +178,7 @@
                                             </div>
                                             <!-- inline-facts end -->
                                             <!-- inline-facts  -->
-                                            <div class="inline-facts-wrap">
+                                            {{-- <div class="inline-facts-wrap">
                                                 <div class="inline-facts">
                                                     <i class="fal fa-users"></i>
                                                     <div class="milestone-counter">
@@ -188,10 +188,10 @@
                                                     </div>
                                                     <h6>Customers Every Year</h6>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             <!-- inline-facts end -->
                                             <!-- inline-facts -->
-                                            <div class="inline-facts-wrap">
+                                            {{-- <div class="inline-facts-wrap">
                                                 <div class="inline-facts">
                                                     <i class="fal fa-taxi"></i>
                                                     <div class="milestone-counter">
@@ -201,7 +201,7 @@
                                                     </div>
                                                     <h6>Distance to Center</h6>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             <!-- inline-facts end -->
                                             <!-- inline-facts -->
                                             <div class="inline-facts-wrap">
@@ -209,10 +209,10 @@
                                                     <i class="fal fa-cocktail"></i>
                                                     <div class="milestone-counter">
                                                         <div class="stats animaper">
-                                                            4
+                                                            
                                                         </div>
                                                     </div>
-                                                    <h6>Restaurant Inside</h6>
+                                                    <h6>Breakfast Included</h6>
                                                 </div>
                                             </div>
                                             <!-- inline-facts end -->                                                                        
