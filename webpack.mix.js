@@ -15,7 +15,12 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         require('postcss-import'),
         require('tailwindcss'),
-    ]);
+    ])
+    .postCss('resources/assets/front/css/reset.css', 'public/front-assets/css')
+    .postCss('resources/assets/front/css/plugins.css', 'public/front-assets/css')
+    .postCss('resources/assets/front/css/style.css', 'public/front-assets/css')
+    .postCss('resources/assets/front/css/color.css', 'public/front-assets/css')
+    .version();
 
 if (mix.inProduction()) {
     mix.version();
