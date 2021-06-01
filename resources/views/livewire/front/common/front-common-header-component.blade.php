@@ -70,20 +70,22 @@
                             <a href="{{ route('front.home')}}"><img src="{{ asset('front-assets/images/logo.png') }}" alt=""></a>
                         </div>
                         <div class="home-btn"><a href="{{ route('front.home')}}"><i class="fas fa-home"></i></a></div>
-
+                        
                         
                         <!--  navigation -->
                         <div class="nav-holder main-menu">
                             <nav>
                                 <ul>
-                                	
+                                	<li>
+                                        <a href="{{ route('front.property.all') }}"> Properties</a>
+                                    </li>
                                 	
                                     <li>
-                                        <a href="{{ route('front.category.all') }}" class="{{ (strpos(Route::currentRouteName(), 'front.category') === 0 ) ? 'act-link' : '' }}">All Stay Category <i class="fas fa-caret-down"></i></a>
+                                        <a href="{{ route('front.category.all') }}" class="{{ (strpos(Route::currentRouteName(), 'front.category') === 0 ) ? 'act-link' : '' }}">Stay Categories <i class="fas fa-caret-down"></i></a>
                                         <!--second level -->
                                         <ul>
                                             <li>
-                                                <a href="{{ route('front.category.all') }}"> All Stay Category</a>
+                                                <a href="{{ route('front.category.all') }}"> Stay Categories</a>
                                             </li>
                                         	@foreach($categories as $category)
                                             <li><a href="{{ route('front.category.show', ['slug'=>$category->slug]) }}" class="{{ (strpos(Route::currentRouteName(), 'front.category.show') === 0 ) && (Route::current()->parameter('slug') == $category->slug) ? 'act-link' : '' }}">{{$category->name}}</a></li>
@@ -93,12 +95,12 @@
                                         <!--second level end-->
                                     </li>
                                     <li>
-                                        <a href="{{ route('front.state.all') }}" class="{{ (strpos(Route::currentRouteName(), 'front.state') === 0 ) ? 'act-link' : '' }}">All Locations <i class="fas fa-caret-down"></i></a>
+                                        <a href="{{ route('front.state.all') }}" class="{{ (strpos(Route::currentRouteName(), 'front.state') === 0 ) ? 'act-link' : '' }}">Destinations <i class="fas fa-caret-down"></i></a>
                                         <!--second level -->
                                         
                                         <ul>
                                             <li>
-                                                <a href="{{ route('front.state.all') }}">All States</a>
+                                                <a href="{{ route('front.state.all') }}">All</a>
                                             </li>
                                         	@foreach($states as $state)
                                             <li><a href="{{ route('front.state.show', ['slug'=>$state->slug]) }}" class="{{ (strpos(Route::currentRouteName(), 'front.state.show') === 0 ) && (Route::current()->parameter('slug') == $state->slug) ? 'act-link' : '' }}">{{$state->name}}</a></li>

@@ -16,11 +16,12 @@ class CreateQueriesTable extends Migration
         Schema::create('queries', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
-            $table->string('phone');
-            $table->string('location');
-            $table->string('category');
-            $table->string('phone');
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('location')->nullable();
+            $table->string('category')->nullable();
+            $table->string('property_name')->nullable();
+            $table->date('date')->nullable();
             $table->string('comments');
             $table->timestamps();
         });

@@ -33,7 +33,7 @@ class FrontListingCardListWithLoadMoreComponent extends Component
     public function render()
     {
     	$state = State::where('slug', $this->slug)->first();
-    	$properties = Property::where('state_id', $state->id)->paginate($this->perPage);
+    	$properties = Property::with('state', 'location', 'category', 'images')->where('state_id', $state->id)->paginate($this->perPage);
         return view('livewire.front.front-listing-card-list-with-load-more-component', [
         				'state' => $state,
         				'properties' => $properties,

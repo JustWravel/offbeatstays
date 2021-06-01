@@ -78,7 +78,7 @@
 												@foreach($categories as $category)
 												<tr>
 													<td>{{ $category->id }}</td>
-													<td><a class="text-dark-50 text-hover-primary" href="{{ $category->slug }}">{{ $category->name }}</a></td>
+													<td style="background: {{$category->color ?? '#333'}};"><a class="" style="color:#fff" href="{{ $category->slug }}">{{ $category->name }}</a></td>
 													<td><img src="{{ $category->image }}" style="width: 40px" alt=""></td>
 													<td>{{ $category->description }}</td>
 													

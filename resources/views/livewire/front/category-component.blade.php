@@ -25,7 +25,10 @@
                             <div class="row">
                                 <!--filter sidebar -->
                                 <div class="col-md-4">
-                                    @include('livewire.front.front-listing-left-sidebar-search-filter-component')
+                                    @livewire('front.front-listing-left-sidebar-search-filter-component', [
+                                        'price_min' => 1420,
+                                        'price_max' => 1520
+                                        ])
                                     
                                 </div>
                                 <!--filter sidebar end-->

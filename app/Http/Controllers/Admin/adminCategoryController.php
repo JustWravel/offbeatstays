@@ -47,6 +47,7 @@ class adminCategoryController extends Controller
         $category->name = $request->name;
         $category->slug = SlugService::createSlug(Category::class, 'slug', $request->name);
         $category->description = $request->description;
+        $category->color = $request->color;
         if($request->file('image')){
             $imageName = str_replace(' ', '-', $request->name).'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
             $category->image = '/storage/' .$request->file('image')->storeAs('uploads/categories/original', $imageName, 'public');
@@ -99,6 +100,7 @@ class adminCategoryController extends Controller
         $category->name = $request->name;
         // $category->slug = SlugService::createSlug(Category::class, 'slug', $request->name);
         $category->description = $request->description;
+        $category->color = $request->color;
         if($request->file('image')){
             $imageName = str_replace(' ', '-', $request->name).'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
             $category->image = '/storage/' .$request->file('image')->storeAs('uploads/categories/original', $imageName, 'public');

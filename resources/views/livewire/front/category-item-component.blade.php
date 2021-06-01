@@ -38,11 +38,11 @@
 	                                                            </ul>
 	                                                            <div class="geodir-category-footer fl-wrap">
 	                                                                <div class="geodir-category-price"> <span><i class="fas fa-rupee-icon"></i>{{$property->price}}</span> /Night</div>
-	                                                                <div class="geodir-opt-list">
+	                                                                {{-- <div class="geodir-opt-list">
 	                                                                    <a href="#" class="single-map-item" data-newlatitude="40.72956781" data-newlongitude="-73.99726866"><i class="fal fa-map-marker-alt"></i><span class="geodir-opt-tooltip">On the map</span></a>
-	                                                                    {{-- <a href="#" class="geodir-js-favorite"><i class="fal fa-heart"></i><span class="geodir-opt-tooltip">Save</span></a> --}}
-	                                                                    {{-- <a href="#" class="geodir-js-booking"><i class="fal fa-exchange"></i><span class="geodir-opt-tooltip">Find Directions</span></a> --}}
-	                                                                </div>
+	                                                                    <a href="#" class="geodir-js-favorite"><i class="fal fa-heart"></i><span class="geodir-opt-tooltip">Save</span></a>
+	                                                                    <a href="#" class="geodir-js-booking"><i class="fal fa-exchange"></i><span class="geodir-opt-tooltip">Find Directions</span></a>
+	                                                                </div> --}}
 	                                                            </div>
 	                                                        </div>
 	                                                    </article>

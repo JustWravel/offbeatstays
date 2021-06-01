@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Front;
 
 use Livewire\Component;
+use App\Models\Query;
 
 class ContactUsComponent extends Component
 {
@@ -11,17 +12,42 @@ class ContactUsComponent extends Component
     public $phone;
     public $comments;
 
+    public function resetForm()
+    {
+       $this->name = '';
+       $this->email = '';
+       $this->phone = '';
+       $this->comments = '';
+    }
+
     public function save()
     {
         $this->validate([
             'name'=>'required',
-            'email'=>'required',
-            'phone'=>'required',
+            'email'=>'nullable|email',
+            'phone'=>'required|numeric|digits:10',
+            'comments'=>'nullable',
             
             
         ]);
 
-        dd($this->name);
+
+        $query = new Query;
+        $query->name = $this->name;
+        $query->email = $this->email;
+        $query->phone = $this->phone;
+        $query->comments = $this->comments ?? ' ';
+
+        $query->save();
+        $this->resetForm();
+        // session()->flash('message', 'Query Submitted successfully.');
+        $this->dispatchBrowserEvent('alert',[
+                'type'=>'success',
+                'message'=>"Query Submitted successfully."
+            ]);
+
+
+        
         
     }
     public function render()

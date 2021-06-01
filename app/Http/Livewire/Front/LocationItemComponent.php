@@ -33,7 +33,7 @@ class LocationItemComponent extends Component
     public function render()
     {
     	$location = Location::where('slug', $this->slug)->first();
-    	$properties = Property::where('location_id', $location->id)->paginate($this->perPage);
+    	$properties = Property::with('state', 'location', 'category', 'images')->where('location_id', $location->id)->paginate($this->perPage);
         return view('livewire.front.location-item-component', [
         				'location' => $location,
         				'properties' => $properties,

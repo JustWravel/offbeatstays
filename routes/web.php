@@ -22,6 +22,7 @@ use App\Http\Livewire\Front\AllCategoriesComponent;
 use App\Http\Livewire\Front\CategoryComponent;
 use App\Http\Livewire\Front\LocationComponent;
 use App\Http\Livewire\Front\PropertyDetailComponent;
+use App\Http\Livewire\Front\FrontAllPropertiesComponent;
 
 use App\Http\Livewire\Front\FrontBlogPostComponent;
 use App\Http\Livewire\Front\FrontAllBlogPostsComponent;
@@ -50,14 +51,16 @@ Route::get('/home', function () {
 
 Route::get('/', HomeComponent::class)->name('front.home');
 Route::get('/search', ListingComponent::class)->name('front.listing');
-Route::get('/all-locations', AllStatesComponent::class)->name('front.state.all');
-Route::get('/property/{slug}', StateComponent::class)->name('front.state.show');
-Route::get('/property/{state}/{slug}', LocationComponent::class)->name('front.location.show');
+Route::get('/destinations', AllStatesComponent::class)->name('front.state.all');
+Route::get('/properties/{slug}', StateComponent::class)->name('front.state.show');
+Route::get('/properties/{state}/{slug}', LocationComponent::class)->name('front.location.show');
 Route::get('/stay-types', AllCategoriesComponent::class)->name('front.category.all');
-Route::get('/stay-type/{slug}', CategoryComponent::class)->name('front.category.show');
+Route::get('/stay-type/{slug}/properties', CategoryComponent::class)->name('front.category.show');
 
 
 Route::get('/property/{state}/{location}/{category}/{slug}', PropertyDetailComponent::class)->name('front.property.show');
+
+Route::get('/properties', FrontAllPropertiesComponent::class)->name('front.property.all');
 
 
 

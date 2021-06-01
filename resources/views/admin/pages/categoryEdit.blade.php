@@ -89,6 +89,12 @@
 															<span class="form-text text-muted">Please enter category name</span>
 														</div>
 														<div class="col-lg-6 offset-lg-3">
+															<label>Category Color:</label>
+															<input type="color" class="form-control" placeholder="Enter category color" name="color" value="{{ old('color') ?? $category->color }}" />
+															<span class="form-text text-muted">Please enter category color</span>
+														</div>
+														
+														<div class="col-lg-6 offset-lg-3">
 															<label>Image:</label>
 															@if($category->image)
 															<div style="padding: 10px;">
@@ -102,6 +108,7 @@
 															<input type="file" class="form-control" name="image" />
 															<span class="form-text text-muted">URL slug</span>
 														</div>
+
 														<div class="col-lg-6 offset-lg-3">
 															<label>Description:</label>
 															<textarea class="form-control" placeholder="Enter category Description" name="description">{{ old('description') ?? $category->description }}</textarea>

@@ -76,9 +76,14 @@
                                                     <input type="text"  name="phone" id="phone" placeholder="Phone Number*" value="" wire:model="phone"/>
                                                     @error('phone') <span class="error">{{ $message }}</span> @enderror
                                                     
-                                                    <textarea name="comments"  id="comments" cols="40" rows="3" placeholder="Your Message:" wire:model="comments">{{$comments}}</textarea>
+                                                    <textarea name="comments"  id="comments" cols="40" rows="3" placeholder="Your Message:" wire:model="comments"></textarea>
                                                 </fieldset>
                                                 <button class="btn float-btn color2-bg" style="margin-top:15px;" type="submit">Send Message<i class="fal fa-angle-right"></i></button>
+                                                @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
                                             </form>
                                         </div>
                                         <!-- contact form  end--> 
