@@ -22,7 +22,7 @@
 	                                                        <div class="geodir-category-content fl-wrap title-sin_item">
 	                                                            <div class="geodir-category-content-title fl-wrap">
 	                                                                <div class="geodir-category-content-title-item">
-	                                                                    <h3 class="title-sin_map"><a href="listing-single.html">{{ $property->name }}</a></h3>
+	                                                                    <h3 class="title-sin_map"><a href="{{ route('front.property.show', ['state'=> $property->state->slug, 'location'=> $property->location->slug, 'category'=> $property->category->slug, 'slug'=> $property->slug])}}">{{ $property->name }}</a></h3>
 	                                                                    <div class="geodir-category-location fl-wrap"><a href="#" class="map-item"><i class="fas fa-map-marker-alt"></i> {{ $property->location->name .', '.$property->state->name.', India'}}</a></div>
 	                                                                </div>
 	                                                            </div>
