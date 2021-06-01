@@ -169,7 +169,7 @@
 <li><a href="mailto:info@offbeatstays.in" target="_blank" title="Send email">
 <i class="fas fa-envelope my-float"></i>
 </a></li>
-<li><a href="https://web.whatsapp.com/send?phone=919667051161&text=Hello%20Stayers!%20I%27m%20looking%20for%20an%20Offbeat%20Stay." target="_blank" title="Ask the expert">
+<li><a href="//wa.me/send?phone=919667051161&text=Hello%20Stayers!%20I%27m%20looking%20for%20an%20Offbeat%20Stay." target="_blank" title="Ask the expert">
 <i class="fab fa-whatsapp my-float"></i>
 </a></li>
 <li><a href="tel:+919667051161" target="_blank" title="Call Now">
