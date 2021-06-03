@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -16,6 +17,13 @@ mix.js('resources/js/app.js', 'public/js')
         require('postcss-import'),
         require('tailwindcss'),
     ])
+    .js('resources/assets/front/js/jquery.min.js', 'public/front-assets/js')
+    // .js('resources/assets/front/js/plugins.js', 'public/front-assets/js', [
+    //     // require('jquery')
+    //     ])
+    .js('resources/assets/front/js/scripts.js', 'public/front-assets/js')
+
+
     .postCss('resources/assets/front/css/reset.css', 'public/front-assets/css')
     .postCss('resources/assets/front/css/plugins.css', 'public/front-assets/css')
     .postCss('resources/assets/front/css/style.css', 'public/front-assets/css')

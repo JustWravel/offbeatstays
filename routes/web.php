@@ -68,7 +68,7 @@ Route::get('/about', AboutComponent::class)->name('front.about');
 Route::get('/contact', ContactUsComponent::class)->name('front.contact');
 
 
-Route::get('/blogs', FrontAllBlogPostsComponent::class)->name('front.blog.all');
+Route::get('/blog', FrontAllBlogPostsComponent::class)->name('front.blog.all');
 Route::get('/blog/{slug}', FrontBlogPostComponent::class)->name('front.blog.detail');
 
 

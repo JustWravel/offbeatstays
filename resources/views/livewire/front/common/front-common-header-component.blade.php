@@ -137,6 +137,7 @@
                                         <a href="#">Others <i class="fas fa-caret-down"></i></a>
                                         <!--second level -->
                                         <ul>
+                                            <li><a href="{{ route('front.blog.all') }}">Blog</a></li>
                                             <li><a href="{{ route('front.about') }}">About Us</a></li>
                                             <li><a href="{{ route('front.contact') }}">Contact Us</a></li>
                                             {{-- <li><a href="author-single.html">User single</a></li>
