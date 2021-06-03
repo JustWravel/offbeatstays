@@ -188,7 +188,7 @@
     </div>
             <div class="modalkabaap" style="position:fixed; z-index: 9999; display:none"></div>
         </div>
-        <!-- Main end -->
+        <!-- Main end  -->
         <!--=============== scripts  ===============-->
         <script type="text/javascript" src="{{ asset('front-assets/js/jquery.min.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
