@@ -160,7 +160,7 @@ float: left;
                             </div>
                         </div>
                         <!--ajax-modal-details-box end-->
-                        <a href="#" class="btn float-btn color2-bg">Book Now<i class="fas fa-caret-right"></i></a>                            
+                        {{-- <a href="#" class="btn float-btn color2-bg">Book Now<i class="fas fa-caret-right"></i></a>                             --}}
                     </div>
                 </div>
                 <!--ajax-modal-item-->

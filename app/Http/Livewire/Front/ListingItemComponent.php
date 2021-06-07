@@ -40,11 +40,25 @@ class ListingItemComponent extends Component
     	$state = State::where(['slug'=>$this->stay_location])->first();
     	$location = Location::where(['slug'=>$this->stay_location])->first();
     	$category = Category::where(['slug'=>$this->stay_type])->first();
-    	$properties = Property::orwhere([
-        		'category_id'=>$category->id ?? '',
+    	if(@$category->id != '' && (@$state->id != ''  || @$location->id != '')){
+    		$properties = Property::orwhere([
+        		
+        		'state_id'=>$state->id,
+        		'location_id'=>$location->id,
+        	])->where(['category_id'=>$category->id])->with('rooms', 'state', 'location', 'category', 'images')->paginate($this->perPage);
+    	}
+    	else if(@$category->id != '' && (@$state->id == ''  && @$location->id == '')){
+    		$properties = Property::where(['category_id'=>$category->id])->with('rooms', 'state', 'location', 'category', 'images')->paginate($this->perPage);
+    	}
+    	else{
+    		$properties = Property::orwhere([
+        		
         		'state_id'=>$state->id ?? '',
         		'location_id'=>$location->id ?? '',
         	])->with('rooms', 'state', 'location', 'category', 'images')->paginate($this->perPage);
+    	}
+
+    	
     	if($this->sortby == 'pricedesc'){
     		$properties = $properties->sortByDesc('price');
     	}

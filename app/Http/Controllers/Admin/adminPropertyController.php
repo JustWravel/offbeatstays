@@ -20,7 +20,7 @@ class adminPropertyController extends Controller
     public function index()
     {
         return view('admin.pages.propertyList', [
-            'properties' => Property::with('location', 'category', 'state', 'images')->get()
+            'properties' => Property::with('location', 'category', 'state'  , 'images')->get()
         ]);
     }
 

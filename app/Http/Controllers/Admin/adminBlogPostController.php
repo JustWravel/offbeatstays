@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Auth;
+use Illuminate\Support\Str;
+use Image;
 
 class adminBlogPostController extends Controller
 {
@@ -23,7 +25,7 @@ class adminBlogPostController extends Controller
         return 'this is index page';
     }
 
-    public function import()
+    public function import1()
     {
         $response = Http::get('https://www.offbeatstays.in/wp-json/wp/v2/posts',
             [
@@ -69,10 +71,33 @@ class adminBlogPostController extends Controller
         }
     }
 
-    public function addblogpost($array)
+    public function import()
     {
-        // print_r($array);
-        BlogPost::firstOrCreate($array);
+        // return "xcvxcv";
+        $array = BlogPost::get();
+        foreach($array as $value){
+            if(Str::startswith($value->image, 'https')){
+                $blog = BlogPost::find($value->id);
+                echo ini_get('allow_url_fopen') ? 'Enabled' : 'Disabled';
+                echo $path = $value->image;
+                echo '<br/>';
+        echo $filename = basename($path).'<br/>';
+        echo $file_extension = pathinfo($path, PATHINFO_EXTENSION);
+
+        $imageName = $blog->slug.'-OffBeat-Stays-'.md5(time()).'.'.$file_extension;
+
+        Image::make($path)->save(storage_path('app/public/uploads/blogs/original/'.$imageName));
+        $blog->image = '/storage/app/public/uploads/blogs/original/'.$imageName;
+
+        $blog->save();
+            }
+            // print_r($value->image);
+
+        }
+
+
+        
+
         // print_r($array['category_ids']);
         // $output = array();
         // foreach($array as $cat_id){

@@ -234,7 +234,7 @@
                                             <div class="listing-features fl-wrap">
                                                 <ul>
                                                     @forelse($property->amenities as $amenity)
-                                                        <li><i class="fal fa-{{$amenity->iconclass}}"></i><span>{{$amenity->name}}</span></li>
+                                                        <li><i class="{{$amenity->iconclass}}"></i><span>{{$amenity->name}}</span></li>
                                                     @empty
                                                         <li><i class="fal fa-"></i><span></span></li>
                                                     @endforelse

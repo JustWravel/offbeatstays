@@ -52,7 +52,7 @@ class Property extends Model
 
         public function image()
     {
-        return $this->hasMany(PropertyImage::class,'property_id')->latest();
+        return $this->hasMany(PropertyImage::class,'property_id')->oldest();
     }
 
 

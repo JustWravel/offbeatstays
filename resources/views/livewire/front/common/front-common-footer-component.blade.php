@@ -7,7 +7,7 @@
                             <div class="col-md-6">
                                 <div class="subscribe-header">
                                     <h3>Subscribe</h3>
-                                    <p>Get Exclusive deals and offers on Stays on 200+ locations across India. Special Offers on LoongStays and Staycations.</p>
+                                    <p>Get Exclusive deals and offers on Stays on 200+ locations across India. Special Offers on LongStays and Staycations.</p>
                                 </div>
                             </div>
                             <div class="col-md-1"></div>

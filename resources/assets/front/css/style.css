@@ -20,7 +20,7 @@ html{
 }
 /* width */
 ::-webkit-scrollbar {
-  width: 1px;
+  width: 4px;
 }
 
 /* Track */
