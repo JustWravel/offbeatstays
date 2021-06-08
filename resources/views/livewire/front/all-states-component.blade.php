@@ -1,3 +1,7 @@
+@section('meta_title', 'Offbeat Locations - OffbeatStays')
+                    @section('meta_description', '')
+                    @section('meta_keywords', '')
+                    @section('meta_image', asset('front-assets/images/banners/India-Offbeat-Stays.jpg'))
 <section class="parallax-section single-par" data-scrollax-parent="true">
                         <div class="bg par-elem "  data-bg="{{asset('front-assets/images/banners/India-Offbeat-Stays.jpg') }}" data-scrollax="properties: { translateY: '30%' }"></div>
                         <div class="overlay"></div>

@@ -1,6 +1,6 @@
-					@section('meta_title', 'About us - Offbeat Stays')
-                    @section('meta_description', 'About us - Offbeat Stays')
-                    @section('meta_keywords', 'About us - Offbeat Stays')
+					@section('meta_title', 'About OffbeatStays - A Product by JustWravel')
+                    @section('meta_description', 'About OffbeatStays a collection of 786 properties by JustWravel. Home Away from home with proper sanitization')
+                    @section('meta_keywords', 'about offbeatstays, leisure stays, offbeat properties, ')
                     
                    
                     <section class="parallax-section single-par" data-scrollax-parent="true">

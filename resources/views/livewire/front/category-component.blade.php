@@ -1,3 +1,7 @@
+@section('meta_title', 'All '.$category->name.' - OffbeatStays')
+                    @section('meta_description', 'A List of all '.$category->name.' that are a part of OffbeatStays. Looking for '.$category->name.' stays at offbeat locations? your search ends here!')
+                    @section('meta_keywords', $category->name.' india, independent '.$category->name.', '.$category->name.' offbeat locations,')
+                    @section('meta_image', asset($category->image ?? 'front-assets/images/bg/1.jpg'))
 <section class="parallax-section single-par" data-scrollax-parent="true">
                         <div class="bg par-elem "  data-bg="{{ asset($category->image ?? 'front-assets/images/bg/1.jpg') }}" style="background-image: url('{{ asset($category->image ?? 'front-assets/images/bg/1.jpg') }}')" data-scrollax="properties: { translateY: '30%' }"></div>
                         <div class="overlay"></div>

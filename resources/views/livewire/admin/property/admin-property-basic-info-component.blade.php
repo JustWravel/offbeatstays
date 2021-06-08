@@ -247,6 +247,9 @@
 				.then( editor => {
 					ckeditorid = editor.id;
 					console.log( editor.id );
+					 editor.model.document.on('change:data', () => {
+           @this.set('description', editor.getData());
+          })
 				} )
 				.catch( error => {
 					console.error( error );

@@ -58,7 +58,7 @@
 																	</div>
 																	<div class="col-lg-12">
 																		<label>Cancellation Policy:</label>
-																		<textarea class="form-control" placeholder="Enter property name" id="cancellationpolicy" name="cancellationpolicy" wire:model="cancellationpolicy">{{$cancellationpolicy}}</textarea>
+																		<textarea class="form-control" placeholder="Enter property name" id="cancellation_policy" name="cancellation_policy" wire:model="cancellation_policy">{{$cancellation_policy}}</textarea>
 																		<span class="form-text text-muted">Please enter Meta title</span>
 																	</div>
 																	
@@ -81,16 +81,19 @@
 											<!--end::Form-->
 											@push('scripts')
 <script>
-			//CK Editor
-				// ClassicEditor
-				// .create( document.querySelector( '#cancellationpolicy' ) )
-				// .then( editor => {
-				// 	// ckeditorid = editor.id;
-				// 	// console.log( editor.id );
-				// } )
-				// .catch( error => {
-				// 	console.error( error );
-				// } );
+			// CK Editor
+				ClassicEditor
+				.create( document.querySelector( '#cancellation_policy' ) )
+				.then( editor => {
+					ckeditorid = editor.id;
+					console.log( editor.id );
+					 editor.model.document.on('change:data', () => {
+           @this.set('cancellation_policy', editor.getData());
+          })
+				} )
+				.catch( error => {
+					console.error( error );
+				} );
 		</script>
 @endpush
 										</div>

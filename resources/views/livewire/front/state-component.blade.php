@@ -1,3 +1,7 @@
+@section('meta_title', 'Best Offbeat Properties '.$state->name.' - OffbeatStays')
+                    @section('meta_description', 'A List of all Properties in '.$state->name.' that are a part of OffbeatStays. Looking for offbeat stays in '.$state->name.' at offbeat locations? your search ends here!')
+                    @section('meta_keywords', 'offbeatstays '.$state->name.', best properties '.$state->name.', long stays '.$state->name.', work from mountain properties '.$state->name.', staycations '.$state->name.', Leisure Stays '.$state->name.', best stays '.$state->name.', worckations '.$state->name)
+                    @section('meta_image', asset($state->image ?? 'front-assets/images/bg/1.jpg'))
 <section class="parallax-section single-par" data-scrollax-parent="true">
                         <div class="bg par-elem "  data-bg="{{ asset($state->image ?? 'front-assets/images/bg/1.jpg') }}" style="background-image: url('{{ asset($state->image ?? 'front-assets/images/bg/1.jpg') }}')" data-scrollax="properties: { translateY: '30%' }"></div>
                         <div class="overlay"></div>

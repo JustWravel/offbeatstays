@@ -1,4 +1,7 @@
-<div>
+                    @section('meta_title', 'Contact OffbeatStays - A Collection of 786 Stays')
+                    @section('meta_description', 'Contact OffbeatStays for Exclusive deals and Offers on your Stays. If you are looking for long stays')
+                    @section('meta_keywords', 'contact offbeatstays, properties offbeat locations, ')
+                    <div>
     <!-- content-->
                 <div class="content">
                     <!-- map-view-wrap --> 

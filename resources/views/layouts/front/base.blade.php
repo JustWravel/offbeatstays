@@ -24,7 +24,7 @@
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="{{url()->current()}}"/>
         <meta property="og:site_name" content="OffBeat Stays"/>
-        <meta property="og:image" content="{{asset('/front-assets/images/logo.png')}}"/>
+        <meta property="og:image" content="@yield('meta_image')"/>
     
         <!--=============== css  ===============-->
         {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}

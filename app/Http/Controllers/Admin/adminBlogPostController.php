@@ -22,7 +22,9 @@ class adminBlogPostController extends Controller
      */
     public function index()
     {
-        return 'this is index page';
+         return view('admin.pages.blogPostList', [
+            'blogposts' => BlogPost::all()
+        ]);
     }
 
     public function import1()
@@ -169,7 +171,7 @@ class adminBlogPostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.blogPostCreate');
     }
 
     /**
@@ -202,7 +204,9 @@ class adminBlogPostController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.pages.blogPostEdit', [
+            'blogpost' => BlogPost::find($id),
+        ]);
     }
 
     /**

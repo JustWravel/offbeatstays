@@ -1,3 +1,7 @@
+@section('meta_title', 'Choose Stay Categories - OffbeatStays')
+                    @section('meta_description', 'A List of all types of stay that are a part of OffbeatStays. Looking for stays at offbeat locations? your search ends here!')
+                    @section('meta_keywords', 'hostels india, villas india, homestays india, independent properties india, best stays india,')
+                    @section('meta_image', 'front-assets/images/bg/1.jpg,')
 <section class="parallax-section single-par" data-scrollax-parent="true">
                         <div class="bg par-elem "  data-bg="{{asset('front-assets/images/banners/India-Offbeat-Stays.jpg') }}" data-scrollax="properties: { translateY: '30%' }"></div>
                         <div class="overlay"></div>
