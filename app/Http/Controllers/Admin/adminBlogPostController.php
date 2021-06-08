@@ -80,7 +80,9 @@ class adminBlogPostController extends Controller
         foreach($array as $value){
             if(Str::startswith($value->image, 'https')){
                 $blog = BlogPost::find($value->id);
-                echo ini_get('allow_url_fopen') ? 'Enabled' : 'Disabled';
+                // $value->image  =  str_replace('-scaled', '', $value->image);
+                $value->image  = str_replace('https://offbeatstays.in/', '', str_replace('-scaled', '', $value->image));
+                // echo ini_get('allow_url_fopen') ? 'Enabled' : 'Disabled';
                 echo $path = $value->image;
                 echo '<br/>';
         echo $filename = basename($path).'<br/>';
@@ -88,8 +90,8 @@ class adminBlogPostController extends Controller
 
         $imageName = $blog->slug.'-OffBeat-Stays-'.md5(time()).'.'.$file_extension;
 
-        Image::make($path)->save(storage_path('app/public/uploads/blogs/original/'.$imageName));
-        $blog->image = '/storage/app/public/uploads/blogs/original/'.$imageName;
+        Image::make(public_path($path))->save(storage_path('app/public/uploads/blogs/original/'.$imageName));
+        $blog->image = '/storage/uploads/blogs/original/'.$imageName;
 
         $blog->save();
             }
