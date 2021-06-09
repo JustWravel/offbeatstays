@@ -10,7 +10,7 @@
                                 <div class="section-title-separator"><span></span></div>
                                 <h2><span>Stay Type</span></h2>
                                 <span class="section-separator"></span>
-                                <h4>Offbeat Stays type description</h4>
+                                {{-- <h4>Offbeat Stays type description</h4> --}}
                             </div>
                         </div>
                         <div class="header-sec-link">
@@ -43,7 +43,7 @@
                                 <div class="gallery-item">
                                     <div class="grid-item-holder">
                                         <div class="listing-item-grid">
-                                            <div class="listing-counter" style="background: {{$category->color}}"><span>{{$category->properties_count}} </span> Hotels</div>
+                                            <div class="listing-counter" style="background: {{$category->color}}"><span>{{$category->properties_count}} </span> @if($category->properties_count > 1) Stays @else Stay @endif</div>
                                             <img  src="{{ asset($category->image ?? 'front-assets/images/city/1.jpg') }}"   alt="">
                                             <div class="listing-item-cat">
                                                 <h3><a href="{{ route('front.category.show', ['slug' => $category->slug]) }}">{{ $category->name }}</a></h3>
