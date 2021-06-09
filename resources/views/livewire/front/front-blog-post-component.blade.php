@@ -1,10 +1,14 @@
+@section('meta_title', $blog->meta_title ?? $blog->name .' - OffbeatStays')
+                    @section('meta_description', $blog->meta_description ?? $blog->excerpt)
+                    @section('meta_keywords', $blog->meta_keywords ?? $blog->meta_name)
+                    @section('meta_image', 'front-assets/images/bg/1.jpg,')
 <section class="color-bg middle-padding ">
                         <div class="wave-bg wave-bg2"></div>
                         <div class="container">
                             <div class="flat-title-wrap">
                                 <h2><span>{{$blog->name}}</span></h2>
                                 <span class="section-separator"></span>
-                                <h4>{!!$blog->excerpt!!}</h4>
+                                {{-- <h4 style="color: #fff">{{$blog->excerpt}}</h4> --}}
                             </div>
                         </div>
                     </section>
@@ -14,6 +18,23 @@
                             <div class="breadcrumbs fl-wrap"><a href="{{route('front.home')}}">Home</a><a href="{{route('front.blog.all')}}">Blog</a><span>{{$blog->name}}</span></div>
                         </div>
                     </div>
+                    <style>
+                        .post-article ol{
+                            list-style: decimal;
+                        }
+                        .post-article ol li {
+                            margin: 10px;
+                            text-align: justify;
+                            margin-left: 20px;
+                            font-size: 16px;
+                            font-weight: 700;
+                            color: #555;
+                        }
+                        figure.wp-block-image img {
+                            max-width: 100%;
+                            padding: 10px 0;
+                        }
+                    </style>
                     <!-- section-->
                     <section  id="sec1" class="middle-padding grey-blue-bg">
                         <div class="container">
@@ -40,14 +61,7 @@
                                                     <h3>{{$blog->name}}</h3>
                                                 </div>
                                                 {!!$blog->description!!}
-                                                <p>
-                                                    Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. Integer iaculis tellus nulla, quis imperdiet magna venenatis vitae..
-                                                </p>
-                                                <p>Ut nec hinc dolor possim. An eros argumentum vel, elit diceret duo eu, quo et aliquid ornatus delicatissimi. Cu nam tale ferri utroque, eu habemus albucius mel, cu vidit possit ornatus eum. Eu ius postulant salutatus definitionem,  explicari. Graeci viderer qui ut, at habeo facer solet usu. Pri choro pertinax indoctum ne, ad partiendo persecuti forensibus est.</p>
-                                                <blockquote>
-                                                    <p>Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
-                                                </blockquote>
-                                                <p>Ut nec hinc dolor possim. An eros argumentum vel, elit diceret duo eu, quo et aliquid ornatus delicatissimi. Cu nam tale ferri utroque, eu habemus albucius mel, cu vidit possit ornatus eum. Eu ius postulant salutatus definitionem, an e trud erroribus explicari. Graeci viderer qui ut, at habeo facer solet usu. Pri choro pertinax indoctum ne, ad partiendo persecuti forensibus est.</p>
+
                                                 <div class="post-author"><a href="#"><img src="{{$blog->author->profile_photo_url}}" alt=""><span>By, {{$blog->author->name}}</span></a></div>
                                                 <div class="post-opt">
                                                     <ul>
@@ -62,22 +76,21 @@
                                                 </div>
                                                 <div class="list-single-tags tags-stylwrap blog-tags">
                                                     @foreach($blog->tags as $blog_tag)
-                                                    <a href="{{$blog_tag->slug}}">{{$blog_tag->name}}</a>, 
+                                                    <a href="{{$blog_tag->slug}}">{{$blog_tag->name}}</a> 
                                                     @endforeach
-                                                    {{-- <a href="#">Event</a>
-                                                    <a href="#">Conference</a>
-                                                    <a href="#">Strategies</a>
-                                                    <a href="#">Trends</a>
-                                                    <a href="#">Schedule</a>
-                                                    <a href="#">Speak</a> --}}                                                                               
+                                                                                                                                  
                                                 </div>
                                                 <span class="fw-separator"></span>
                                                 <div class="post-nav fl-wrap">
-                                                    <a href="#" class="post-link prev-post-link"><i class="fal fa-angle-left"></i>Prev <span class="clearfix">The Sign of Experience</span></a>
-                                                    <a href="#" class="post-link next-post-link"><i class="fal fa-angle-right"></i>Next<span class="clearfix">Dedicated to Results</span></a>
+                                                    @if (isset($previous))
+                                                        <a href="{{ route('front.blog.detail',['slug'=>$previous->slug] )}}" class="post-link prev-post-link"><i class="fal fa-angle-left"></i>Prev <span class="clearfix">{{ $previous->name}}</span></a>
+                                                    @endif
+                                                    @if (isset($next))
+                                                        <a href="{{ route('front.blog.detail',['slug'=>$next->slug] )}}" class="post-link next-post-link"><i class="fal fa-angle-right"></i>Next<span class="clearfix">{{ $next->name}}</span></a>
+                                                    @endif
                                                 </div>
                                             </div>
-                                            <!-- list-single-main-item -->   
+                                            {{-- <!-- list-single-main-item -->   
                                             <div class="list-single-main-item fl-wrap" id="sec5">
                                                 <div class="list-single-main-item-title fl-wrap">
                                                     <h3>Comments -  <span> 2 </span></h3>
@@ -139,7 +152,7 @@
                                                 </div>
                                                 <!-- Add Review Box / End -->
                                             </div>
-                                            <!-- list-single-main-item end -->                                             
+                                            <!-- list-single-main-item end -->   --}}                                           
                                         </article>
                                         <!-- article end -->                                
                                     </div>
@@ -168,7 +181,7 @@
                                         </div>
                                         <!--box-widget-item end -->                          
                                         <!--box-widget-item -->
-                                        <div class="box-widget-item fl-wrap">
+                                        {{-- <div class="box-widget-item fl-wrap">
                                             <div class="box-widget">
                                                 <div class="box-widget-content">
                                                     <div class="box-widget-item-header">
@@ -196,57 +209,36 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <!--box-widget-item end --> 
                                         <!--box-widget-item -->
                                         <div class="box-widget-item fl-wrap">
                                             <div class="box-widget widget-posts">
                                                 <div class="box-widget-content">
                                                     <div class="box-widget-item-header">
-                                                        <h3>Popular Posts</h3>
+                                                        <h3>Latest Posts</h3>
                                                     </div>
+                                                    @foreach($latest as $latestblog)
                                                     <!--box-image-widget-->
                                                     <div class="box-image-widget">
-                                                        <div class="box-image-widget-media"><img src="images/all/1.jpg" alt="">
+                                                        <div class="box-image-widget-media"><img src="{{$latestblog->image}}" alt="">
                                                             <a href="blog-single.html" class="color-bg">Details</a>
                                                         </div>
                                                         <div class="box-image-widget-details">
-                                                            <h4>Nullam dictum felis</h4>
-                                                            <p>Integer tincidunt. Aliquam lorem ante, dapibus in, viverra quis...</p>
-                                                            <span class="widget-posts-date"><i class="fal fa-calendar"></i> 7 Mar 2017 </span>
+                                                            <h4>{{$latestblog->name}}</h4>
+                                                            
+                                                            <span class="widget-posts-date"><i class="fal fa-calendar"></i> {{$latestblog->created_at->diffForHumans()}} </span>
                                                         </div>
                                                     </div>
                                                     <!--box-image-widget end -->
-                                                    <!--box-image-widget-->
-                                                    <div class="box-image-widget">
-                                                        <div class="box-image-widget-media"><img src="images/all/1.jpg" alt="">
-                                                            <a href="blog-single.html" class="color-bg">Details</a>
-                                                        </div>
-                                                        <div class="box-image-widget-details">
-                                                            <h4>Scrambled it to mak</h4>
-                                                            <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo...</p>
-                                                            <span class="widget-posts-date"><i class="fal fa-calendar"></i> 7 Mar 2017 </span>
-                                                        </div>
-                                                    </div>
-                                                    <!--box-image-widget end -->                                                    
-                                                    <!--box-image-widget-->
-                                                    <div class="box-image-widget">
-                                                        <div class="box-image-widget-media"><img src="images/all/1.jpg" alt="">
-                                                            <a href="blog-single.html" class="color-bg">Details</a>
-                                                        </div>
-                                                        <div class="box-image-widget-details">
-                                                            <h4>Fermentum nis type</h4>
-                                                            <p>Lorem Ipsum is simply dummy text of the printing and   industry...</p>
-                                                            <span class="widget-posts-date"><i class="fal fa-calendar"></i> 7 Mar 2017 </span>
-                                                        </div>
-                                                    </div>
-                                                    <!--box-image-widget end -->                                                         
+                                                    @endforeach
+                                                                                                            
                                                 </div>
                                             </div>
                                         </div>
                                         <!--box-widget-item end -->                                         
                                         <!--box-widget-item -->
-                                        <div class="box-widget-item fl-wrap">
+                                        {{-- <div class="box-widget-item fl-wrap">
                                             <div class="box-widget">
                                                 <div class="box-widget-content">
                                                     <div class="box-widget-item-header">
@@ -262,9 +254,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <!--box-widget-item end -->                                       
-                                        <!--box-widget-item -->
+                                        {{-- <!--box-widget-item -->
                                         <div class="box-widget-item fl-wrap">
                                             <div class="box-widget">
                                                 <div class="box-widget-content">
@@ -296,8 +288,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--box-widget-item end -->                            
-                                        <!--box-widget-item -->
+                                        <!--box-widget-item end -->  --}}                           
+                                        {{-- <!--box-widget-item -->
                                         <div class="box-widget-item fl-wrap">
                                             <div class="box-widget">
                                                 <div class="box-widget-content">
@@ -313,7 +305,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--box-widget-item end -->                             
+                                        <!--box-widget-item end -->  --}}                            
                                     </div>
                                     <!--box-widget-wrap end -->  
                                 </div>

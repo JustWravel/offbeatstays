@@ -213,8 +213,7 @@ dd($location_image);*/
         echo '<br/>';
 echo $filename = basename($path).'<br/>';
 echo $file_extension = pathinfo($path, PATHINFO_EXTENSION);
-/*$imageName = $this->property->name.'-'.$this->property->location->name.'-'.$this->property->state->name.'-'.$this->property->category->name.'-OffBeat-Stays-'.md5(time()).'.'.$photo->getClientOriginalExtension();
-$PropertyImage = '/storage/' .$photo->storeAs('uploads/properties/original', $imageName, 'public');*/
+
 $imageName = $property->slug.'-OffBeat-Stays-'.md5(time()).'.'.$file_extension;
 
 Image::make($path)->save(storage_path('app/public/uploads/properties/original/'.$imageName));
