@@ -3843,12 +3843,16 @@ input[type=number]
 .facilities-list {
 	margin:12px 0 12px;
 	list-style:none;
+	white-space: nowrap;
+    overflow-x: hidden;
+    display: flex;
 }
 .facilities-list li {
 	float:left;
 	margin-right:14px;
 	cursor:pointer;
 	position:relative;
+
 }
 .facilities-list li i {
 	color:#ADC7DD;
