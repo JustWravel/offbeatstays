@@ -3,7 +3,7 @@
                     @section('meta_keywords', 'offbeatstays '.$state->name.', best properties '.$state->name.', long stays '.$state->name.', work from mountain properties '.$state->name.', staycations '.$state->name.', Leisure Stays '.$state->name.', best stays '.$state->name.', worckations '.$state->name)
                     @section('meta_image', asset($state->image ?? 'front-assets/images/bg/1.jpg'))
 <section class="parallax-section single-par" data-scrollax-parent="true">
-                        <div class="bg par-elem "  data-bg="{{ asset($state->image ?? 'front-assets/images/bg/1.jpg') }}" style="background-image: url('{{ asset($state->image ?? 'front-assets/images/bg/1.jpg') }}')" data-scrollax="properties: { translateY: '30%' }"></div>
+                        <div class="bg par-elem "  data-bg="{{ asset($state->getFirstMediaUrl('state', 'banner') ?? 'front-assets/images/bg/1.jpg') }}" style="background-image: url('{{ asset($state->image ?? 'front-assets/images/bg/1.jpg') }}')" data-scrollax="properties: { translateY: '30%' }"></div>
                         <div class="overlay"></div>
                         <div class="container">
                             <div class="section-title center-align big-title">

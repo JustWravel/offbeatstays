@@ -1,10 +1,10 @@
 @section('meta_title', $property->meta_title ?? $property->name)
 @section('meta_description', $property->meta_description ?? $property->description)
 @section('meta_keywords', $property->meta_description)
-@section('meta_image', $property->images[0]->name)
+@section('meta_image', $property->images?->first()?->media?->getUrl('card'))
 
                     <div wire:ignore.self ><section class="list-single-hero" data-scrollax-parent="true" id="sec1">
-                        <div class="bg par-elem "  data-bg="{{ $property->images[0]->name ?? asset('front-assets/images/bg/1.jpg')}}" style="background-image: url('{{ $property->images[0]->name ?? asset('front-assets/images/bg/1.jpg')}}');" data-scrollax="properties: { translateY: '30%' }"></div>
+                        <div class="bg par-elem "  data-bg="{{ $property->images?->first()?->media?->getUrl('banner') ?? asset('front-assets/images/bg/1.jpg')}}"  data-scrollax="properties: { translateY: '30%' }"></div>
                         <div class="list-single-hero-title fl-wrap">
                             <div class="container">
                                 <div class="row">
@@ -148,7 +148,7 @@
                                                 <div class="slider-for fl-wrap"  >
                                                 	@foreach($property->images as $property_image)
                                                     <div class="slick-slide-item">
-                                                        <img src="{{$property_image->name}}" alt="{{$property_image->caption}}">
+                                                        <img src="{{$property_image->media?->getUrl('slider')}}" alt="{{$property_image->caption}}">
                                                         @if($property_image->caption)<figcaption class="caption">{{$property_image->caption}}</figcaption>@endif
                                                     </div>
                                                     @endforeach
@@ -159,7 +159,7 @@
                                             <div class="single-slider-wrapper fl-wrap">
                                                 <div class="slider-nav fl-wrap">
                                                 	@foreach($property->images as $property_image)
-                                                    <div class="slick-slide-item"><img src="{{$property_image->name}}" alt="{{$property_image->name}}" ></div>
+                                                    <div class="slick-slide-item"><img src="{{$property_image->media?->getUrl('thumb')}}" alt="{{$property_image->name}}" ></div>
                                                     @endforeach</div>
                                             </div>
                                         </div>
@@ -677,7 +677,7 @@
                                                             
                                                             @foreach($similar_properties as $similar)
                                                             <li class="clearfix">
-                                                                <a href="{{route('front.property.show', ['state'=>$similar->state->slug, 'location'=>$similar->location->slug, 'category'=>$similar->category->slug, 'slug'=>$similar->slug])}}" title="{{$similar->name}}"  class="widget-posts-img"><img src="{{$similar->image[0]->name}}" class="respimg" alt="{{$similar->name}}"></a>
+                                                                <a href="{{route('front.property.show', ['state'=>$similar->state->slug, 'location'=>$similar->location->slug, 'category'=>$similar->category->slug, 'slug'=>$similar->slug])}}" title="{{$similar->name}}"  class="widget-posts-img"><img src="{{$similar->image->first()->media?->getUrl('thumb')}}" class="respimg" alt="{{$similar->name}}"></a>
                                                                 <div class="widget-posts-descr">
                                                                     <a href="{{route('front.property.show', ['state'=>$similar->state->slug, 'location'=>$similar->location->slug, 'category'=>$similar->category->slug, 'slug'=>$similar->slug])}}" title="{{$similar->name}}">{{$similar->name}}</a>
                                                                     {{-- <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div> --}}
@@ -688,7 +688,7 @@
                                                             @endforeach
                                                             
                                                         </ul>
-                                                        <a class="widget-posts-link" href="#">See All Listing <i class="fal fa-long-arrow-right"></i> </a>
+                                                        <a class="widget-posts-link" href="/properties">See All Listing <i class="fal fa-long-arrow-right"></i> </a>
                                                     </div>
                                                 </div>
                                             </div>

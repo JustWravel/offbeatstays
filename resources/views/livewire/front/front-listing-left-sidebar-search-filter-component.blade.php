@@ -28,6 +28,7 @@
                                                         @foreach($states as $state)
                                                         <optgroup label="{{ $state->name }}">
                                                             <option value="{{ $state->slug }}"> All {{ $state->name }}</option>
+                                                                <option value="">StayType</option>
                                                                 @foreach($state->locations as $location)
                                                             
                                                                 <option value="{{ $location->slug }}">{{ $location->name }}</option>

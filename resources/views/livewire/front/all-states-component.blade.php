@@ -19,7 +19,7 @@
                     <!--  section  end-->
                     <div class="breadcrumbs-fs fl-wrap">
                         <div class="container">
-                            <div class="breadcrumbs fl-wrap"><a href="#">Home</a><a href="#">Listings</a><span>Listings Without Map</span></div>
+                            <div class="breadcrumbs fl-wrap"><a href="{{route('front.home')}}">Home</a><span>Destinations</span></div>
                         </div>
                     </div>
                     <!--section -->
@@ -37,7 +37,7 @@
                                         <div class="listing-item-grid">
                                             <div class="listing-counter"><span>{{ $state->properties_count}} </span> @if($state->properties_count > 1) Properties @else Property @endif</div>
                                             <a href="{{ route('front.state.show', ['slug' => $state->slug]) }}">
-                                            <img  src="{{ asset($state->image ?? 'front-assets/images/city/1.jpg') }}"   alt="">
+                                            <img  src="{{ asset($state->getFirstMediaUrl('state', 'card') ?? 'front-assets/images/city/1.jpg') }}"   alt="{{ $state->name }}">
 
                                             <div class="listing-item-cat">
                                                 <h3><a href="{{ route('front.state.show', ['slug' => $state->slug]) }}">{{ $state->name }}</a></h3>

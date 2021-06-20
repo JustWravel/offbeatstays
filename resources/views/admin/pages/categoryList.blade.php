@@ -79,7 +79,10 @@
 												<tr>
 													<td>{{ $category->id }}</td>
 													<td style="background: {{$category->color ?? '#333'}};"><a class="" style="color:#fff" href="{{ $category->slug }}">{{ $category->name }}</a></td>
-													<td><img src="{{ $category->image }}" style="width: 40px" alt=""></td>
+													<td>
+													
+														<img src="{{ $category->getFirstMediaUrl('category', 'thumb')}}" style="width: 40px" alt="{{ $category->name }}">
+													</td>
 													<td>{{ $category->description }}</td>
 													
 													<td nowrap="nowrap">

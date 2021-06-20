@@ -31,7 +31,8 @@ class AdminPropertyImageUploadComponent extends Component
         // $this->PropertyImages = (array)$this->property->images;
         $this->showButton = false;
         $this->imageUploadStatus = '';
-        
+        // dd($this->property->images[10]->media->getUrl('thumb'));
+
     }
     // public function updatedPropertyImages(){
     // 	foreach ($this->PropertyImages as $PropertyImageKey => $PropertyImage) {
@@ -67,10 +68,15 @@ class AdminPropertyImageUploadComponent extends Component
         foreach ($this->photos as $key => $photo) {
         	// dd($photo);
             
-
+             // $image = [
+             //        'name' => $photo->getClientOriginalName(),
+             //        'path' => $photo->getRealPath(),
+             //    ];
         	
-        		$imageName = $this->property->name.'-'.$this->property->location->name.'-'.$this->property->state->name.'-'.$this->property->category->name.'-OffBeat-Stays-'.md5(time()).$key.'.'.$photo->getClientOriginalExtension();
-	            $PropertyImage = '/storage/' .$photo->storeAs('uploads/properties/original', $imageName, 'public');
+        		$imageName = 'obs-'.$this->property->id.'-'.$this->property->location->slug.'-'.$this->property->state->slug.'-'.$this->property->category->slug.'-OffBeat-Stays-'.md5(time()).$key.'.'.$photo->getClientOriginalExtension();
+                // dd($photo->getRealPath());
+	            // $PropertyImage = '/storage/' .$photo->storeAs('uploads/properties/original', $imageName, 'public');
+                $PropertyImage = $this->property->addMedia($photo->getRealPath())->usingFileName($imageName)->toMediaCollection('property')->id;
 	            // array_push($this->PropertyImages, $PropertyImage);
 
 	            /*$imageName = $this->property->name.'-'.$this->property->location->name.'-'.$this->property->state->name.'-'.$this->property->category->name.'-OffBeat-Stays-'.md5(time()).$key.'.'.$photo->getClientOriginalExtension();
@@ -83,15 +89,15 @@ class AdminPropertyImageUploadComponent extends Component
 				    'property_id' => $this->property->id,
 				]);
 
-	            $img = Image::make(public_path($PropertyImage));
+	            /*$img = Image::make(public_path($PropertyImage));
 
 
 	   			$watermark = Image::make(public_path('front-assets/images/logo.png'));
 
-			    /* insert watermark at bottom-right corner with 10px offset */
+			     insert watermark at bottom-right corner with 10px offset 
 
 			    $img->insert($watermark, 'bottom-right', 10, 10);
-			    $img->save($img->dirname.'/watermarked/'.$img->basename);
+			    $img->save($img->dirname.'/watermarked/'.$img->basename);*/
 			    unset($this->photos[$key]);
 			    $this->emit('refreshImages');
 	        	

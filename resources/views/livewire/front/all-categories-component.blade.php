@@ -44,7 +44,7 @@
                                     <div class="grid-item-holder">
                                         <div class="listing-item-grid">
                                             <div class="listing-counter" style="background: {{$category->color}}"><span>{{$category->properties_count}} </span> @if($category->properties_count > 1) Stays @else Stay @endif</div>
-                                            <img  src="{{ asset($category->image ?? 'front-assets/images/city/1.jpg') }}"   alt="">
+                                            <img  src="{{ asset($category->getFirstMediaUrl('category', 'card') ?? 'front-assets/images/city/1.jpg') }}"   alt="">
                                             <div class="listing-item-cat">
                                                 <h3><a href="{{ route('front.category.show', ['slug' => $category->slug]) }}">{{ $category->name }}</a></h3>
                                                 <div class="weather-grid"   data-grcity="{{ $category->name }}"></div>

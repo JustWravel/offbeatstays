@@ -57,14 +57,9 @@
 										<div class="card card-custom gutter-b example example-compact">
 											<div class="card-header">
 												<h3 class="card-title">Add New Category</h3>
-												<div class="card-toolbar">
-													<div class="example-tools justify-content-center">
-														<span class="example-toggle" data-toggle="tooltip" title="View code"></span>
-														<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
-													</div>
-												</div>
+												
 											</div>
-											<button wire:click="delete">Delete</button>
+											
 											<!--begin::Form-->
 											<form class="form" action="{{ route('admin.category.store') }}" method="post" enctype="multipart/form-data">
 												<div class="card-body">

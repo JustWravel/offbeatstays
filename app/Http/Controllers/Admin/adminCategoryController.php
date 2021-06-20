@@ -16,8 +16,10 @@ class adminCategoryController extends Controller
      */
     public function index()
     {
+        // $category = Category::with('media')->get();
+        // dd($category[0]->getFirstMediaUrl());
         return view('admin.pages.categoryList', [
-            'categories' => Category::all()
+            'categories' => Category::with('media')->get()
         ]);
     }
 
@@ -50,7 +52,9 @@ class adminCategoryController extends Controller
         $category->color = $request->color;
         if($request->file('image')){
             $imageName = str_replace(' ', '-', $request->name).'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
-            $category->image = '/storage/' .$request->file('image')->storeAs('uploads/categories/original', $imageName, 'public');
+            // $category->image = '/storage/' .$request->file('image')->storeAs('uploads/categories/original', $imageName, 'public');
+            $category->clearMediaCollection('category');
+            $category->addMedia($request->image)->usingFileName($imageName)->toMediaCollection('category');
         }
         $category->meta_title = $request->meta_title;
         $category->meta_keywords = $request->meta_keywords;
@@ -67,7 +71,18 @@ class adminCategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $categories = Category::all();
+        foreach($categories as $category){
+            if($category->image != ''):
+            $pathToFile = public_path($category->image);
+            // return $pathToFile;
+            $category->clearMediaCollection('category');
+            $category->addMedia($pathToFile)
+                 ->preservingOriginal()
+                 ->toMediaLibrary('category');
+             endif;
+        }
+
     }
 
     /**
@@ -103,8 +118,11 @@ class adminCategoryController extends Controller
         $category->color = $request->color;
         if($request->file('image')){
             $imageName = str_replace(' ', '-', $request->name).'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
-            $category->image = '/storage/' .$request->file('image')->storeAs('uploads/categories/original', $imageName, 'public');
+            // $category->image = '/storage/' .$request->file('image')->storeAs('uploads/categories/original', $imageName, 'public');
+            $category->clearMediaCollection('category');
+            $category->addMedia($request->image)->usingFileName($imageName)->toMediaCollection('category');
         }
+        
         $category->meta_title = $request->meta_title;
         $category->meta_keywords = $request->meta_keywords;
         $category->meta_description = $request->meta_description;

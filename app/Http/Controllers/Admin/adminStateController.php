@@ -66,10 +66,17 @@ class adminStateController extends Controller
      */
     public function show($id)
     {
-        return State::find($id);
-        // return view('admin.pages.stateShow', [
-        //     'states' => State::find($id)
-        // ]);
+        $states = State::all();
+        foreach($states as $state){
+            if($state->image != ''):
+            $pathToFile = public_path($state->image);
+            // return $pathToFile;
+            $state->clearMediaCollection('state');
+            $state->addMedia($pathToFile)
+                 ->preservingOriginal()
+                 ->toMediaLibrary('state');
+            endif;
+        }
 
     }
 
@@ -105,7 +112,9 @@ class adminStateController extends Controller
         $state->description = $request->description;
         if($request->file('image')){
             $imageName = str_replace(' ', '-', $request->name).'-OffBeat-Stays-'.md5(time()).'.'.$request->file('image')->getClientOriginalExtension();
-            $state->image = '/storage/' .$request->file('image')->storeAs('uploads/states/original', $imageName, 'public');
+            // $state->image = '/storage/' .$request->file('image')->storeAs('uploads/states/original', $imageName, 'public');
+            $state->clearMediaCollection('state');
+            $state->addMedia($request->image)->usingFileName($imageName)->toMediaCollection('state');
         }
         $state->meta_title = $request->meta_title;
         $state->meta_keywords = $request->meta_keywords;

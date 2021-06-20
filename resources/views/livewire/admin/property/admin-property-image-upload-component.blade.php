@@ -45,7 +45,8 @@
 															@forelse($property->images as $PIkey => $PropertyImage)
 																<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" >
 															        	<div class="card border-success">
-																		  <img class="card-img-top" src="{{ asset($PropertyImage->name) }}" alt="Card image cap" height="200">
+
+																		  <img class="card-img-top" src="{{ $PropertyImage->media?->getUrl('card')  }}" alt="Card image cap" height="200">
 																		  <div class="card-body">
 																		  	
 																		  	<input type="text" class="form-control" name="caption[]" value="{{ $PropertyImage->caption}}" placeholder="Caption here" wire:change="updateCaption({{ $PropertyImage->id }}, $event.target.value)" /><br/>

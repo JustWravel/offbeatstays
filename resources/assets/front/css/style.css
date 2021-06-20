@@ -3845,9 +3845,7 @@ input[type=number]
 .facilities-list {
 	margin:12px 0 12px;
 	list-style:none;
-	white-space: nowrap;
-    overflow-x: hidden;
-    display: flex;
+	height: 36px;
 }
 .facilities-list li {
 	float:left;

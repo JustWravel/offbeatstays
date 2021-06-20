@@ -25,7 +25,7 @@
                                                     </div>
                                                     <div class="rooms-details">
                                                         <div class="rooms-details-header fl-wrap">
-                                                            <span class="rooms-price"><span class="fal fas far fa-rupee-sign"></span> {{ $room->cost_per_night }}<strong> / person</strong></span>
+                                                            <span class="rooms-price"><span class="fal fas far fa-rupee-sign"></span> {{ $room->cost_per_night }}<strong> / night</strong></span>
                                                             <h3>{{$room->name}}</h3>
                                                             <h5>Max Guests: <span>3 persons</span></h5>
                                                         </div>

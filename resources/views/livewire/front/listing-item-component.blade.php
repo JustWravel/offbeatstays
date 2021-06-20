@@ -5,7 +5,7 @@
     											<div class="listing-item">
                                                     <article class="geodir-category-listing fl-wrap">
                                                         <div class="geodir-category-img">
-                                                            <a href="{{ route('front.property.show', ['state'=> $property->state->slug, 'location'=> $property->location->slug, 'category'=> $property->category->slug, 'slug'=> $property->slug])}}"><img src="{{ $property->images[0]->name ?? asset('front-assets/images/gal/1.jpg')}}" alt=""></a>
+                                                            <a href="{{ route('front.property.show', ['state'=> $property->state->slug, 'location'=> $property->location->slug, 'category'=> $property->category->slug, 'slug'=> $property->slug])}}"><img src="{{ $property->images?->first()?->media?->getUrl('card') ?? asset('front-assets/images/gal/1.jpg')}}" alt=""></a>
                                                             {{-- <div class="listing-avatar"><a href="author-single.html"><img src="images/avatar/1.jpg" alt=""></a>
                                                                 <span class="avatar-tooltip">Added By  <strong>Alisa Noory</strong></span>
                                                             </div> --}}

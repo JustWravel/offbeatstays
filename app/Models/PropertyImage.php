@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class PropertyImage extends Model
 {
@@ -15,6 +16,13 @@ class PropertyImage extends Model
      // 'caption',
      // 'property_id',
     ];
+
+    public function getMediaAttribute()
+    {
+        // $data = (array)json_decode($this->amenity);
+        return Media::find($this->name);
+        
+    }
 
 
 

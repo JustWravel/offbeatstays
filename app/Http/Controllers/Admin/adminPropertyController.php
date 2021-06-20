@@ -8,6 +8,7 @@ use App\Models\Location;
 use App\Models\State;
 use App\Models\Category;
 use App\Models\Property;
+use App\Models\PropertyImage;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class adminPropertyController extends Controller
@@ -80,7 +81,32 @@ class adminPropertyController extends Controller
      */
     public function show($id)
     {
-        //
+        $properties = Property::with('images')->get();
+        foreach($properties as $p){
+            $property = Property::find($p->id);
+            if(count($property->images) > 0):
+                foreach ($property->images as $key => $image) {
+                    // code...
+                    // echo $image->id;
+                    $propimage = PropertyImage::find($image->id);
+                    $pathToFile = public_path($image->name);
+                    // $imageName = 'obs-'.$property->id.'-'.$property->location->slug.'-'.$property->state->slug.'-'.$property->category->slug.'-OffBeat-Stays-'.md5(time()).$key.'.'.$pathToFile->getClientOriginalExtension();
+
+                    
+                    $propimage->name = $property->addMedia($pathToFile)
+                                        ->preservingOriginal()
+                                        ->toMediaCollection('property')->id;
+                    $propimage->save();
+                    echo $pathToFile.'<br>';
+                }
+            // $property->clearMediaCollection('property');
+            // $property->addMedia($pathToFile)
+            //      ->preservingOriginal()
+            //      ->toMediaLibrary('property');
+             endif;
+             echo '<hr>';
+        }
+
     }
 
     /**

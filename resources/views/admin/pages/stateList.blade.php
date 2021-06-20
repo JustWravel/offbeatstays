@@ -88,7 +88,7 @@
 														@endforelse
 														{{-- <a class="text-dark-50 text-hover-primary" href="{{ $state->slug }}">{{ $state->locations }}</a> --}}
 													</td>
-													<td><img src="{{ $state->image }}" style="width: 40px" alt=""></td>
+													<td><img src="{{ $state->getFirstMediaUrl('state', 'thumb')}}" style="width: 40px" alt=""></td>
 													<td>{{ $state->description }}</td>
 													
 													<td nowrap="nowrap">

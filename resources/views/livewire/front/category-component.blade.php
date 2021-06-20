@@ -3,7 +3,7 @@
                     @section('meta_keywords', $category->name.' india, independent '.$category->name.', '.$category->name.' offbeat locations,')
                     @section('meta_image', asset($category->image ?? 'front-assets/images/bg/1.jpg'))
 <section class="parallax-section single-par" data-scrollax-parent="true">
-                        <div class="bg par-elem "  data-bg="{{ asset($category->image ?? 'front-assets/images/bg/1.jpg') }}" style="background-image: url('{{ asset($category->image ?? 'front-assets/images/bg/1.jpg') }}')" data-scrollax="properties: { translateY: '30%' }"></div>
+                        <div class="bg par-elem "  data-bg="{{ asset($category->getFirstMediaUrl('category', 'banner') ?? 'front-assets/images/bg/1.jpg') }}" style="background-image: url('{{ asset($category->image ?? 'front-assets/images/bg/1.jpg') }}')" data-scrollax="properties: { translateY: '30%' }"></div>
                         <div class="overlay"></div>
                         <div class="container">
                             <div class="section-title center-align big-title">
