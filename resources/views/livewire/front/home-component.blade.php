@@ -70,7 +70,7 @@
                                         <div class="listing-item-grid">
                                             <div class="listing-counter"><span>{{$popular_destination->properties_count}} </span> @if($popular_destination->properties_count > 1) Properties @else Property @endif</div>
                                             <a href="{{ route('front.state.show', ['slug'=>$popular_destination->slug])}}">
-                                                <img  src="{{ $popular_destination->image ?? asset('front-assets/images/city/1.jpg') }}"   alt="{{$popular_destination->name}} - Offbeat Stays">
+                                                <img  src="{{ $popular_destination->getFirstMediaUrl('state', 'card') ?? asset('front-assets/images/city/1.jpg') }}"   alt="{{$popular_destination->name}} - Offbeat Stays">
                                             </a>
                                             <div class="listing-item-cat">
                                                 <a href="{{ route('front.state.show', ['slug'=>$popular_destination->slug])}}">

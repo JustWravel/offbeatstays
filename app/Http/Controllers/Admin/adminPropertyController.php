@@ -88,16 +88,18 @@ class adminPropertyController extends Controller
                 foreach ($property->images as $key => $image) {
                     // code...
                     // echo $image->id;
-                    $propimage = PropertyImage::find($image->id);
-                    $pathToFile = public_path($image->name);
-                    // $imageName = 'obs-'.$property->id.'-'.$property->location->slug.'-'.$property->state->slug.'-'.$property->category->slug.'-OffBeat-Stays-'.md5(time()).$key.'.'.$pathToFile->getClientOriginalExtension();
+                    if(!is_numeric($image->name)):
+                        $propimage = PropertyImage::find($image->id);
+                        $pathToFile = public_path($image->name);
+                        // $imageName = 'obs-'.$property->id.'-'.$property->location->slug.'-'.$property->state->slug.'-'.$property->category->slug.'-OffBeat-Stays-'.md5(time()).$key.'.'.$pathToFile->getClientOriginalExtension();
 
-                    
-                    $propimage->name = $property->addMedia($pathToFile)
-                                        ->preservingOriginal()
-                                        ->toMediaCollection('property')->id;
-                    $propimage->save();
-                    echo $pathToFile.'<br>';
+                        
+                        $propimage->name = $property->addMedia($pathToFile)
+                                            ->preservingOriginal()
+                                            ->toMediaCollection('property')->id;
+                        $propimage->save();
+                        echo $pathToFile.'<br>';
+                    endif;
                 }
             // $property->clearMediaCollection('property');
             // $property->addMedia($pathToFile)
