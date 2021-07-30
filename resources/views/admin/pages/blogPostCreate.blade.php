@@ -61,7 +61,7 @@
 											</div>
 											
 											<!--begin::Form-->
-											<form class="form" action="{{ route('admin.category.store') }}" method="post" enctype="multipart/form-data">
+											<form class="form" action="{{ route('admin.blogpost.store') }}" method="post" enctype="multipart/form-data">
 												<div class="card-body">
 													<div class="row">
 														<div class="col-lg-8 offset-lg-2">
