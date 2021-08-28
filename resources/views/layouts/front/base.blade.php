@@ -1,6 +1,13 @@
 <!DOCTYPE HTML>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K2DXFVJ');</script>
+        <!-- End Google Tag Manager -->
         <!--=============== basic  ===============-->
         <meta charset="UTF-8">
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -48,10 +55,16 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}"></script>
-        @livewire('front.common.front-common-analytics-code-component')
+       
         {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
     </head>
     <body>
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2DXFVJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        
         <!--loader-->
         <div class="loader-wrap">
             <div class="pin">
