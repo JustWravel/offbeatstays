@@ -94,7 +94,7 @@
                                         <ul  class="footer-contacts fl-wrap">
                                             <li><span><i class="fal fa-envelope"></i> Mail :</span><a href="mailto:info@offbeatstays.in" target="_blank">info@offbeatstays.in</a></li>
                                             <li> <span><i class="fal fa-map-marker-alt"></i> Adress :</span><a href="https://www.google.com/maps/dir//offbeatstays/@28.6285092,77.3034102,12z/data=!3m1!4b1!4m9!4m8!1m1!4e2!1m5!1m1!1s0x390ce5571d17cb7f:0xe34c274beeef488f!2m2!1d77.373459!2d28.6285143" target="_blank">A 13A, Sector 62, Noida, Uttar Pradesh 201301</a></li>
-                                            <li><span><i class="fal fa-phone"></i> Phone :</span><a href="tel:+919667051161"> +91 96670 51161</a></li>
+                                            <li><span><i class="fal fa-phone"></i> Phone :</span><a href="tel:+917827603151"> +91 78276 03151</a></li>
                                         </ul>
                                         <div class="footer-social">
                                             <span>Find us : </span>
@@ -173,8 +173,8 @@
                                 <div class="col-md-8">
                                     <div class="customer-support-widget fl-wrap">
                                         <h4>For Queries related to Long Stays and Experiences, you can reach out to us</h4>
-                                        <a href="tel:+919667051161" class="cs-mumber">+91 966 705 1161</a>
-                                        <a href="tel:+919667051161" class="cs-mumber-button color2-bg">Call Now <i class="far fa-phone-volume"></i></a>
+                                        <a href="tel:+917827603151" class="cs-mumber">+91 782 760 3151</a>
+                                        <a href="tel:+917827603151" class="cs-mumber-button color2-bg">Call Now <i class="far fa-phone-volume"></i></a>
                                     </div>
                                 </div>
                             </div>
