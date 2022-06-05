@@ -7,7 +7,7 @@
                         </div>
                         <a href="{{ route('admin.dashboard')}}" class="add-hotel">Add Your Hotel <span><i class="far fa-plus"></i></span></a>                     
                         <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Sign In</div>
-                        <a href="tel:+917827603151" class="show-reg-form"><i class="fa fa-phone"></i>+91 78276 03151</a>
+                        <a href="tel:+918506075051" class="show-reg-form"><i class="fa fa-phone"></i>+91 85060 75051</a>
                         
                     </div>
                 </div> --}}
@@ -16,7 +16,7 @@
                 <div class="header-inner fl-wrap">
                     <div class="container">
                         <div class="show-search-button"><span>Search</span> <i class="fas fa-search"></i> </div>
-                        <a href="tel:+917827603151" class="header-phone-number"><i class="fas fa-phone-volume"></i>+91 78276 03151</a>
+                        <a href="tel:+918506075051" class="header-phone-number"><i class="fas fa-phone-volume"></i>+91 85060 75051</a>
                         {{-- <div class="wishlist-link"><i class="fal fa-heart"></i><span class="wl_counter">3</span></div> --}}
                         
                         {{-- <div class="header-user-menu">

@@ -182,10 +182,10 @@
 <li><a href="mailto:info@offbeatstays.in" target="_blank" title="Send email">
 <i class="fas fa-envelope my-float"></i>
 </a></li>
-<li><a href="//wa.me/send?phone=917827603151&text=Hello%20Stayers!%20I%27m%20looking%20for%20an%20Offbeat%20Stay." target="_blank" title="Ask the expert">
+<li><a href="//wa.me/send?phone=918506075051&text=Hello%20Stayers!%20I%27m%20looking%20for%20an%20Offbeat%20Stay." target="_blank" title="Ask the expert">
 <i class="fab fa-whatsapp my-float"></i>
 </a></li>
-<li><a href="tel:+917827603151" target="_blank" title="Call Now">
+<li><a href="tel:+918506075051" target="_blank" title="Call Now">
 <i class="fas fa-phone-volume my-float"></i>
 </a></li>
 </ul>
